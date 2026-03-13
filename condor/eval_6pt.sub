@@ -1,0 +1,23 @@
+# NOTE: Update paths below before use
+# HTCondor submission for 6pt SFT evaluation with reject_term_increase=1
+# 1000 workers, ~10 samples each (9934 total)
+
+universe = vanilla
+executable = /bin/bash
+arguments = /path/to/RL_amplitudes_claude/scripts/run_eval_6pt_worker.sh $(Process) 1000 9934
+
+output = /path/to/output/eval_6pt/$(Process).out
+error = /path/to/output/eval_6pt/$(Process).err
+log = /path/to/output/eval_6pt/condor.log
+
+environment = "PYTHONPATH=/path/to/RL_amplitudes_claude/spinorhelicity:/path/to/RL_amplitudes_claude/src"
+
+request_cpus = 2
+request_memory = 8GB
+request_disk = 2GB
+
+getenv = True
++IsGPUJob = false
++MaxRuntime = 21600
+
+queue 1000

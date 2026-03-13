@@ -1,0 +1,18 @@
+# NOTE: Update paths below before use
+universe = vanilla
+executable = /path/to/python
+arguments = /path/to/RL_amplitudes_claude/src/convert_oracle_5pt_to_multilabel_worker.py --input_dir /path/to/RL_amplitudes_claude/data/oracle_5pt_500k --output_dir /path/to/RL_amplitudes_claude/data/transitions_5pt_chunks --worker_id $(Process) --num_workers 500 --n_point 5 --max_terms_obs 25 --max_terms_action 25 --max_brackets_per_term 15 --max_brackets 20
+
+output = /path/to/RL_amplitudes_claude/logs/convert_5pt_$(Process).out
+error = /path/to/RL_amplitudes_claude/logs/convert_5pt_$(Process).err
+log = /path/to/RL_amplitudes_claude/logs/convert_5pt.log
+
+environment = "PYTHONPATH=/path/to/RL_amplitudes_claude/spinorhelicity:/path/to/RL_amplitudes_claude/src"
+
+request_cpus = 1
+request_memory = 4GB
+request_disk = 1GB
+
++MaxRuntime = 7200
+
+queue 500

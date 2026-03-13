@@ -1,0 +1,1384 @@
+Equation 0 (1/1)
+src=-2*ab23*sb23/(ab24*sb14)
+tgt=-2*ab14/ab24
+1 -2*ab14/ab24
+
+Equation 1 (1/1)
+src=-ab23*ab34*sb23/sb14
+tgt=-ab14*ab34
+1 -ab14*ab34
+
+Equation 2 (1/1)
+src=(2*sb12*sb34**2 + 2*sb14*sb23*sb34)/sb24
+tgt=2*sb13*sb34
+1 2*sb13*sb34
+
+Equation 3 (1/1)
+src=-ab23**3*sb23**3/(ab12*ab14**3)
+tgt=-sb14**3/ab12
+1 -sb14**3/ab12
+
+Equation 4 (1/1)
+src=(ab12*ab24*ab34 - ab13*ab24**2)/(ab23**2*sb24)
+tgt=-ab14*ab24/(ab23*sb24)
+1 -ab14*ab24/(ab23*sb24)
+
+Equation 5 (1/1)
+src=2*ab13*sb13/(ab24*sb24**2)
+tgt=2/sb24
+1 2/sb24
+
+Equation 6 (1/1)
+src=-ab12**3*sb12**2/(sb23*sb34**2)
+tgt=-ab12*ab34**2/sb23
+1 -ab12*ab34**2/sb23
+
+Equation 7 (1/1)
+src=ab14*ab24*sb14/(sb12*sb23)
+tgt=ab23*ab24/sb12
+1 ab23*ab24/sb12
+
+Equation 8 (1/1)
+src=(sb13**3*sb24**2 - 2*sb13**2*sb14*sb23*sb24 + sb13*sb14**2*sb23**2)/(ab34*sb34**2)
+tgt=sb12**2*sb13/ab34
+1 sb12**2*sb13/ab34
+
+Equation 9 (1/1)
+src=(-sb13*sb24 + sb14*sb23)/(ab34*sb12*sb13**2*sb34)
+tgt=-1/(ab34*sb13**2)
+1 -1/(ab34*sb13**2)
+
+Equation 10 (1/1)
+src=ab34*sb14/(ab23*sb23*sb34)
+tgt=sb12/(sb23*sb34)
+1 sb12/(sb23*sb34)
+
+Equation 11 (1/1)
+src=(-ab12*ab14*ab34 - ab14**2*ab23)/(ab13*sb24)
+tgt=-ab14*ab24/sb24
+1 -ab14*ab24/sb24
+
+Equation 12 (1/1)
+src=ab12*sb12/(ab13*ab34*sb13*sb24**2)
+tgt=sb34/(ab13*sb13*sb24**2)
+1 sb34/(ab13*sb13*sb24**2)
+
+Equation 13 (1/1)
+src=(ab13*ab24*sb12 - ab14*ab23*sb12)/(ab12**2*ab34)
+tgt=sb12/ab12
+1 sb12/ab12
+
+Equation 14 (1/1)
+src=(ab12*sb12 + ab14*sb14)/(ab12*sb13*sb23)
+tgt=-ab13/(ab12*sb23)
+1 -ab13/(ab12*sb23)
+
+Equation 15 (1/1)
+src=-2*ab24*sb24/(ab13*sb13*sb23)
+tgt=-2/sb23
+1 -2/sb23
+
+Equation 16 (1/1)
+src=-ab14*sb14/(ab23**2*sb23*sb34)
+tgt=-1/(ab23*sb34)
+1 -1/(ab23*sb34)
+
+Equation 17 (1/1)
+src=-ab24**2*sb24**2/(ab14*sb13**2*sb34)
+tgt=-ab13**2/(ab14*sb34)
+1 -ab13**2/(ab14*sb34)
+
+Equation 18 (1/1)
+src=-ab24*sb24*sb34/(ab13*ab14*sb13)
+tgt=-sb34/ab14
+1 -sb34/ab14
+
+Equation 19 (1/1)
+src=-ab24/(ab12*ab13*sb13)
+tgt=-1/(ab12*sb24)
+1 -1/(ab12*sb24)
+
+Equation 20 (1/1)
+src=(-ab14*sb12*sb34 - ab14*sb14*sb23 + 2*ab24*sb23*sb24)/(sb24*sb34)
+tgt=(-ab14*sb13 + 2*ab24*sb23)/sb34
+1 (-ab14*sb13 + 2*ab24*sb23)/sb34
+
+Equation 21 (1/1)
+src=(ab12*sb12*sb13**2*sb24 - ab12*sb12*sb13*sb14*sb23 - ab24*sb13**2*sb24**2 + 2*ab24*sb13*sb14*sb23*sb24 - ab24*sb14**2*sb23**2)/(sb12**2*sb14)
+tgt=(ab12*sb13*sb34 - ab24*sb34**2)/sb14
+1 (ab12*sb13*sb34 - ab24*sb34**2)/sb14
+
+Equation 22 (1/1)
+src=(sb13*sb24 - sb14*sb23)/(sb12*sb14**2*sb34**2)
+tgt=1/(sb14**2*sb34)
+1 1/(sb14**2*sb34)
+
+Equation 23 (1/1)
+src=(ab12*sb12*sb24*sb34 - ab12*sb13*sb24**2 + ab12*sb14*sb23*sb24)/sb12
+tgt=0
+1 0
+
+Equation 24 (1/1)
+src=(-sb13*sb14*sb24 + sb14**2*sb23)/(ab34*sb34)
+tgt=-sb12*sb14/ab34
+1 -sb12*sb14/ab34
+
+Equation 25 (1/1)
+src=ab12*sb12*sb13*sb14/ab34
+tgt=sb13*sb14*sb34
+1 sb13*sb14*sb34
+
+Equation 26 (1/1)
+src=(2*ab12*ab34 + 2*ab14*ab23)/(ab24**2*ab34**2)
+tgt=2*ab13/(ab24*ab34**2)
+1 2*ab13/(ab24*ab34**2)
+
+Equation 27 (1/1)
+src=(-sb13*sb24 + sb14*sb23)/(ab23**2*ab24*sb34)
+tgt=-sb12/(ab23**2*ab24)
+1 -sb12/(ab23**2*ab24)
+
+Equation 28 (1/1)
+src=(ab13*sb13 + ab34*sb34)/(ab23*sb14**2)
+tgt=-sb23/sb14**2
+1 -sb23/sb14**2
+
+Equation 29 (1/1)
+src=(-sb12*sb34 + sb13*sb24)/(ab23*sb12*sb14*sb23)
+tgt=1/(ab23*sb12)
+1 1/(ab23*sb12)
+
+Equation 30 (1/1)
+src=(-sb12**2*sb34**2 - 2*sb12*sb14*sb23*sb34 - sb14**2*sb23**2)/(ab14**3*sb13**2)
+tgt=-sb24**2/ab14**3
+1 -sb24**2/ab14**3
+
+Equation 31 (1/1)
+src=(ab14*sb12*sb34 - ab14*sb13*sb24)/(ab13**2*sb14)
+tgt=-ab14*sb23/ab13**2
+1 -ab14*sb23/ab13**2
+
+Equation 32 (1/1)
+src=(ab12*ab34 - ab13*ab24)/(ab13**2*ab14*ab23*sb23)
+tgt=-1/(ab13**2*sb23)
+1 -1/(ab13**2*sb23)
+
+Equation 33 (1/1)
+src=(-sb12*sb34 + sb13*sb24)/(ab13*sb13**4*sb23)
+tgt=sb14/(ab13*sb13**4)
+1 sb14/(ab13*sb13**4)
+
+Equation 34 (1/1)
+src=(-ab14*sb14 + ab23*sb23)/(ab13*ab14*ab24)
+tgt=0
+1 0
+
+Equation 35 (1/1)
+src=(-sb12*sb34 + sb13*sb24)/(ab12**2*sb14**3*sb24)
+tgt=sb23/(ab12**2*sb14**2*sb24)
+1 sb23/(ab12**2*sb14**2*sb24)
+
+Equation 36 (1/1)
+src=(-ab13**2*ab24**3 + 2*ab13*ab14*ab23*ab24**2 - ab14**2*ab23**2*ab24)/(ab12**2*ab14)
+tgt=-ab24*ab34**2/ab14
+1 -ab24*ab34**2/ab14
+
+Equation 37 (1/1)
+src=(-ab12*sb12 - ab13*sb13)/(ab12*sb14*sb34)
+tgt=ab14/(ab12*sb34)
+1 ab14/(ab12*sb34)
+
+Equation 38 (1/1)
+src=(-ab13*ab24 + ab14*ab23)/(ab12*ab24*sb13*sb34)
+tgt=-ab34/(ab24*sb13*sb34)
+1 -ab34/(ab24*sb13*sb34)
+
+Equation 39 (1/1)
+src=(-ab12*ab24*sb24 + ab12*ab34*sb34 - ab13*ab24*sb34 + ab14*ab23*sb34)/(ab12*ab23*ab24)
+tgt=-sb24/ab23
+1 -sb24/ab23
+
+Equation 40 (1/1)
+src=ab34*sb34/(ab12*ab14*ab23*ab24*sb14*sb24)
+tgt=sb12/(ab14*ab23*ab24*sb14*sb24)
+1 sb12/(ab14*ab23*ab24*sb14*sb24)
+
+Equation 41 (1/1)
+src=-3*ab13*sb23/(ab14*sb12)
+tgt=3*sb24/sb12
+1 3*sb24/sb12
+
+Equation 42 (1/1)
+src=2*ab12*sb12*sb13/ab34**2
+tgt=2*sb13*sb34/ab34
+1 2*sb13*sb34/ab34
+
+Equation 43 (1/1)
+src=-2*ab23*sb23/(ab12**2*sb14*sb34)
+tgt=-2*ab14/(ab12**2*sb34)
+1 -2*ab14/(ab12**2*sb34)
+
+Equation 44 (1/1)
+src=-ab23*ab24*sb23/(sb14**2*sb24)
+tgt=-ab14*ab24/(sb14*sb24)
+1 -ab14*ab24/(sb14*sb24)
+
+Equation 45 (1/1)
+src=-ab34**3*sb13**3/(ab23*sb12**3)
+tgt=ab24**3/ab23
+1 ab24**3/ab23
+
+Equation 46 (1/1)
+src=-ab13**2*sb13**2/(ab24**2*sb14**2)
+tgt=-sb24**2/sb14**2
+1 -sb24**2/sb14**2
+
+Equation 47 (1/1)
+src=-ab23*ab34*sb34/(ab12*sb23)
+tgt=-ab23*sb12/sb23
+1 -ab23*sb12/sb23
+
+Equation 48 (1/1)
+src=(ab13*ab14*sb13*sb24 - ab13*ab14*sb14*sb23)/sb34
+tgt=ab13*ab14*sb12
+1 ab13*ab14*sb12
+
+Equation 49 (1/1)
+src=(ab12*ab13*sb13**2 - ab12*ab24*sb13*sb24)/(sb24*sb34)
+tgt=0
+1 0
+
+Equation 50 (1/1)
+src=(-ab13**2*ab34*sb12*sb14*sb34 - ab13**2*ab34*sb14**2*sb23)/sb24
+tgt=-ab13**2*ab34*sb13*sb14
+1 -ab13**2*ab34*sb13*sb14
+
+Equation 51 (1/1)
+src=(ab12**2*sb12**2 + 2*ab12*ab24*sb12*sb24 + ab24**2*sb24**2)/sb23**2
+tgt=ab23**2
+1 ab23**2
+
+Equation 52 (1/1)
+src=(ab34*sb12*sb34 - ab34*sb13*sb24 + ab34*sb14*sb23)/(sb23*sb24*sb34)
+tgt=0
+1 0
+
+Equation 53 (1/1)
+src=(ab12*ab14*sb12*sb34 - ab12*ab14*sb13*sb24 - ab12*ab23*sb23**2)/sb23
+tgt=-ab12*ab14*sb14 - ab12*ab23*sb23
+1 -ab12*ab14*sb14 - ab12*ab23*sb23
+
+Equation 54 (1/1)
+src=ab23*sb23/(sb14**2*sb24**2)
+tgt=ab14/(sb14*sb24**2)
+1 ab14/(sb14*sb24**2)
+
+Equation 55 (1/1)
+src=(-ab14*sb12*sb14 - ab24*sb12*sb24)/(sb14*sb34)
+tgt=ab34*sb12/sb14
+1 ab34*sb12/sb14
+
+Equation 56 (1/1)
+src=(-sb12*sb34 + sb13*sb24 - sb14*sb23)/(sb14*sb23*sb34)
+tgt=0
+1 0
+
+Equation 57 (1/1)
+src=(-ab14**2*ab34*sb12*sb34 + ab14**2*ab34*sb13*sb24)/sb14
+tgt=ab14**2*ab34*sb23
+1 ab14**2*ab34*sb23
+
+Equation 58 (1/1)
+src=(2*sb12**2*sb14*sb34**2 + 4*sb12*sb14**2*sb23*sb34 + 2*sb14**3*sb23**2)/sb13**3
+tgt=2*sb14*sb24**2/sb13
+1 2*sb14*sb24**2/sb13
+
+Equation 59 (1/1)
+src=(-sb12**2*sb34**3 - 2*sb12*sb14*sb23*sb34**2 - sb14**2*sb23**2*sb34)/sb13**2
+tgt=-sb24**2*sb34
+1 -sb24**2*sb34
+
+Equation 60 (1/1)
+src=(ab14*ab23*sb13 + ab24**2*sb24)/(sb13*sb24)
+tgt=(ab13*ab24 + ab14*ab23)/sb24
+1 (ab13*ab24 + ab14*ab23)/sb24
+
+Equation 61 (1/1)
+src=(-ab13**2*sb13 - ab13*ab34*sb34)/(sb13*sb23)
+tgt=ab13*ab23/sb13
+1 ab13*ab23/sb13
+
+Equation 62 (1/1)
+src=(ab12**2*sb12*sb34 + ab12**2*sb14*sb23)/(sb13*sb14)
+tgt=ab12**2*sb24/sb14
+1 ab12**2*sb24/sb14
+
+Equation 63 (1/1)
+src=(-sb13**2*sb23*sb24**2 + sb13*sb14*sb23**2*sb24)/sb12**2
+tgt=-sb13*sb23*sb24*sb34/sb12
+1 -sb13*sb23*sb24*sb34/sb12
+
+Equation 64 (1/1)
+src=(-sb13**3*sb24 + sb13**2*sb14*sb23)/(sb12*sb24)
+tgt=-sb13**2*sb34/sb24
+1 -sb13**2*sb34/sb24
+
+Equation 65 (1/1)
+src=(ab14*sb13*sb24 + ab24*sb23*sb24)/(sb12*sb23)
+tgt=0
+1 0
+
+Equation 66 (1/1)
+src=(ab13*sb12*sb23*sb34 + ab34*sb23*sb24*sb34)/(sb12*sb14)
+tgt=(ab12*sb23*sb24 + ab13*sb23*sb34)/sb14
+1 (ab12*sb23*sb24 + ab13*sb23*sb34)/sb14
+
+Equation 67 (1/1)
+src=(-ab13**2*ab23*sb23 - ab13**2*ab24*sb24)/sb12
+tgt=ab12*ab13**2
+1 ab12*ab13**2
+
+Equation 68 (1/1)
+src=(ab13**2*ab24**2*sb14 - 2*ab13*ab14*ab23*ab24*sb14 + ab14**2*ab23**2*sb14)/(ab34**2*sb24**2)
+tgt=ab12**2*sb14/sb24**2
+1 ab12**2*sb14/sb24**2
+
+Equation 69 (1/1)
+src=(2*sb12*sb34 + 2*sb14*sb23)/(ab34**2*sb13)
+tgt=2*sb24/ab34**2
+1 2*sb24/ab34**2
+
+Equation 70 (1/1)
+src=(-ab13*sb13*sb23 - ab23*sb23**2)/(ab34*sb34**2)
+tgt=sb23/sb34
+1 sb23/sb34
+
+Equation 71 (1/1)
+src=(ab14*sb12*sb34 - ab14*sb13*sb24 + ab14*sb14*sb23)/(ab34*sb24)
+tgt=0
+1 0
+
+Equation 72 (1/1)
+src=(ab13**2*ab24 - ab13*ab14*ab23)/(ab34*sb14**3)
+tgt=ab12*ab13/sb14**3
+1 ab12*ab13/sb14**3
+
+Equation 73 (1/1)
+src=(ab12*sb12*sb23 - ab34*sb23*sb34)/(ab34*sb14)
+tgt=0
+1 0
+
+Equation 74 (1/1)
+src=(2*sb13*sb24 - 2*sb14*sb23)/(ab34*sb12*sb23*sb34)
+tgt=2/(ab34*sb23)
+1 2/(ab34*sb23)
+
+Equation 75 (1/1)
+src=(sb12*sb13*sb34 + sb13*sb14*sb23)/ab34
+tgt=sb13**2*sb24/ab34
+1 sb13**2*sb24/ab34
+
+Equation 76 (1/1)
+src=(sb12*sb34 - sb13*sb24)/(ab24**2*sb14*sb24)
+tgt=-sb23/(ab24**2*sb24)
+1 -sb23/(ab24**2*sb24)
+
+Equation 77 (1/1)
+src=(ab12**2*ab34*sb12*sb13*sb24**3 + ab12*ab14*ab23*sb12*sb13*sb24**3)/(ab24*sb34)
+tgt=ab12*ab13*sb12*sb13*sb24**3/sb34
+1 ab12*ab13*sb12*sb13*sb24**3/sb34
+
+Equation 78 (1/1)
+src=(-2*sb12**2*sb34 + 2*sb12*sb13*sb24)/(ab24*sb23**2)
+tgt=2*sb12*sb14/(ab24*sb23)
+1 2*sb12*sb14/(ab24*sb23)
+
+Equation 79 (1/1)
+src=(sb12*sb34 - sb13*sb24 + sb14*sb23)/(ab24*sb14*sb34)
+tgt=0
+1 0
+
+Equation 80 (1/1)
+src=ab34*sb24**2*sb34/(ab24*sb12**2)
+tgt=ab12*sb24**2/(ab24*sb12)
+1 ab12*sb24**2/(ab24*sb12)
+
+Equation 81 (1/1)
+src=(-ab13*ab14*sb13 + ab14*ab24*sb24)/(ab24*sb12*sb13*sb34)
+tgt=0
+1 0
+
+Equation 82 (1/1)
+src=(-2*ab13*ab24 + 2*ab14*ab23)/(ab24*ab34*sb34**2)
+tgt=-2*ab12/(ab24*sb34**2)
+1 -2*ab12/(ab24*sb34**2)
+
+Equation 83 (1/1)
+src=(-sb12**2*sb34 - sb12*sb14*sb23)/ab24
+tgt=-sb12*sb13*sb24/ab24
+1 -sb12*sb13*sb24/ab24
+
+Equation 84 (1/1)
+src=ab23**2*sb12*sb23**2/(sb13**2*sb14**2)
+tgt=ab14**2*sb12/sb13**2
+1 ab14**2*sb12/sb13**2
+
+Equation 85 (1/1)
+src=(sb13*sb24 - sb14*sb23)/(ab23**2*ab34*sb12*sb23*sb34)
+tgt=1/(ab23**2*ab34*sb23)
+1 1/(ab23**2*ab34*sb23)
+
+Equation 86 (1/1)
+src=(ab12*ab34*sb24 - ab13*ab23*sb23 - ab13*ab24*sb24 + 2*ab14*ab23*sb24)/ab23**2
+tgt=(-ab13*sb23 + ab14*sb24)/ab23
+1 (-ab13*sb23 + ab14*sb24)/ab23
+
+Equation 87 (1/1)
+src=(-ab13*sb12*sb34 + ab13*sb13*sb24 - ab13*sb14*sb23)/(ab23*sb24)
+tgt=0
+1 0
+
+Equation 88 (1/1)
+src=(-ab13*sb13 - ab34*sb34)/(ab23*sb14**2*sb23)
+tgt=sb14**(-2)
+1 sb14**(-2)
+
+Equation 89 (1/1)
+src=(sb13*sb14*sb24 - sb14**2*sb23)/(ab23*sb12**2*sb34)
+tgt=sb14/(ab23*sb12)
+1 sb14/(ab23*sb12)
+
+Equation 90 (1/1)
+src=(-ab14*ab24*sb14 + ab23*ab24*sb23)/(ab23*sb12*sb13*sb14)
+tgt=0
+1 0
+
+Equation 91 (1/1)
+src=sb12/(ab23*ab34*sb24*sb34)
+tgt=1/(ab12*ab23*sb24)
+1 1/(ab12*ab23*sb24)
+
+Equation 92 (1/1)
+src=(-ab12*ab34 - ab14*ab23)/(ab23*ab34*sb12)
+tgt=-ab13*ab24/(ab23*ab34*sb12)
+1 -ab13*ab24/(ab23*ab34*sb12)
+
+Equation 93 (5/5)
+src=ab12*sb13*sb14/(ab23*ab24*sb34)
+tgt=sb13/ab24
+1 -1.228e-01 -sb14/ab23
+1 -1.464e-01 sb13/ab24
+1 -1.924e-01 -sb23/ab14
+1 -2.876e-01 -sb12/ab34
+1 -3.443e-01 sb24/ab13
+
+Equation 94 (1/1)
+src=(sb12**2*sb34 + sb12*sb14*sb23)/ab23
+tgt=sb12*sb13*sb24/ab23
+1 sb12*sb13*sb24/ab23
+
+Equation 95 (1/1)
+src=(sb12*sb34 + sb14*sb23)/(ab14**3*sb13**2*sb23*sb24**2)
+tgt=1/(ab14**3*sb13*sb23*sb24)
+1 1/(ab14**3*sb13*sb23*sb24)
+
+Equation 96 (1/1)
+src=ab12*sb12**2/(ab14**2*ab34**2)
+tgt=sb34**2/(ab12*ab14**2)
+1 sb34**2/(ab12*ab14**2)
+
+Equation 97 (1/1)
+src=(-ab12**2*ab34**2*sb23 + 2*ab12*ab13*ab24*ab34*sb23 - ab13**2*ab24**2*sb23)/(ab14**2*ab24)
+tgt=-ab23**2*sb23/ab24
+1 -ab23**2*sb23/ab24
+
+Equation 98 (1/1)
+src=(ab12**2*ab24*ab34 - ab12*ab13*ab24**2 + ab12*ab14*ab23*ab24)/ab14**2
+tgt=0
+1 0
+
+Equation 99 (1/1)
+src=(-2*ab24*sb12*sb34 - 2*ab24*sb14*sb23)/(ab14*sb24)
+tgt=-2*ab24*sb13/ab14
+1 -2*ab24*sb13/ab14
+
+Equation 100 (1/1)
+src=ab12*sb14**3*sb23/ab14
+tgt=sb14**3*sb34
+1 sb14**3*sb34
+
+Equation 101 (1/1)
+src=(-sb12*sb34 + sb13*sb24 - sb14*sb23)/(ab14*sb13**2*sb34)
+tgt=0
+1 0
+
+Equation 102 (1/1)
+src=(ab12*ab13*ab24**2*ab34 - ab13**2*ab24**3 + ab13*ab14*ab23*ab24**2)/(ab14*sb13)
+tgt=0
+1 0
+
+Equation 103 (1/1)
+src=(ab34*sb12*sb34 - ab34*sb13*sb24)/(ab14*sb12*sb14*sb23*sb34)
+tgt=-ab34/(ab14*sb12*sb34)
+1 -ab34/(ab14*sb12*sb34)
+
+Equation 104 (1/1)
+src=(sb13*sb24 - sb14*sb23)/(ab14*ab34*sb12**2*sb23*sb34)
+tgt=1/(ab14*ab34*sb12*sb23)
+1 1/(ab14*ab34*sb12*sb23)
+
+Equation 105 (1/1)
+src=ab23*sb23/(ab14*ab24*sb12*sb13**2)
+tgt=sb14/(ab24*sb12*sb13**2)
+1 sb14/(ab24*sb12*sb13**2)
+
+Equation 106 (1/1)
+src=(sb12*sb24*sb34 - sb13*sb24**2)/(ab14*ab23*sb14*sb23)
+tgt=-sb24/(ab14*ab23)
+1 -sb24/(ab14*ab23)
+
+Equation 107 (1/1)
+src=(2*ab13*ab24 - 2*ab14*ab23)/(ab14*ab23*ab34*sb12)
+tgt=2*ab12/(ab14*ab23*sb12)
+1 2*ab12/(ab14*ab23*sb12)
+
+Equation 108 (1/1)
+src=(ab14*sb13*sb24**2 + ab23*sb23**2*sb24)/ab14
+tgt=sb13*sb24**2 + sb14*sb23*sb24
+1 sb13*sb24**2 + sb14*sb23*sb24
+
+Equation 109 (1/1)
+src=(-ab13*ab23*sb13*sb14 + ab23*ab24*sb14*sb24)/(ab13**2*ab24*sb13)
+tgt=0
+1 0
+
+Equation 110 (1/1)
+src=(ab12*ab34 - ab13*ab24)/(ab13**2*ab14**2*ab34*sb13)
+tgt=-ab23/(ab13**2*ab14*ab34*sb13)
+1 -ab23/(ab13**2*ab14*ab34*sb13)
+
+Equation 111 (1/1)
+src=(-ab12*sb12 - 3*ab13*sb13 + ab34*sb34)/ab13**2
+tgt=-3*sb13/ab13
+1 -3*sb13/ab13
+
+Equation 112 (1/1)
+src=(2*ab14*sb12*sb34 + 2*ab14*sb14*sb23 + ab24*sb23*sb24)/(ab13*sb24)
+tgt=(2*ab14*sb13 + ab24*sb23)/ab13
+1 (2*ab14*sb13 + ab24*sb23)/ab13
+
+Equation 113 (1/1)
+src=(ab12*sb13**2*sb24**2 - 2*ab12*sb13*sb14*sb23*sb24 + ab12*sb14**2*sb23**2)/(ab13*sb12**2*sb23)
+tgt=ab12*sb34**2/(ab13*sb23)
+1 ab12*sb34**2/(ab13*sb23)
+
+Equation 114 (1/1)
+src=(-2*ab13*sb23 - ab14*sb24)/(ab13*ab34)
+tgt=-sb23/ab34
+1 -sb23/ab34
+
+Equation 115 (1/1)
+src=(-ab12*ab34*sb34 - ab14*ab23*sb34)/(ab13*ab24*sb23)
+tgt=-sb34/sb23
+1 -sb34/sb23
+
+Equation 116 (1/1)
+src=(sb13*sb24**2 - sb14*sb23*sb24)/(ab13*ab24*ab34*sb13)
+tgt=sb12*sb24*sb34/(ab13*ab24*ab34*sb13)
+1 sb12*sb24*sb34/(ab13*ab24*ab34*sb13)
+
+Equation 117 (1/1)
+src=(-ab12**3*ab34**2 + 2*ab12**2*ab13*ab24*ab34 - ab12*ab13**2*ab24**2)/(ab13*ab23**2)
+tgt=-ab12*ab14**2/ab13
+1 -ab12*ab14**2/ab13
+
+Equation 118 (1/1)
+src=ab24*sb24/(ab13*ab23*sb12*sb13*sb23**2)
+tgt=1/(ab23*sb12*sb23**2)
+1 1/(ab23*sb12*sb23**2)
+
+Equation 119 (1/1)
+src=ab14**2*sb14/(ab13*ab23*sb23)
+tgt=ab14/ab13
+1 ab14/ab13
+
+Equation 120 (1/1)
+src=(-2*ab12*ab14*sb14 + ab12*ab34*sb34 - ab13*ab24*sb34)/(ab13*ab14)
+tgt=(-2*ab12*sb14 - ab23*sb34)/ab13
+1 (-2*ab12*sb14 - ab23*sb34)/ab13
+
+Equation 121 (5/5)
+src=ab23*ab34*sb34**3/ab12**3
+tgt=ab23*sb12**3/ab34**2
+1 -2.107e-02 sb12**2*sb14/ab34
+1 -1.724e-01 ab23*sb12**3/ab34**2
+1 -2.424e-01 sb12*sb14**2/ab23
+1 -3.050e-01 ab34*sb14**3/ab23**2
+1 -3.705e-01 ab23*sb12*sb34**2/ab12**2
+
+Equation 122 (1/1)
+src=(-ab12*sb12 - ab14*sb14)/(ab12**3*ab13)
+tgt=sb13/ab12**3
+1 sb13/ab12**3
+
+Equation 123 (1/1)
+src=(2*ab12*sb12 + 2*ab24*sb24)/(ab12**2*ab24*sb13*sb23)
+tgt=-2*ab23/(ab12**2*ab24*sb13)
+1 -2*ab23/(ab12**2*ab24*sb13)
+
+Equation 124 (1/1)
+src=(ab13*sb13 + ab14*sb14)/(ab12**2*ab14**2*ab34*sb24)
+tgt=-sb12/(ab12*ab14**2*ab34*sb24)
+1 -sb12/(ab12*ab14**2*ab34*sb24)
+
+Equation 125 (1/1)
+src=ab34*sb14*sb34**3/ab12
+tgt=sb12*sb14*sb34**2
+1 sb12*sb14*sb34**2
+
+Equation 126 (1/1)
+src=(-2*ab13*ab24 + 2*ab14*ab23)/(ab12*sb23*sb34**2)
+tgt=-2*ab34/(sb23*sb34**2)
+1 -2*ab34/(sb23*sb34**2)
+
+Equation 127 (1/1)
+src=(-ab12*sb12*sb34 - ab13*sb13*sb34 - ab14*sb14*sb34)/(ab12*ab34**2*sb14)
+tgt=0
+1 0
+
+Equation 128 (1/1)
+src=(ab12*ab34 - ab13*ab24)/(ab12*ab23*ab24*ab34*sb14)
+tgt=-ab14/(ab12*ab24*ab34*sb14)
+1 -ab14/(ab12*ab24*ab34*sb14)
+
+Equation 129 (1/1)
+src=(-ab12*ab34 + ab13*ab24)/(ab12*ab14**2*ab23**2*sb13*sb14)
+tgt=1/(ab12*ab14*ab23*sb13*sb14)
+1 1/(ab12*ab14*ab23*sb13*sb14)
+
+Equation 130 (1/1)
+src=(ab12*ab34 - ab13*ab24)/(ab12*ab14*ab23**3*sb23**2*sb34)
+tgt=-1/(ab12*ab23**2*sb23**2*sb34)
+1 -1/(ab12*ab23**2*sb23**2*sb34)
+
+Equation 131 (1/1)
+src=(sb13*sb24 - sb14*sb23)/(ab12*ab13**3*ab24*sb12*sb14*sb34)
+tgt=1/(ab12*ab13**3*ab24*sb14)
+1 1/(ab12*ab13**3*ab24*sb14)
+
+Equation 132 (1/1)
+src=(ab12*sb23**2*sb24 + ab13*sb23**2*sb34 + ab14*sb23*sb24*sb34)/(ab12*ab13*sb24)
+tgt=sb23**2/ab13
+1 sb23**2/ab13
+
+Equation 133 (1/1)
+src=(-ab13*ab14*ab24*sb24**3 + ab14**2*ab23*sb24**3)/(ab12*ab13)
+tgt=-ab14*ab34*sb24**3/ab13
+1 -ab14*ab34*sb24**3/ab13
+
+Equation 134 (1/1)
+src=3*ab23*ab24*sb23/(sb14*sb24)
+tgt=3*ab14*ab24/sb24
+1 3*ab14*ab24/sb24
+
+Equation 135 (1/1)
+src=3*ab14*sb24/(ab23*sb14*sb23)
+tgt=-3*ab13/(ab23*sb14)
+1 -3*ab13/(ab23*sb14)
+
+Equation 136 (1/1)
+src=-3*ab34*sb34/(ab12*ab13*sb13)
+tgt=-3*sb12/(ab13*sb13)
+1 -3*sb12/(ab13*sb13)
+
+Equation 137 (1/1)
+src=2*ab34*sb14*sb34/sb12
+tgt=2*ab12*sb14
+1 2*ab12*sb14
+
+Equation 138 (1/1)
+src=2*ab13*sb13*sb14**3*sb34/ab24
+tgt=2*sb14**3*sb24*sb34
+1 2*sb14**3*sb24*sb34
+
+Equation 139 (1/1)
+src=2*ab24*sb24/(ab23*ab34**2*sb13**2)
+tgt=2*ab13/(ab23*ab34**2*sb13)
+1 2*ab13/(ab23*ab34**2*sb13)
+
+Equation 140 (1/1)
+src=-2*ab24*sb24/(ab13*ab14*sb12*sb14)
+tgt=-2*sb13/(ab14*sb12*sb14)
+1 -2*sb13/(ab14*sb12*sb14)
+
+Equation 141 (1/1)
+src=-ab14*sb13/(sb12*sb14*sb23*sb34)
+tgt=ab24/(sb12*sb14*sb34)
+1 ab24/(sb12*sb14*sb34)
+
+Equation 142 (1/1)
+src=-ab23*sb23/(ab34*sb14*sb24**3)
+tgt=-ab14/(ab34*sb24**3)
+1 -ab14/(ab34*sb24**3)
+
+Equation 143 (2/5)
+src=-ab34/(ab24**2*sb12*sb14)
+tgt=1/(ab24*sb13*sb14)
+1 -4.570e-02 -ab23/(ab24**2*sb14**2)
+1 -5.090e-02 1/(ab24*sb13*sb14)
+0 -3.639e-01 -sb14/(ab23*sb13**2)
+0 -3.782e-01 ['mul', 'INT-', '1', 'mul', 'pow', 'ab23', 'INT-', '1', 'mul', 'pow', 'sb13', 'INT-', '2']
+0 -3.961e-01 ab34/(ab23*ab24*sb13)
+
+Equation 144 (1/1)
+src=-ab14*sb14/(ab24*ab34**2*sb23*sb24)
+tgt=-ab23/(ab24*ab34**2*sb24)
+1 -ab23/(ab24*ab34**2*sb24)
+
+Equation 145 (4/5)
+src=-ab12*ab13*sb14/(ab23**2*ab34)
+tgt=-ab13*sb34/(ab23*ab34)
+1 -5.718e-02 ab12*sb24/(ab23*ab34)
+1 -5.995e-02 -ab13*sb34/(ab23*ab34)
+1 -1.265e-01 sb24*sb34/(ab23*sb12)
+1 -2.948e-01 sb24*sb34/(ab34*sb14)
+0 -4.104e-01 -sb24*sb34/(ab34*sb14)
+
+Equation 146 (1/1)
+src=-ab23*ab24*sb23/(ab14**3*sb14*sb34**2)
+tgt=-ab24/(ab14**2*sb34**2)
+1 -ab24/(ab14**2*sb34**2)
+
+Equation 147 (1/1)
+src=-ab14**2*sb14**2/(ab23*sb12)
+tgt=-ab23*sb23**2/sb12
+1 -ab23*sb23**2/sb12
+
+Equation 148 (1/1)
+src=-ab24*sb24/(ab14*ab23*sb13**2)
+tgt=-ab13/(ab14*ab23*sb13)
+1 -ab13/(ab14*ab23*sb13)
+
+Equation 149 (1/1)
+src=-ab13**2*sb12/(ab34**2*sb23**2*sb34)
+tgt=-sb24**2/(sb12*sb23**2*sb34)
+1 -sb24**2/(sb12*sb23**2*sb34)
+
+Equation 150 (1/1)
+src=-ab14*sb13*sb24**2/ab13
+tgt=sb13*sb23*sb24
+1 sb13*sb23*sb24
+
+Equation 151 (1/1)
+src=-ab24*sb14*sb24*sb34/(ab13*ab34)
+tgt=-sb13*sb14*sb34/ab34
+1 -sb13*sb14*sb34/ab34
+
+Equation 152 (1/1)
+src=-ab12**3*ab34**2*sb13/ab24
+tgt=ab12**3*ab34*sb12
+1 ab12**3*ab34*sb12
+
+Equation 153 (1/1)
+src=-ab34/(ab12**2*ab23*sb12*sb13*sb24**2)
+tgt=-1/(ab12*ab23*sb13*sb24**2*sb34)
+1 -1/(ab12*ab23*sb13*sb24**2*sb34)
+
+Equation 154 (1/1)
+src=-ab34*sb24**2*sb34/(ab12*sb14)
+tgt=-sb12*sb24**2/sb14
+1 -sb12*sb24**2/sb14
+
+Equation 155 (1/1)
+src=-ab14*sb14/(ab12*ab24*sb23**2)
+tgt=-ab23/(ab12*ab24*sb23)
+1 -ab23/(ab12*ab24*sb23)
+
+Equation 156 (1/1)
+src=-ab34*sb34/(ab12*ab14**2*ab24*sb12*sb14)
+tgt=-1/(ab14**2*ab24*sb14)
+1 -1/(ab14**2*ab24*sb14)
+
+Equation 157 (1/1)
+src=-ab24*ab34**2*sb24/(ab12*ab13)
+tgt=-ab34**2*sb13/ab12
+1 -ab34**2*sb13/ab12
+
+Equation 158 (1/1)
+src=-2*ab12*ab34 - 2*ab14*ab23
+tgt=-2*ab13*ab24
+1 -2*ab13*ab24
+
+Equation 159 (1/1)
+src=ab12*sb24/sb34**5
+tgt=-ab13/sb34**4
+1 -ab13/sb34**4
+
+Equation 160 (1/1)
+src=(-ab34*sb12*sb13*sb14**3*sb34 + ab34*sb13**2*sb14**3*sb24 - ab34*sb13*sb14**4*sb23)/sb34**4
+tgt=0
+1 0
+
+Equation 161 (1/1)
+src=(ab12**2*ab13**4*sb13**6 + 4*ab12**2*ab13**3*ab23*sb13**5*sb23 + 6*ab12**2*ab13**2*ab23**2*sb13**4*sb23**2 + 4*ab12**2*ab13*ab23**3*sb13**3*sb23**3 + ab12**2*ab23**4*sb13**2*sb23**4 - ab13*ab14**2*ab23*ab24**2*sb12*sb13*sb14*sb34**3 - ab14**2*ab23**2*ab24**2*sb12**2*sb34**4 - ab14**2*ab23**2*ab24**2*sb12*sb14*sb23*sb34**3)/sb34**4
+tgt=ab12**2*ab34**4*sb13**2 - ab14**2*ab23**2*ab24**2*sb12**2 + ab14**2*ab23*ab24**2*ab34*sb12*sb14
+1 ab12**2*ab34**4*sb13**2 - ab14**2*ab23**2*ab24**2*sb12**2 + ab14**2*ab23*ab24**2*ab34*sb12*sb14
+
+Equation 162 (1/1)
+src=ab12*ab13*ab24*sb12*sb13/sb34**3
+tgt=ab13*ab24*ab34*sb13/sb34**2
+1 ab13*ab24*ab34*sb13/sb34**2
+
+Equation 163 (1/1)
+src=(-ab12*ab24**3*ab34**2*sb12*sb14**3 + ab13*ab24**4*ab34*sb12*sb14**3 - ab14*ab23*ab24**3*ab34*sb12*sb14**3)/sb34**3
+tgt=0
+1 0
+
+Equation 164 (1/1)
+src=(ab13**3*ab23*sb12**2*sb13**5 + 3*ab13**2*ab23**2*sb12**2*sb13**4*sb23 + ab13**2*ab24**2*sb12**3*sb13**2*sb14*sb34 + 3*ab13*ab23**3*sb12**2*sb13**3*sb23**2 + 2*ab13*ab23*ab24**2*sb12**3*sb13*sb14*sb23*sb34 + ab23**4*sb12**2*sb13**2*sb23**3 + ab23**2*ab24**2*sb12**3*sb14*sb23**2*sb34)/sb34**3
+tgt=-ab23*ab34**3*sb12**2*sb13**2 + ab24**2*ab34**2*sb12**3*sb14
+1 -ab23*ab34**3*sb12**2*sb13**2 + ab24**2*ab34**2*sb12**3*sb14
+
+Equation 165 (4/5)
+src=(ab12**2*ab23**2*ab34*sb12**2*sb14*sb24**3 + ab12*ab23*ab34**3*sb14**2*sb24**3*sb34)/sb34**3
+tgt=(-ab13**3*ab23**2*ab34*sb12**2*sb14 + ab13**2*ab23*ab34**3*sb14**2*sb24)/ab12
+1 -5.129e-02 (-ab13**3*ab23**2*ab34*sb12**2*sb14 - ab13*ab23**2*ab34**3*sb14*sb24**2)/ab12
+1 -6.673e-02 (-ab13*ab23**2*ab34**2*sb12*sb14*sb24**2 + ab23**2*ab34**3*sb14*sb24**3)/sb34
+1 -6.905e-02 (ab12*ab23*ab34**3*sb14**2*sb24**3 - ab13*ab23**2*ab34**2*sb12*sb14*sb24**2*sb34)/sb34**2
+1 -7.298e-02 (ab12*ab23**2*ab34**2*sb12*sb14*sb24**3 + ab12*ab23*ab34**3*sb14**2*sb24**3)/sb34**2
+0 -8.194e-02 (-ab13**3*ab23**2*ab34*sb12**2*sb14 - ab13*ab23*ab34**3*sb14**2*sb24**2)/ab12
+
+Equation 166 (1/1)
+src=(-ab12*ab14*ab24*sb14 - ab12*ab24**2*sb24 - ab14*ab23*ab24*sb34)/sb34**3
+tgt=(ab12*ab24*ab34 - ab14*ab23*ab24)/sb34**2
+1 (ab12*ab24*ab34 - ab14*ab23*ab24)/sb34**2
+
+Equation 167 (1/1)
+src=(-ab12**3*ab23*sb12**2*sb14 - ab13*ab23**2*ab24*sb12*sb34**2)/sb34**3
+tgt=(-ab12*ab23*ab34**2*sb14 - ab13*ab23**2*ab24*sb12)/sb34
+1 (-ab12*ab23*ab34**2*sb14 - ab13*ab23**2*ab24*sb12)/sb34
+
+Equation 168 (3/5)
+src=(ab12*ab13*sb13*sb14*sb24**2 - ab13*ab23*sb13*sb24**2*sb34 - ab13*ab23*sb14*sb23*sb24*sb34 + ab13*ab24*sb14*sb24**2*sb34)/sb34**2
+tgt=(-ab13*ab23*sb14*sb23*sb24 + ab13*ab24*sb14*sb24**2)/sb34
+1 -3.085e-02 (-ab13*ab23*sb13*sb24**2 - ab13*ab23*sb14*sb23*sb24)/sb34
+1 -5.940e-02 (-ab13*ab23*sb14*sb23*sb24 + ab13*ab24*sb14*sb24**2)/sb34
+1 -1.312e-01 (-ab13*ab23*sb14*sb23*sb24 - ab23*ab24*sb24**3)/sb34
+0 -2.852e-01 ab13*ab23*sb12*sb24
+0 -4.126e-01 ab13*ab34*sb14*sb24
+
+Equation 169 (1/1)
+src=(ab14*sb13**2*sb14*sb24**2 - 2*ab14*sb13*sb14**2*sb23*sb24 + ab14*sb14**3*sb23**2 + ab24*sb13**2*sb24**3 - 2*ab24*sb13*sb14*sb23*sb24**2 + ab24*sb14**2*sb23**2*sb24 - ab34*sb13**2*sb24**2*sb34 + 2*ab34*sb13*sb14*sb23*sb24*sb34 - ab34*sb14**2*sb23**2*sb34)/sb34**2
+tgt=ab14*sb12**2*sb14 + ab24*sb12**2*sb24 - ab34*sb12**2*sb34
+1 ab14*sb12**2*sb14 + ab24*sb12**2*sb24 - ab34*sb12**2*sb34
+
+Equation 170 (1/1)
+src=(-ab23*ab34*sb12*sb34 + ab23*ab34*sb13*sb24 - ab23*ab34*sb14*sb23 + ab34**2*sb14*sb34)/sb34**2
+tgt=ab34**2*sb14/sb34
+1 ab34**2*sb14/sb34
+
+Equation 171 (1/1)
+src=(ab24**2*sb12**2*sb13*sb24 - ab24**2*sb12**2*sb14*sb23)/sb34**2
+tgt=ab24**2*sb12**3/sb34
+1 ab24**2*sb12**3/sb34
+
+Equation 172 (1/1)
+src=(ab23**2*ab24*sb12*sb34 - ab23**2*ab24*sb13*sb24 + ab23**2*ab24*sb14*sb23)/sb34**2
+tgt=0
+1 0
+
+Equation 173 (1/5)
+src=(ab12*ab14*ab23*sb12 - ab12*ab23*ab34*sb23 - ab12*ab34**2*sb34 + ab13*ab14*ab23*sb13 + ab14**2*ab23*sb14 - ab14*ab23**2*sb23)/sb34**2
+tgt=(-ab12*ab23*ab34*sb23 - ab12*ab34**2*sb34 - ab14*ab23**2*sb23)/sb34**2
+0 -4.258e-02 (-ab12*ab23*ab34*sb23 - ab12*ab34**2*sb34 - ab14*ab23*ab34*sb34)/sb34**2
+0 -7.257e-02 (-ab12*ab23*ab34*sb23 - ab12*ab34**2*sb34 - ab14*ab23*ab24*sb24)/sb34**2
+0 -8.267e-02 (-ab12*ab14*ab23*sb12 - ab12*ab23*ab34*sb23 - ab12*ab34**2*sb34)/sb34**2
+1 -8.472e-02 (-ab12*ab34**2*sb34 - ab13*ab23*ab24*sb23)/sb34**2
+0 -8.599e-02 (-ab12*ab23*ab34*sb23 - ab12*ab34**2*sb34 + ab14**2*ab23*sb14)/sb34**2
+
+Equation 174 (1/1)
+src=(ab13**2*ab24**2*ab34*sb14 - ab13*ab23*ab24**2*ab34*sb24 + ab14*ab23**2*ab24*ab34*sb24)/sb34**2
+tgt=(-ab12*ab23*ab24*ab34**2*sb24 + ab13**2*ab24**2*ab34*sb14)/sb34**2
+1 (-ab12*ab23*ab24*ab34**2*sb24 + ab13**2*ab24**2*ab34*sb14)/sb34**2
+
+Equation 175 (1/1)
+src=(ab12**2*sb12*sb24 + ab12*ab13*sb12*sb34 - ab12*ab34*sb24*sb34 + ab13*ab24*sb24*sb34)/sb34**2
+tgt=(ab12*ab13*sb12 + ab13*ab24*sb24)/sb34
+1 (ab12*ab13*sb12 + ab13*ab24*sb24)/sb34
+
+Equation 176 (1/1)
+src=(ab12**3*ab14*ab34*sb12**2 - ab12**2*ab13*ab14*ab24*sb12**2 + ab12**2*ab14**2*ab23*sb12**2)/sb34**2
+tgt=0
+1 0
+
+Equation 177 (3/5)
+src=(-ab12*sb12*sb23**3*sb24**3 - ab13*sb13*sb23**3*sb24**3)/sb34**2
+tgt=ab14*sb14*sb23**3*sb24**3/sb34**2
+0 -1.582e-02 ab23*sb23**3*sb24**3/sb34**2
+1 -1.022e-01 ab23*sb23**4*sb24**3/sb34**2
+1 -2.471e-01 ab14*sb14*sb23**3*sb24**3/sb34**2
+1 -2.799e-01 ab14**3*sb14*sb23*sb24**3/ab12**2
+0 -4.508e-01 ab14**3*sb12*sb24**3*sb34/ab12**2
+
+Equation 178 (1/1)
+src=(-ab12*ab14*ab23*sb12**2*sb13*sb14*sb23 + ab14*ab23*ab34*sb12*sb13*sb14*sb23*sb34)/sb34**2
+tgt=0
+1 0
+
+Equation 179 (1/1)
+src=(ab12*ab13*ab23*sb12*sb14**3*sb24**2 - ab23**3*sb12*sb14*sb24**3*sb34)/sb34**2
+tgt=(ab13*ab23*ab34*sb14**3*sb24**2 - ab23**3*sb12*sb14*sb24**3)/sb34
+1 (ab13*ab23*ab34*sb14**3*sb24**2 - ab23**3*sb12*sb14*sb24**3)/sb34
+
+Equation 180 (1/1)
+src=(ab12*ab14**2*ab23*ab34*sb12*sb13*sb24 - ab13*ab14**2*ab23*ab24*sb12**2*sb34 + ab13*ab14**2*ab23*ab24*sb12*sb13*sb24 - ab14**2*ab23**2*ab24*sb12*sb23*sb24)/sb34**2
+tgt=(ab12*ab14**2*ab23*ab34*sb12*sb13*sb24 + ab13*ab14**2*ab23*ab24*sb12*sb14*sb23 - ab14**2*ab23**2*ab24*sb12*sb23*sb24)/sb34**2
+1 (ab12*ab14**2*ab23*ab34*sb12*sb13*sb24 + ab13*ab14**2*ab23*ab24*sb12*sb14*sb23 - ab14**2*ab23**2*ab24*sb12*sb23*sb24)/sb34**2
+
+Equation 181 (1/1)
+src=(ab12**3*ab14*ab23*sb13*sb23**2*sb24 - ab12**3*ab14*ab23*sb14*sb23**3)/sb34**2
+tgt=ab12**3*ab14*ab23*sb12*sb23**2/sb34
+1 ab12**3*ab14*ab23*sb12*sb23**2/sb34
+
+Equation 182 (1/1)
+src=(-ab12**2*ab13*ab14**3*sb12**3*sb13**4*sb23 + ab12*ab13*ab14**2*ab24**2*sb12**3*sb13**2*sb23**2*sb34)/sb34**2
+tgt=-ab13*ab14**3*ab34**2*sb12*sb13**4*sb23 + ab13*ab14**2*ab24**2*ab34*sb12**2*sb13**2*sb23**2
+1 -ab13*ab14**3*ab34**2*sb12*sb13**4*sb23 + ab13*ab14**2*ab24**2*ab34*sb12**2*sb13**2*sb23**2
+
+Equation 183 (2/5)
+src=(ab12*ab13*sb12 + ab13*ab24*sb24 - ab13*ab34*sb34)/sb34**2
+tgt=(-ab13*ab23*sb23 - ab13*ab34*sb34)/sb34**2
+1 -3.260e-02 ab13*ab24*sb24/sb34**2
+0 -1.236e-01 (ab12*ab13*sb12 + ab13*ab24*sb24)/sb34**2
+0 -2.774e-01 (ab12*ab13*sb12 - ab13*ab14*sb14)/sb34**2
+0 -2.884e-01 (ab12*ab13*sb12 - ab13*ab23*sb23)/sb34**2
+1 -3.056e-01 ab13**2*sb13/sb34**2
+
+Equation 184 (4/5)
+src=(-ab12*sb12*sb23**3*sb24**2*sb34 + ab12*sb14*sb23**4*sb24**2 + ab14*sb12*sb23**2*sb24**2*sb34**2)/sb34
+tgt=ab13*sb12*sb23**3*sb24*sb34 - ab13*sb14*sb23**4*sb24 + ab14*sb12*sb23**2*sb24**2*sb34
+1 -3.181e-02 -ab12*sb12*sb23**3*sb24**2 + ab14*sb12*sb23**2*sb24**2*sb34 + ab23*sb23**4*sb24**2
+1 -3.444e-02 (ab12*sb14*sb23**4*sb24**2 + ab14*sb12*sb23**2*sb24**2*sb34**2 - ab34*sb23**3*sb24**2*sb34**2)/sb34
+1 -5.633e-02 -ab12*sb12*sb23**3*sb24**2 + ab14*sb12*sb23**2*sb24**2*sb34 + ab14*sb14*sb23**3*sb24**2
+1 -6.661e-02 (ab12*sb14*sb23**4*sb24**2 - ab13*sb12*sb23**3*sb24*sb34**2 - ab34*sb23**3*sb24**2*sb34**2)/sb34
+0 -8.775e-02 -ab13*sb12*sb23**3*sb24*sb34 - ab13*sb14*sb23**4*sb24 + ab14*sb12*sb23**2*sb24**2*sb34
+
+Equation 185 (1/1)
+src=(ab12*sb14**3 - ab23*sb14**2*sb34)/sb34
+tgt=0
+1 0
+
+Equation 186 (1/1)
+src=(ab13*ab14*sb13**3*sb24 - ab13*ab14*sb13**2*sb14*sb23 - ab23*ab24*sb13*sb23**2*sb24 + ab23*ab24*sb14*sb23**3)/sb34
+tgt=ab13*ab14*sb12*sb13**2 - ab23*ab24*sb12*sb23**2
+1 ab13*ab14*sb12*sb13**2 - ab23*ab24*sb12*sb23**2
+
+Equation 187 (4/5)
+src=(-ab12*ab14*ab34*sb12**5*sb14 + 2*ab13*ab34**2*sb12**4*sb13*sb34 + ab14*ab23*ab34*sb12**5*sb34 - ab23*ab34**2*sb12**4*sb23*sb34)/sb34
+tgt=2*ab13*ab34**2*sb12**4*sb13 - ab23*ab34**2*sb12**4*sb23
+1 -5.157e-02 2*ab13*ab34**2*sb12**4*sb13 - ab14*ab34**2*sb12**4*sb14
+1 -6.393e-02 2*ab13*ab34**2*sb12**4*sb13 - ab23*ab34**2*sb12**4*sb23
+1 -7.188e-02 2*ab13*ab34**2*sb12**4*sb13 - ab14*ab23*ab34*sb12**5
+0 -7.662e-02 2*ab13*ab34**2*sb12**4*sb13 - ab14*ab34*sb12**5*sb14
+1 -8.779e-02 -ab14*ab34**2*sb12**4*sb14 + 2*ab24*ab34**2*sb12**4*sb24
+
+Equation 188 (5/5)
+src=(-ab14*ab23*ab34*sb12**2*sb14 + ab23*ab24*ab34*sb12**2*sb24 - ab23*ab34**2*sb12*sb14*sb23)/sb34
+tgt=(-ab14*ab23*ab34*sb12**2*sb14 + ab23*ab24*ab34*sb12**2*sb24 - ab34**3*sb14**2*sb23)/sb34
+1 -3.129e-02 (-ab14*ab23*ab34*sb12**2*sb14 + ab23*ab24*ab34*sb12**2*sb24 - ab23*ab34**2*sb12*sb14*sb23)/sb34
+1 -3.589e-02 (-ab23**2*ab34*sb12**2*sb23 + ab23*ab24*ab34*sb12**2*sb24 - ab23*ab34**2*sb12*sb14*sb23)/sb34
+1 -5.094e-02 (-ab23**2*ab34*sb12**2*sb23 + ab23*ab24*ab34*sb12**2*sb24 - ab23*ab34**2*sb12*sb14*sb23)/sb34
+1 -5.812e-02 (ab13*ab23*ab34*sb12**2*sb13 - ab14*ab23*ab34*sb12**2*sb14 - ab23*ab34**2*sb12*sb14*sb23)/sb34
+1 -5.913e-02 (-ab14*ab23*ab34*sb12**2*sb14 - ab23**2*ab34*sb12**2*sb23 + ab23*ab24*ab34*sb12**2*sb24)/sb34
+
+Equation 189 (1/1)
+src=(ab14*ab23*ab34**3*sb13**2*sb14**3 + ab23*ab24*ab34**3*sb13**2*sb14**2*sb24 + ab23*ab34**4*sb13**2*sb14**2*sb34)/sb34
+tgt=0
+1 0
+
+Equation 190 (1/1)
+src=(ab13*ab34*sb12**2*sb13**2*sb14**2*sb23 + ab23*ab34*sb12**2*sb13*sb14**2*sb23**2 + ab34**2*sb12**2*sb13*sb14**2*sb23*sb34)/sb34
+tgt=0
+1 0
+
+Equation 191 (1/1)
+src=(-ab13**2*ab24**2*ab34*sb13 + ab13*ab24**3*ab34*sb24)/sb34
+tgt=0
+1 0
+
+Equation 192 (1/1)
+src=(-ab13*ab14*ab24*ab34**3*sb13 + ab14*ab24**2*ab34**3*sb24)/sb34
+tgt=0
+1 0
+
+Equation 193 (1/1)
+src=(ab12*ab13*ab23**2*ab24*sb13**2*sb24 - ab12*ab13*ab23**2*ab24*sb13*sb14*sb23 + ab12*ab14*ab23**3*sb13**2*sb24 - ab12*ab14*ab23**3*sb13*sb14*sb23 + ab13*ab14*ab23**3*sb13**2*sb34)/sb34
+tgt=ab12*ab13*ab23**2*ab24*sb12*sb13 + ab12*ab14*ab23**3*sb12*sb13 + ab13*ab14*ab23**3*sb13**2
+1 ab12*ab13*ab23**2*ab24*sb12*sb13 + ab12*ab14*ab23**3*sb12*sb13 + ab13*ab14*ab23**3*sb13**2
+
+Equation 194 (1/1)
+src=(-ab13*ab34*sb12*sb14**2*sb23 + ab23**2*sb12**2*sb23*sb24 + ab23*ab34*sb12**2*sb24*sb34 - ab23*ab34*sb12*sb13*sb24**2 + ab23*ab34*sb12*sb14*sb23*sb24)/sb34
+tgt=(-ab13*ab34*sb12*sb14**2*sb23 + ab23**2*sb12**2*sb23*sb24)/sb34
+1 (-ab13*ab34*sb12*sb14**2*sb23 + ab23**2*sb12**2*sb23*sb24)/sb34
+
+Equation 195 (1/1)
+src=(-ab13*ab14**4*sb13*sb23**2 + ab14**4*ab24*sb23**2*sb24)/sb34
+tgt=0
+1 0
+
+Equation 196 (1/1)
+src=(ab12*ab13*ab14*sb13*sb14*sb23**2 + ab12*ab13*ab24*sb13*sb23**2*sb24 + ab14**3*sb13*sb14*sb24*sb34 + ab14**2*ab24*sb13*sb24**2*sb34)/sb34
+tgt=-ab12*ab13*ab34*sb13*sb23**2 - ab14**2*ab34*sb13*sb24*sb34
+1 -ab12*ab13*ab34*sb13*sb23**2 - ab14**2*ab34*sb13*sb24*sb34
+
+Equation 197 (1/1)
+src=(-ab12*ab14**2*ab24*sb12*sb13*sb23 + ab14**2*ab24**2*sb12*sb23*sb34 + ab14**2*ab24*ab34*sb13*sb23*sb34)/sb34
+tgt=ab14**2*ab24**2*sb12*sb23
+1 ab14**2*ab24**2*sb12*sb23
+
+Equation 198 (2/5)
+src=(-ab12*ab13*ab14**2*ab24**2*sb12**2*sb13**2*sb23*sb24*sb34 - ab12*ab14**2*ab23*ab24**2*sb12**2*sb13*sb23**2*sb24*sb34 + ab13**4*ab14**2*sb13**6*sb23 + 4*ab13**3*ab14**2*ab23*sb13**5*sb23**2 + 6*ab13**2*ab14**2*ab23**2*sb13**4*sb23**3 - ab13**2*ab14**2*ab23*ab24*sb12*sb13**3*sb23**2*sb34 + 4*ab13*ab14**2*ab23**3*sb13**3*sb23**4 - ab13*ab14**2*ab23**2*ab24*sb12*sb13**2*sb23**3*sb34 + ab14**2*ab23**4*sb13**2*sb23**5)/sb34
+tgt=ab12*ab14**2*ab24**2*ab34*sb12**2*sb13*sb23*sb24*sb34 + ab13*ab14**2*ab23*ab24*ab34*sb12*sb13**2*sb23**2*sb34 + ab14**2*ab34**4*sb13**2*sb23*sb34**3
+1 -2.994e-02 ab12*ab13*ab14**2*ab24*ab34*sb12**2*sb13**2*sb23*sb34 + ab13*ab14**2*ab23*ab24*ab34*sb12*sb13**2*sb23**2*sb34 + ab14**2*ab34**4*sb13**2*sb23*sb34**3
+0 -3.448e-02 ab12*ab14**2*ab24**2*ab34*sb12**2*sb13*sb23*sb24*sb34 + ab14**2*ab34**4*sb13**2*sb23*sb34**3
+0 -4.366e-02 ab12*ab14**2*ab23*ab24*ab34*sb12*sb13**2*sb23**2*sb24 + ab13*ab14**2*ab23*ab24*ab34*sb12*sb13**2*sb23**2*sb34 + ab14**2*ab34**4*sb13**2*sb23*sb34**3
+0 -4.847e-02 ab12*ab13*ab14**2*ab24*ab34*sb12**2*sb13**2*sb23*sb34 + ab14**2*ab34**4*sb13**2*sb23*sb34**3
+1 -5.028e-02 ab12*ab14**2*ab24**2*ab34*sb12**2*sb13*sb23*sb24*sb34 + ab13*ab14**2*ab23*ab24*ab34*sb12*sb13**2*sb23**2*sb34 + ab14**2*ab34**4*sb13**2*sb23*sb34**3
+
+Equation 199 (1/1)
+src=(-ab13**2*sb12*sb24*sb34 + ab13**2*sb13*sb24**2 - ab13**2*sb14*sb23*sb24)/sb34
+tgt=0
+1 0
+
+Equation 200 (1/1)
+src=(ab13**2*ab14*ab24**4*sb14 - ab13**2*ab23*ab24**4*sb23)/sb34
+tgt=0
+1 0
+
+Equation 201 (3/5)
+src=(ab12*ab14*ab34**2*sb13*sb24 - ab12*ab14*ab34**2*sb14*sb23 + ab13**2*ab14*ab24*sb12*sb13 - ab13*ab14*ab24*ab34*sb13*sb24 + ab13*ab14*ab24*ab34*sb14*sb23)/sb34
+tgt=(ab13**2*ab14*ab24*sb12*sb13 - ab14**2*ab23*ab34*sb13*sb24 + ab14**2*ab23*ab34*sb14*sb23)/sb34
+1 -2.893e-02 (ab12*ab14*ab34**2*sb12*sb34 + ab13**2*ab14*ab24*sb12*sb13 - ab13*ab14*ab24*ab34*sb12*sb34)/sb34
+1 -4.224e-02 (ab13**2*ab14*ab24*sb12*sb13 - ab14**2*ab23*ab34*sb12*sb34)/sb34
+0 -7.393e-02 (ab13**2*ab14*ab24*sb12*sb13 - ab13*ab14*ab24*ab34*sb13*sb24 + ab14**2*ab23*ab34*sb14*sb23)/sb34
+0 -9.776e-02 (ab12*ab14*ab34**2*sb13*sb24 - ab13*ab14*ab24*ab34*sb12*sb34 + ab14**2*ab23*ab34*sb14*sb23)/sb34
+1 -1.089e-01 (-ab12*ab14**2*ab34*sb12*sb14 + ab13**2*ab14*ab24*sb12*sb13)/sb34
+
+Equation 202 (3/5)
+src=(ab12**3*ab23*ab34**3 - ab12**2*ab13*ab23*ab24*ab34**2 + ab12*ab13**2*ab23*ab24**2*ab34)/sb34
+tgt=(ab12**2*ab13*ab23*ab24*ab34**2 + ab12*ab14**2*ab23**3*ab34)/sb34
+1 -1.130e-02 (ab12**3*ab23*ab34**3 + ab12*ab13*ab14*ab23**2*ab24*ab34)/sb34
+0 -9.930e-02 (ab12**3*ab23*ab34**3 + ab12*ab13**2*ab23**2*ab24*ab34)/sb34
+0 -1.015e-01 (-ab12**2*ab13*ab23*ab24*ab34**2 + ab12*ab13**2*ab23*ab24**2*ab34)/sb34
+1 -1.229e-01 (ab12**2*ab13*ab23*ab24*ab34**2 + ab12*ab14**2*ab23**3*ab34)/sb34
+1 -2.253e-01 (-ab12**2*ab14*ab23**2*ab34**2 + ab12*ab13**2*ab23*ab24**2*ab34)/sb34
+
+Equation 203 (1/1)
+src=(ab12**2*ab34*sb12*sb14*sb24*sb34 - ab12**2*ab34*sb13*sb14*sb24**2 + ab12**2*ab34*sb14**2*sb23*sb24)/sb34
+tgt=0
+1 0
+
+Equation 204 (1/1)
+src=(ab12**2*ab13*ab14*ab34**2*sb12*sb23 - ab12*ab13*ab14*ab34**3*sb23*sb34)/sb34
+tgt=0
+1 0
+
+Equation 205 (1/1)
+src=(-ab12**2*ab13**2*ab23*sb12*sb13*sb23**3*sb34 + ab12**2*ab13**2*ab23*sb13**2*sb23**3*sb24)/sb34
+tgt=ab12**2*ab13**2*ab23*sb13*sb14*sb23**4/sb34
+1 ab12**2*ab13**2*ab23*sb13*sb14*sb23**4/sb34
+
+Equation 206 (1/1)
+src=(ab12*ab14*ab23*sb12 - 2*ab12*ab34**2*sb34)/sb34
+tgt=-2*ab12*ab34**2 + ab14*ab23*ab34
+1 -2*ab12*ab34**2 + ab14*ab23*ab34
+
+Equation 207 (4/5)
+src=(-ab12*ab34*sb13*sb23*sb24 + ab13*ab34*sb13*sb23*sb34 + ab14*ab23*sb13*sb23*sb24 - ab14*ab23*sb14*sb23**2)/sb34
+tgt=(-ab12*ab34*sb13*sb23*sb24 + ab13*ab34*sb13*sb23*sb34 + ab14*ab23*sb12*sb23*sb34)/sb34
+1 -2.895e-02 ab13*ab34*sb13*sb23 + ab14*ab23*sb12*sb23 - ab14*ab34*sb13*sb24
+1 -6.708e-02 ab13*ab34*sb13*sb23 + ab14*ab23*sb12*sb23 + ab24*ab34*sb23*sb24
+1 -8.047e-02 (-ab12*ab34*sb13*sb23*sb24 + ab13*ab34*sb13*sb23*sb34 + ab14*ab23*sb12*sb23*sb34)/sb34
+1 -1.253e-01 ab14*ab23*sb12*sb23 - ab14*ab34*sb13*sb24 + ab24*ab34*sb23*sb24
+0 -2.216e-01 (ab13*ab34*sb13*sb23*sb34 - ab14*ab23*sb14*sb23**2 + ab14*ab24*sb14*sb23*sb24)/sb34
+
+Equation 208 (1/1)
+src=(-sb12*sb13**2*sb24**2 + sb12*sb13*sb14*sb23*sb24)/sb34
+tgt=-sb12**2*sb13*sb24
+1 -sb12**2*sb13*sb24
+
+Equation 209 (1/1)
+src=(-ab14*sb12**2*sb34 + ab14*sb12*sb13*sb24 - ab14*sb12*sb14*sb23)/sb34
+tgt=0
+1 0
+
+Equation 210 (1/1)
+src=(-ab12*ab34**2*sb14**4 + ab13*ab24*ab34*sb14**4 - ab14*ab23*ab34*sb14**4)/sb34
+tgt=0
+1 0
+
+Equation 211 (1/1)
+src=(-ab14*ab24*sb13*sb14*sb23**2 - ab24**2*sb13*sb23**2*sb24)/sb34
+tgt=ab24*ab34*sb13*sb23**2
+1 ab24*ab34*sb13*sb23**2
+
+Equation 212 (5/5)
+src=(-ab12*ab23**3*sb12 + ab12*ab23**2*ab34*sb14 - ab14*ab23**3*sb14)/sb34
+tgt=(ab12*ab23**2*ab34*sb14 + ab13*ab23**3*sb13)/sb34
+1 -1.853e-02 (-ab12*ab23**3*sb12 + ab12*ab23**2*ab34*sb14 - ab23**4*sb23)/sb34
+1 -1.034e-01 (-ab12*ab23**3*sb12 - ab23**4*sb23 + ab23**3*ab34*sb34)/sb34
+1 -1.099e-01 (ab12*ab23**2*ab34*sb14 - ab23**4*sb23 - ab23**3*ab34*sb34)/sb34
+1 -1.144e-01 -ab14*ab23**3*sb14/sb34
+1 -1.393e-01 (ab12*ab23**2*ab34*sb14 + ab23**3*ab24*sb24)/sb34
+
+Equation 213 (1/1)
+src=(ab12*ab14**2*ab34*sb13*sb23**2*sb24 - ab13*ab14*ab24**2*sb23**3*sb24 - ab13*ab14*ab24*ab34*sb23**3*sb34 - ab14**4*sb13**2*sb24**2)/sb34
+tgt=(ab12*ab14**2*ab34*sb13*sb23**2*sb24 + ab13*ab14**2*ab24*sb14*sb23**3 - ab14**4*sb13**2*sb24**2)/sb34
+1 (ab12*ab14**2*ab34*sb13*sb23**2*sb24 + ab13*ab14**2*ab24*sb14*sb23**3 - ab14**4*sb13**2*sb24**2)/sb34
+
+Equation 214 (1/1)
+src=(-ab14**2*sb12**2*sb13**5*sb23*sb24**2 + ab14**2*sb12**2*sb13**4*sb14*sb23**2*sb24 - ab14*ab24*sb12**3*sb13**3*sb23**2*sb24*sb34)/sb34
+tgt=-ab14**2*sb12**3*sb13**4*sb23*sb24 - ab14*ab24*sb12**3*sb13**3*sb23**2*sb24
+1 -ab14**2*sb12**3*sb13**4*sb23*sb24 - ab14*ab24*sb12**3*sb13**3*sb23**2*sb24
+
+Equation 215 (1/1)
+src=(-ab13**3*ab14*sb12**2*sb34 + ab13**3*ab14*sb12*sb13*sb24 - ab13**3*ab14*sb12*sb14*sb23)/sb34
+tgt=0
+1 0
+
+Equation 216 (1/1)
+src=(-ab13**2*ab24**4*sb23**3*sb24**2 + 2*ab13*ab14*ab23*ab24**3*sb23**3*sb24**2 - ab14**2*ab23**2*ab24**2*sb23**3*sb24**2)/sb34
+tgt=-ab12**2*ab24**2*ab34**2*sb23**3*sb24**2/sb34
+1 -ab12**2*ab24**2*ab34**2*sb23**3*sb24**2/sb34
+
+Equation 217 (4/5)
+src=(-ab12**3*ab34*sb14**2*sb24 + ab12*ab13**2*ab24*sb14**2*sb34)/sb34
+tgt=ab12*ab13**2*ab24*sb14**2 - ab12*ab23**2*ab34*sb24*sb34
+1 -2.449e-02 -ab12**2*ab23*ab34*sb14*sb24 + ab12*ab13**2*ab24*sb14**2
+1 -8.007e-02 -ab12**2*ab23**2*sb12*sb24 + ab12*ab13**2*ab24*sb14**2
+0 -8.362e-02 -ab12**2*ab13*ab34*sb14**2 + ab12*ab13**2*ab24*sb14**2
+1 -9.914e-02 -ab12**2*ab23*ab34*sb14*sb24 + ab13**2*ab23*ab24*sb14*sb34
+1 -1.081e-01 ab12**2*ab13*ab34*sb14**2 + ab12*ab13**2*ab24*sb14**2
+
+Equation 218 (1/1)
+src=(-ab12**2*ab23*sb12**5*sb23*sb34 + ab12**2*ab23*sb12**4*sb13*sb23*sb24 - ab12**2*ab23*sb12**4*sb14*sb23**2)/sb34
+tgt=0
+1 0
+
+Equation 219 (1/1)
+src=(-ab12**2*ab13**4*ab23*sb13**3 - ab12**2*ab13**4*ab24*sb13**2*sb14)/sb34
+tgt=0
+1 0
+
+Equation 220 (1/1)
+src=(-ab13*ab23*ab34*sb13*sb14 + ab23*ab24*ab34*sb14*sb24)/sb34
+tgt=0
+1 0
+
+Equation 221 (1/1)
+src=(-ab12*ab14*sb14 + ab12*ab23*sb23)/sb34
+tgt=0
+1 0
+
+Equation 222 (1/1)
+src=(ab12*ab13**2*ab24**2*ab34*sb12*sb34 + ab12*ab13**2*ab24**2*ab34*sb14*sb23)/(sb24**5*sb34)
+tgt=ab12*ab13**2*ab24**2*ab34*sb13/(sb24**4*sb34)
+1 ab12*ab13**2*ab24**2*ab34*sb13/(sb24**4*sb34)
+
+Equation 223 (1/1)
+src=(ab12*ab23*ab34**2*sb13*sb14*sb34 + ab13*ab23*ab24**2*sb13*sb14*sb24 - ab13*ab23*ab24**2*sb14**2*sb23)/(sb24**4*sb34**2)
+tgt=(ab12*ab23*ab34**2*sb13*sb14 + ab13*ab23*ab24**2*sb12*sb14)/(sb24**4*sb34)
+1 (ab12*ab23*ab34**2*sb13*sb14 + ab13*ab23*ab24**2*sb12*sb14)/(sb24**4*sb34)
+
+Equation 224 (1/1)
+src=(ab13**5*ab34*sb12*sb13**4*sb34 - ab13**3*ab14*ab23**2*sb12*sb13**3*sb23*sb24)/sb24**4
+tgt=ab13*ab24**4*ab34*sb12*sb34 - ab14*ab23**2*ab24**3*sb12*sb23
+1 ab13*ab24**4*ab34*sb12*sb34 - ab14*ab23**2*ab24**3*sb12*sb23
+
+Equation 225 (2/5)
+src=(-ab13**3*ab34*sb12*sb13**4*sb34 + ab13**2*ab14*ab34*sb13**4*sb14*sb24)/sb24**4
+tgt=(ab14*ab24**2*ab34*sb13**2*sb14 - ab24**3*ab34*sb12*sb13*sb34)/sb24
+1 -3.247e-02 (ab14*ab24**3*ab34*sb13*sb14 - ab24**4*ab34*sb12*sb34)/ab13
+0 -7.612e-02 (-ab12*ab24**3*ab34*sb12*sb13 + ab14*ab24**3*ab34*sb13*sb14)/ab13
+1 -8.362e-02 (ab23*ab24**3*ab34*sb13*sb23 - ab24**4*ab34*sb12*sb34)/ab13
+0 -9.702e-02 (ab14*ab23*ab24**2*ab34*sb13**2 - ab24**4*ab34*sb12*sb34)/ab13
+0 -3.502e-01 (ab14*ab24**2*ab34*sb13**2*sb14 - ab24**4*ab34*sb12*sb34)/ab13
+
+Equation 226 (1/1)
+src=(ab14*sb12*sb34 - ab14*sb14*sb23 + ab23*sb23**2 - 2*ab34*sb23*sb34)/(sb24**3*sb34)
+tgt=(ab14*sb12 - 2*ab34*sb23)/sb24**3
+1 (ab14*sb12 - 2*ab34*sb23)/sb24**3
+
+Equation 227 (1/1)
+src=(-ab12**2*ab34*sb12*sb13*sb23**3 - ab12*ab23*ab34*sb13*sb23**4)/(sb24**3*sb34)
+tgt=ab12*ab24*ab34*sb13*sb23**3/(sb24**2*sb34)
+1 ab12*ab24*ab34*sb13*sb23**3/(sb24**2*sb34)
+
+Equation 228 (1/1)
+src=(ab12*ab24**2*sb12*sb13*sb14 + ab24**3*sb13*sb14*sb24)/sb24**3
+tgt=-ab23*ab24**2*sb13*sb14*sb23/sb24**3
+1 -ab23*ab24**2*sb13*sb14*sb23/sb24**3
+
+Equation 229 (1/5)
+src=(-ab13**3*ab23**2*ab24*sb13**2*sb24*sb34 + ab13**3*ab24**2*ab34*sb14**2*sb34**2 + ab13*ab14*ab23**3*ab24*sb13*sb24**2*sb34)/sb24**3
+tgt=(-ab12**3*ab24**2*ab34*sb14**2 - ab12**2*ab13*ab23**2*ab24*sb13**2 - ab12*ab14*ab23**3*ab24*sb13*sb34)/sb34
+0 -3.878e-02 (ab12**2*ab13*ab24**2*ab34*sb14**2 - ab12*ab13**2*ab23**2*ab24*sb13**2 - ab12*ab14*ab23**3*ab24*sb13*sb24)/sb24
+0 -3.988e-02 (-ab12**3*ab23**2*ab24*sb12*sb13 - ab12**3*ab24**2*ab34*sb14**2 - ab12*ab14*ab23**3*ab24*sb13*sb34)/sb34
+1 -4.394e-02 (ab12**2*ab13*ab24**2*ab34*sb14**2 + ab12*ab13**2*ab23**2*ab24*sb13**2 - ab12*ab14*ab23**3*ab24*sb13*sb24)/sb24
+0 -4.487e-02 (-ab12**3*ab24**2*ab34*sb14**2 + ab12**2*ab13*ab23**2*ab24*sb13**2 - ab12*ab14*ab23**3*ab24*sb13*sb34)/sb34
+0 -5.676e-02 (ab12**2*ab13*ab24**2*ab34*sb14**2 - ab12*ab14*ab23**3*ab24*sb13*sb24 + ab13**2*ab23**2*ab24**2*sb13*sb34)/sb24
+
+Equation 230 (1/1)
+src=(-sb12*sb13**4*sb34 + 2*sb13**5*sb24 - sb13**4*sb14*sb23)/sb24**3
+tgt=sb13**5/sb24**2
+1 sb13**5/sb24**2
+
+Equation 231 (1/1)
+src=(ab12*ab23*ab24*ab34**2*sb12 + ab14*ab23*ab24*ab34**2*sb14 - ab23**2*ab24*ab34**2*sb23)/sb24**3
+tgt=ab12*ab23*ab24*ab34**2*sb12/sb24**3
+1 ab12*ab23*ab24*ab34**2*sb12/sb24**3
+
+Equation 232 (1/1)
+src=(-ab12**2*ab13*sb13**2 + ab12**2*ab24*sb13*sb24)/sb24**3
+tgt=0
+1 0
+
+Equation 233 (1/1)
+src=(-ab13*ab23**2*ab34*sb12**2*sb14**2*sb34**2 - 2*ab13*ab23**2*ab34*sb12*sb14**3*sb23*sb34 - ab13*ab23**2*ab34*sb14**4*sb23**2)/(sb24**2*sb34**3)
+tgt=-ab13*ab23**2*ab34*sb13**2*sb14**2/sb34**3
+1 -ab13*ab23**2*ab34*sb13**2*sb14**2/sb34**3
+
+Equation 234 (1/1)
+src=(-ab13**2*sb14 - ab13*ab23*sb24)/(sb24**2*sb34**2)
+tgt=0
+1 0
+
+Equation 235 (5/5)
+src=(-ab13*ab24*ab34**2*sb13**3*sb23*sb34 - 2*ab14**2*ab24**2*sb12*sb13**2*sb14*sb24 - ab24**3*ab34*sb13*sb14*sb23**2*sb24 + ab24**2*ab34**2*sb13**2*sb23*sb24*sb34)/(sb24**2*sb34)
+tgt=(-2*ab14**2*ab24**2*sb12*sb13**2*sb14 - ab24**3*ab34*sb13*sb14*sb23**2)/(sb24*sb34)
+1 -1.007e-02 (-2*ab14*ab23*ab24**2*sb12*sb13**2*sb23 - ab24**3*ab34*sb13*sb14*sb23**2)/(sb24*sb34)
+1 -2.556e-02 (-2*ab14**2*ab24**2*sb12*sb13**2*sb14 - ab24**3*ab34*sb13*sb14*sb23**2)/(sb24*sb34)
+1 -8.373e-02 (-2*ab14**2*ab23*ab24**2*sb12*sb13**2 - ab23*ab24**3*ab34*sb13*sb23**2)/(ab12*sb24)
+1 -8.858e-02 (2*ab14**2*ab23*ab24*sb12*sb13**3 - ab24**3*ab34*sb13*sb14*sb23**2)/(sb24*sb34)
+1 -9.186e-02 (-2*ab14*ab24**2*ab34*sb13**2*sb14*sb23 - ab24**3*ab34*sb13*sb14*sb23**2)/(sb24*sb34)
+
+Equation 236 (2/5)
+src=(ab12**2*ab23**2*ab24**3*sb12*sb14**2*sb23 + ab12*ab13*ab23**2*ab24**2*ab34*sb13**2*sb14*sb34 + ab12*ab14*ab23**2*ab24**2*ab34*sb13*sb14**2*sb34 - ab12*ab23**2*ab24**3*ab34*sb13*sb14*sb24*sb34 - ab13*ab23**3*ab24**2*ab34*sb13**2*sb34**2)/(sb24**2*sb34)
+tgt=(ab12**2*ab23**2*ab24**3*sb12*sb14**2*sb23 + ab12*ab14*ab23**2*ab24**2*ab34*sb13*sb14**2*sb34 - ab13*ab23**3*ab24**2*ab34*sb13**2*sb34**2)/(sb24**2*sb34)
+1 -2.183e-02 (ab12*ab14*ab23**2*ab24**3*sb12*sb14**2 + ab12*ab14*ab23**2*ab24**2*ab34*sb13*sb14**2 - ab13*ab23**3*ab24**2*ab34*sb13**2*sb34)/sb24**2
+1 -3.178e-02 (ab12*ab14*ab23**2*ab24**2*ab34*sb13*sb14**2 + ab12*ab23**2*ab24**3*ab34*sb14**2*sb23 - ab13*ab23**3*ab24**2*ab34*sb13**2*sb34)/sb24**2
+0 -4.438e-02 (-2*ab12*ab23**2*ab24**3*ab34*sb12*sb14*sb34 - ab13*ab23**3*ab24**2*ab34*sb13**2*sb34)/sb24**2
+0 -1.012e-01 (-ab12*ab23**2*ab24**3*ab34*sb12*sb14*sb34 - ab12*ab23**2*ab24**2*ab34*sb12*sb13*sb34 - ab13*ab23**3*ab24**2*ab34*sb13**2*sb34)/sb24**2
+0 -1.309e-01 (-ab12*ab23**2*ab24**3*ab34*sb12*sb14*sb34 - ab12*ab23**2*ab24**2*ab34*sb12*sb13*sb14 - ab13*ab23**3*ab24**2*ab34*sb13**2*sb34)/sb24**2
+
+Equation 237 (1/1)
+src=(-ab13**2*sb13*sb14**2 + 2*ab13*ab24*sb14**2*sb24)/(sb24**2*sb34)
+tgt=(-ab23**2*sb13 - 2*ab23*ab24*sb14)/sb34
+1 (-ab23**2*sb13 - 2*ab23*ab24*sb14)/sb34
+
+Equation 238 (1/1)
+src=(ab34*sb12*sb23*sb34 - ab34*sb13*sb23*sb24 + ab34*sb14*sb23**2)/sb24**2
+tgt=0
+1 0
+
+Equation 239 (5/5)
+src=(ab12*ab23*ab24*sb12**2*sb14*sb34**2 + ab12*ab23*ab24*sb12*sb14**2*sb23*sb34 + ab12*ab23*ab34*sb13**2*sb14*sb24*sb34)/sb24**2
+tgt=(ab12*ab23*ab24*sb12*sb13*sb14*sb34 + ab12*ab23*ab34*sb13**2*sb14*sb34)/sb24
+1 -3.813e-02 (ab12*ab23*ab24*sb12*sb13*sb14*sb34 + ab12*ab23*ab34*sb13**2*sb14*sb34)/sb24
+1 -1.191e-01 0
+1 -1.576e-01 (ab12*ab23*ab34*sb13**2*sb14*sb34 + ab23*ab24*ab34*sb13*sb14*sb34**2)/sb24
+1 -1.659e-01 (ab12**2*ab23*sb12*sb13**2*sb14 + ab12*ab23*ab24*sb12*sb13*sb14*sb34)/sb24
+1 -2.082e-01 (ab12**2*ab23*sb12*sb13**2*sb14 + ab23*ab24*ab34*sb13*sb14*sb34**2)/sb24
+
+Equation 240 (1/1)
+src=(ab12*ab24**3*sb12**2*sb24*sb34 + ab14*ab23*ab24*ab34*sb12*sb13*sb34**2 + ab14*ab23*ab24*ab34*sb13*sb14*sb23*sb34)/sb24**2
+tgt=(ab12*ab24**3*sb12**2*sb34 + ab14*ab23*ab24*ab34*sb13**2*sb34)/sb24
+1 (ab12*ab24**3*sb12**2*sb34 + ab14*ab23*ab24*ab34*sb13**2*sb34)/sb24
+
+Equation 241 (1/1)
+src=(-ab13**2*ab23**2*ab24**3*ab34*sb12*sb13*sb23 + ab13*ab23**2*ab24**4*ab34*sb12*sb23*sb24)/sb24**2
+tgt=0
+1 0
+
+Equation 242 (1/1)
+src=(-ab12*ab13**5*ab24**2*sb12*sb13 + ab12*ab13**3*ab23**2*ab24*ab34*sb23**2 - ab12*ab13**2*ab14*ab23*ab24*ab34**2*sb24*sb34 + ab13**5*ab24**2*ab34*sb13*sb34 + ab13**3*ab14*ab23**2*ab24*ab34*sb23*sb34)/sb24**2
+tgt=(ab12*ab13**3*ab23**2*ab24*ab34*sb23**2 - ab12*ab13**2*ab14*ab23*ab24*ab34**2*sb24*sb34 + ab13**3*ab14*ab23**2*ab24*ab34*sb23*sb34)/sb24**2
+1 (ab12*ab13**3*ab23**2*ab24*ab34*sb23**2 - ab12*ab13**2*ab14*ab23*ab24*ab34**2*sb24*sb34 + ab13**3*ab14*ab23**2*ab24*ab34*sb23*sb34)/sb24**2
+
+Equation 243 (1/1)
+src=(-ab12**2*ab23**2*sb12*sb23*sb24**2 + ab12*ab13**2*ab23*sb12**2*sb34**2 + 2*ab12*ab13**2*ab23*sb12*sb14*sb23*sb34 + ab12*ab13**2*ab23*sb14**2*sb23**2)/sb24**2
+tgt=-ab12**2*ab23**2*sb12*sb23 + ab12*ab13**2*ab23*sb13**2
+1 -ab12**2*ab23**2*sb12*sb23 + ab12*ab13**2*ab23*sb13**2
+
+Equation 244 (1/1)
+src=(ab12**2*ab13*ab34*sb23*sb34**2 + ab12**2*ab14*ab34*sb24*sb34**2)/sb24**2
+tgt=0
+1 0
+
+Equation 245 (1/1)
+src=(2*sb12**3*sb14*sb34**3 + 4*sb12**2*sb14**2*sb23*sb34**2 + 2*sb12*sb14**3*sb23**2*sb34)/sb24**2
+tgt=2*sb12*sb13**2*sb14*sb34
+1 2*sb12*sb13**2*sb14*sb34
+
+Equation 246 (1/1)
+src=(ab12*ab13*sb12**3*sb23*sb34**2 + ab12*ab13*sb12**2*sb14*sb23**2*sb34 - ab13*ab14*sb12**3*sb34**3 - 2*ab13*ab14*sb12**2*sb14*sb23*sb34**2 - ab13*ab14*sb12*sb14**2*sb23**2*sb34 + ab13*ab34*sb12**2*sb23*sb34**3 + ab13*ab34*sb12*sb14*sb23**2*sb34**2)/sb24**2
+tgt=(ab12*ab13*sb12**2*sb13*sb23*sb34 - ab13*ab14*sb12*sb13**2*sb24*sb34 + ab13*ab34*sb12*sb13*sb23*sb34**2)/sb24
+1 (ab12*ab13*sb12**2*sb13*sb23*sb34 - ab13*ab14*sb12*sb13**2*sb24*sb34 + ab13*ab34*sb12*sb13*sb23*sb34**2)/sb24
+
+Equation 247 (1/1)
+src=(ab12*ab24*ab34*sb12*sb13**3 - ab24**2*ab34*sb13**3*sb24 + ab24**2*ab34*sb13**2*sb14*sb23)/sb24**2
+tgt=(ab12*ab24*ab34*sb12*sb13**3 - ab24**2*ab34*sb12*sb13**2*sb34)/sb24**2
+1 (ab12*ab24*ab34*sb12*sb13**3 - ab24**2*ab34*sb12*sb13**2*sb34)/sb24**2
+
+Equation 248 (1/1)
+src=(-ab13*ab14**4*ab23*ab34*sb14**2*sb23**2*sb34 - 2*ab13*ab14**3*ab23*ab34**2*sb14*sb23**2*sb34**2 - ab13*ab14**2*ab23*ab34**3*sb23**2*sb34**3)/sb24**2
+tgt=-ab13*ab14**2*ab23*ab24**2*ab34*sb23**2*sb34
+1 -ab13*ab14**2*ab23*ab24**2*ab34*sb23**2*sb34
+
+Equation 249 (1/1)
+src=(ab13**2*ab14*sb12**2*sb13*sb23**3 - ab13**2*ab24*sb12**2*sb23**4 + ab14**3*sb12**2*sb13*sb23*sb24**2)/sb24**2
+tgt=ab14**3*sb12**2*sb13*sb23 + ab14*ab34**2*sb13*sb23**3 - ab24*ab34**2*sb23**4
+1 ab14**3*sb12**2*sb13*sb23 + ab14*ab34**2*sb13*sb23**3 - ab24*ab34**2*sb23**4
+
+Equation 250 (1/5)
+src=(-ab12**2*ab23**5*ab24*ab34*sb12*sb14**2*sb34 - ab12**2*ab23**5*ab24*ab34*sb14**3*sb23 - ab12*ab23**6*ab24**2*sb12*sb14*sb24*sb34)/sb24**2
+tgt=(-ab12**2*ab23**5*ab24*ab34*sb13*sb14**2 - ab12*ab23**6*ab24**2*sb12*sb14*sb34)/sb24
+0 -1.580e-02 (-ab12**2*ab23**5*ab24**2*sb12*sb14**2 - ab12*ab23**6*ab24**2*sb12*sb14*sb34)/sb24
+1 -2.289e-02 (-ab12**2*ab23**5*ab24*ab34*sb13*sb14**2 - ab12*ab23**6*ab24**2*sb12*sb14*sb34)/sb24
+0 -5.339e-02 (-ab12**2*ab23**5*ab24**2*ab34*sb14**2 - ab12*ab23**6*ab24**2*sb12*sb14*sb34)/sb24
+0 -6.195e-02 (-ab12**2*ab23**5*ab24**2*ab34*sb14**3 - ab12*ab23**6*ab24**2*sb12*sb14*sb34)/sb24
+0 -7.179e-02 (-ab12**2*ab23**4*ab24**2*ab34*sb14**3 - ab12*ab23**6*ab24**2*sb12*sb14*sb34)/sb24
+
+Equation 251 (1/1)
+src=(ab12*ab13*sb13*sb34 - ab12*ab24*sb24*sb34)/sb24**2
+tgt=0
+1 0
+
+Equation 252 (1/1)
+src=(-ab12*ab24*ab34*sb13**4*sb24**3 + 3*ab12*ab24*ab34*sb13**3*sb14*sb23*sb24**2 - 3*ab12*ab24*ab34*sb13**2*sb14**2*sb23**2*sb24 + ab12*ab24*ab34*sb13*sb14**3*sb23**3 - ab14*ab24**2*sb13**3*sb14*sb24**3 + 3*ab14*ab24**2*sb13**2*sb14**2*sb23*sb24**2 - 3*ab14*ab24**2*sb13*sb14**3*sb23**2*sb24 + ab14*ab24**2*sb14**4*sb23**3)/(sb24*sb34**3)
+tgt=(-ab12*ab24*ab34*sb12**3*sb13 - ab14*ab24**2*sb12**3*sb14)/sb24
+1 (-ab12*ab24*ab34*sb12**3*sb13 - ab14*ab24**2*sb12**3*sb14)/sb24
+
+Equation 253 (4/5)
+src=(-ab12**2*ab13*ab34**2*sb12**2*sb13 - ab12*ab13**2*ab34**2*sb12*sb13**2)/(sb24*sb34**3)
+tgt=ab12*ab13*ab14*ab34**2*sb12*sb13*sb14/(sb24*sb34**3)
+1 -2.366e-02 (-ab12**2*ab24*ab34**2*sb12**2 - ab12*ab24**2*ab34**2*sb12*sb24)/sb34**3
+1 -6.517e-02 (-ab12**2*ab24*ab34**2*sb12**2 - ab12*ab13*ab24*ab34**2*sb12*sb13)/sb34**3
+0 -9.078e-02 (-ab12**2*ab24*ab34**2*sb12**2 - ab12*ab13*ab34**2*sb12*sb13**2)/sb34**3
+1 -1.090e-01 (-ab12**2*ab24*ab34**2*sb12**2 - ab24**2*ab34**3*sb24*sb34)/sb34**3
+1 -1.294e-01 ab12*ab23*ab24*ab34**2*sb12*sb23/sb34**3
+
+Equation 254 (1/1)
+src=(ab12*ab23**2*ab34**2*sb12*sb13*sb24**2 + ab12*ab23*ab34**3*sb12*sb14*sb24*sb34 - ab13*ab23**3*ab24*sb12**2*sb23*sb24 - ab13*ab23*ab24**2*ab34*sb12*sb14*sb24**2 + ab13*ab23*ab34**3*sb12*sb14*sb34**2)/(sb24*sb34**2)
+tgt=(ab12*ab23**2*ab34**2*sb12*sb13*sb24 - ab13*ab23**3*ab24*sb12**2*sb23 - ab13*ab23*ab24**2*ab34*sb12*sb14*sb24)/sb34**2
+1 (ab12*ab23**2*ab34**2*sb12*sb13*sb24 - ab13*ab23**3*ab24*sb12**2*sb23 - ab13*ab23*ab24**2*ab34*sb12*sb14*sb24)/sb34**2
+
+Equation 255 (4/5)
+src=(-2*ab13**2*sb13*sb14**3*sb24 + 2*ab13**2*sb14**4*sb23 - ab23**2*sb12*sb14*sb24**2*sb34)/(sb24*sb34**2)
+tgt=(-2*ab13**2*sb12*sb14**3 - ab23**2*sb12*sb14*sb24**2)/(sb24*sb34)
+1 -2.662e-02 (-2*ab13**2*sb12*sb14**3 - ab23**2*sb12*sb14*sb24**2)/(sb24*sb34)
+1 -3.435e-02 (2*ab13*ab34*sb14**3 - ab23**2*sb12*sb14*sb24)/sb34
+1 -8.071e-02 (ab13*ab34*sb14**3 - ab23**2*sb12*sb14*sb24 - ab23*ab34*sb14**2*sb24)/sb34
+0 -8.362e-02 (-2*ab13*ab34*sb14**3 - ab23**2*sb12*sb14*sb24)/sb34
+1 -9.828e-02 (-2*ab23**2*sb12*sb14*sb24 - ab23*ab34*sb14**2*sb24)/sb34
+

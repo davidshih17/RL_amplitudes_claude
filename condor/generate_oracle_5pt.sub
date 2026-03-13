@@ -1,0 +1,16 @@
+# NOTE: Update paths below before use
+universe = vanilla
+executable = /bin/bash
+arguments = /path/to/RL_amplitudes_claude/scripts/run_oracle_5pt_worker.sh $(Process)
+
+output = /path/to/RL_amplitudes_claude/logs/oracle_5pt_$(Process).out
+error = /path/to/RL_amplitudes_claude/logs/oracle_5pt_$(Process).err
+log = /path/to/RL_amplitudes_claude/logs/oracle_5pt.log
+
+request_cpus = 1
+request_memory = 4GB
+request_disk = 1GB
+
++MaxRuntime = 14400
+
+queue 1000

@@ -1,0 +1,232 @@
+INFO - 12/21/25 15:45:24 - 0:00:00 - ============ Initialized logger ============
+INFO - 12/21/25 15:45:24 - 0:00:00 - accumulate_gradients: 1
+                                     all_momenta: False
+                                     amp: -1
+                                     attention_dropout: 0
+                                     batch_size: 32
+                                     beam_early_stopping: True
+                                     beam_eval: True
+                                     beam_length_penalty: 1
+                                     beam_size: 5
+                                     clip_grad_norm: 5
+                                     command: python -c --exp_id "beam5"
+                                     cpu: True
+                                     debug_slurm: False
+                                     dropout: 0
+                                     dump_path: /het/p4/dshih/jet_images-deep_learning/RL_amplitudes_claude/results/paper_model_eval/eval_paper_model/beam5
+                                     emb_dim: 512
+                                     env_base_seed: -1
+                                     env_name: char_env
+                                     epoch_size: 1000
+                                     eval_only: True
+                                     eval_verbose: 1
+                                     eval_verbose_print: False
+                                     exp_id: beam5
+                                     exp_name: eval_paper_model
+                                     export_data: False
+                                     fp16: False
+                                     global_rank: 0
+                                     int_base: 10
+                                     is_master: True
+                                     is_slurm_job: False
+                                     l_scale: 0.75
+                                     lib_path: 
+                                     local_rank: 0
+                                     master_port: -1
+                                     max_epoch: 1
+                                     max_len: 1000
+                                     max_scale: 2
+                                     max_scrambles: 3
+                                     max_terms: 3
+                                     min_scrambles: 1
+                                     mma_path: None
+                                     multi_gpu: False
+                                     multi_node: False
+                                     n_dec_layers: 3
+                                     n_enc_layers: 3
+                                     n_gpu_per_node: 1
+                                     n_heads: 8
+                                     n_max_positions: 2560
+                                     n_nodes: 1
+                                     node_id: 0
+                                     npt_list: [4]
+                                     nucleus_p: 0.95
+                                     nucleus_sampling: False
+                                     num_workers: 1
+                                     numeral_decomp: True
+                                     numerator_only: True
+                                     numerical_check: 2
+                                     optimizer: adam,lr=0.0001
+                                     positional_encoding: True
+                                     reduced_voc: True
+                                     reload_checkpoint: 
+                                     reload_data: spin_hel,data/n4_i1_3/data.prefix.counts.train_1000,data/n4_i1_3/data.prefix.counts.valid_1000,data/n4_i1_3/data.prefix.counts.test_1000
+                                     reload_model: n4_i1_3_l1000_10Mex.pth
+                                     reload_size: 
+                                     save_info_scaling: False
+                                     save_info_scr: False
+                                     save_periodic: 0
+                                     scaling_eval: False
+                                     share_inout_emb: True
+                                     sinusoidal_embeddings: False
+                                     stopping_criterion: 
+                                     tasks: spin_hel
+                                     temperature: 1.5
+                                     test_file: True
+                                     valid_file: False
+                                     validation_metrics: 
+                                     world_size: 1
+INFO - 12/21/25 15:45:24 - 0:00:00 - The experiment will be stored in /het/p4/dshih/jet_images-deep_learning/RL_amplitudes_claude/results/paper_model_eval/eval_paper_model/beam5
+                                     
+INFO - 12/21/25 15:45:24 - 0:00:00 - Running command: python -c
+
+WARNING - 12/21/25 15:45:24 - 0:00:00 - Signal handler installed.
+INFO - 12/21/25 15:45:24 - 0:00:00 - words: {'<s>': 0, '</s>': 1, '<pad>': 2, 'add': 3, 'div': 4, 'mul': 5, 'pow': 6, 'INT+': 7, 'INT-': 8, '0': 9, '1': 10, '2': 11, '3': 12, '4': 13, '5': 14, '6': 15, '7': 16, '8': 17, '9': 18, '10': 19, 'ab12': 20, 'ab13': 21, 'ab14': 22, 'ab23': 23, 'ab24': 24, 'ab34': 25, 'sb12': 26, 'sb13': 27, 'sb14': 28, 'sb23': 29, 'sb24': 30, 'sb34': 31}
+INFO - 12/21/25 15:45:24 - 0:00:00 - Training tasks: spin_hel
+INFO - 12/21/25 15:45:25 - 0:00:00 - Reloading modules from n4_i1_3_l1000_10Mex.pth ...
+DEBUG - 12/21/25 15:45:25 - 0:00:00 - TransformerModel(
+                                        (position_embeddings): Embedding(2560, 512)
+                                        (embeddings): Embedding(32, 512, padding_idx=1)
+                                        (layer_norm_emb): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        (attentions): ModuleList(
+                                          (0-2): 3 x MultiHeadAttention(
+                                            (q_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (k_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (v_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (out_lin): Linear(in_features=512, out_features=512, bias=True)
+                                          )
+                                        )
+                                        (layer_norm1): ModuleList(
+                                          (0-2): 3 x LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                        (ffns): ModuleList(
+                                          (0-2): 3 x TransformerFFN(
+                                            (lin1): Linear(in_features=512, out_features=2048, bias=True)
+                                            (lin2): Linear(in_features=2048, out_features=512, bias=True)
+                                          )
+                                        )
+                                        (layer_norm2): ModuleList(
+                                          (0-2): 3 x LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                      ): TransformerModel(
+                                        (position_embeddings): Embedding(2560, 512)
+                                        (embeddings): Embedding(32, 512, padding_idx=1)
+                                        (layer_norm_emb): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        (attentions): ModuleList(
+                                          (0-2): 3 x MultiHeadAttention(
+                                            (q_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (k_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (v_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (out_lin): Linear(in_features=512, out_features=512, bias=True)
+                                          )
+                                        )
+                                        (layer_norm1): ModuleList(
+                                          (0-2): 3 x LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                        (ffns): ModuleList(
+                                          (0-2): 3 x TransformerFFN(
+                                            (lin1): Linear(in_features=512, out_features=2048, bias=True)
+                                            (lin2): Linear(in_features=2048, out_features=512, bias=True)
+                                          )
+                                        )
+                                        (layer_norm2): ModuleList(
+                                          (0-2): 3 x LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                      )
+DEBUG - 12/21/25 15:45:25 - 0:00:00 - TransformerModel(
+                                        (position_embeddings): Embedding(2560, 512)
+                                        (embeddings): Embedding(32, 512, padding_idx=1)
+                                        (layer_norm_emb): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        (attentions): ModuleList(
+                                          (0-2): 3 x MultiHeadAttention(
+                                            (q_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (k_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (v_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (out_lin): Linear(in_features=512, out_features=512, bias=True)
+                                          )
+                                        )
+                                        (layer_norm1): ModuleList(
+                                          (0-2): 3 x LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                        (ffns): ModuleList(
+                                          (0-2): 3 x TransformerFFN(
+                                            (lin1): Linear(in_features=512, out_features=2048, bias=True)
+                                            (lin2): Linear(in_features=2048, out_features=512, bias=True)
+                                          )
+                                        )
+                                        (layer_norm2): ModuleList(
+                                          (0-2): 3 x LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                        (layer_norm15): ModuleList(
+                                          (0-2): 3 x LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                        (encoder_attn): ModuleList(
+                                          (0-2): 3 x MultiHeadAttention(
+                                            (q_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (k_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (v_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (out_lin): Linear(in_features=512, out_features=512, bias=True)
+                                          )
+                                        )
+                                        (proj): Linear(in_features=512, out_features=32, bias=True)
+                                      ): TransformerModel(
+                                        (position_embeddings): Embedding(2560, 512)
+                                        (embeddings): Embedding(32, 512, padding_idx=1)
+                                        (layer_norm_emb): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        (attentions): ModuleList(
+                                          (0-2): 3 x MultiHeadAttention(
+                                            (q_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (k_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (v_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (out_lin): Linear(in_features=512, out_features=512, bias=True)
+                                          )
+                                        )
+                                        (layer_norm1): ModuleList(
+                                          (0-2): 3 x LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                        (ffns): ModuleList(
+                                          (0-2): 3 x TransformerFFN(
+                                            (lin1): Linear(in_features=512, out_features=2048, bias=True)
+                                            (lin2): Linear(in_features=2048, out_features=512, bias=True)
+                                          )
+                                        )
+                                        (layer_norm2): ModuleList(
+                                          (0-2): 3 x LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                        (layer_norm15): ModuleList(
+                                          (0-2): 3 x LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                        (encoder_attn): ModuleList(
+                                          (0-2): 3 x MultiHeadAttention(
+                                            (q_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (k_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (v_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (out_lin): Linear(in_features=512, out_features=512, bias=True)
+                                          )
+                                        )
+                                        (proj): Linear(in_features=512, out_features=32, bias=True)
+                                      )
+INFO - 12/21/25 15:45:25 - 0:00:00 - Number of parameters (encoder): 10785280
+INFO - 12/21/25 15:45:25 - 0:00:00 - Number of parameters (decoder): 13940256
+INFO - 12/21/25 15:45:25 - 0:00:00 - Found 135 parameters in model.
+INFO - 12/21/25 15:45:26 - 0:00:01 - Optimizers: model
+INFO - 12/21/25 15:45:26 - 0:00:01 - Writing evaluation results in /het/p4/dshih/jet_images-deep_learning/RL_amplitudes_claude/results/paper_model_eval/eval_paper_model/beam5/eval.spin_hel.test.0 ...
+INFO - 12/21/25 15:45:26 - 0:00:01 - Creating test iterator for spin_hel ...
+INFO - 12/21/25 15:45:26 - 0:00:01 - Preparing to load data from data/n4_i1_3/data.prefix.counts.test_1000 ...
+INFO - 12/21/25 15:45:26 - 0:00:02 - words: {'<s>': 0, '</s>': 1, '<pad>': 2, 'add': 3, 'div': 4, 'mul': 5, 'pow': 6, 'INT+': 7, 'INT-': 8, '0': 9, '1': 10, '2': 11, '3': 12, '4': 13, '5': 14, '6': 15, '7': 16, '8': 17, '9': 18, '10': 19, 'ab12': 20, 'ab13': 21, 'ab14': 22, 'ab23': 23, 'ab24': 24, 'ab34': 25, 'sb12': 26, 'sb13': 27, 'sb14': 28, 'sb23': 29, 'sb24': 30, 'sb34': 31}
+INFO - 12/21/25 15:45:26 - 0:00:02 - Loading data from data/n4_i1_3/data.prefix.counts.test_1000 ...
+INFO - 12/21/25 15:45:26 - 0:00:02 - Loaded 10020 equations from the disk.
+INFO - 12/21/25 15:45:26 - 0:00:02 - (96/10020) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:45:27 - 0:00:03 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:45:28 - 0:00:03 - (128/10020) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:45:29 - 0:00:04 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:45:29 - 0:00:04 - (160/10020) Found 30/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 15:45:29 - 0:00:05 - Exception TypeError when checking hypothesis: ['mul', 'INT-', '1', 'mul', 'pow', 'ab23', 'INT-', '1', 'mul', 'pow', 'sb13', 'INT-', '2']
+INFO - 12/21/25 15:45:30 - 0:00:05 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:45:30 - 0:00:05 - (192/10020) Found 24/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:45:39 - 0:00:14 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:45:39 - 0:00:15 - (224/10020) Found 26/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:45:51 - 0:00:26 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:45:51 - 0:00:27 - (256/10020) Found 24/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:46:01 - 0:00:37 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:46:01 - 0:00:37 - (288/10020) Found 26/32 valid top-1 predictions. Generating solutions ...

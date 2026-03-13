@@ -1,0 +1,20 @@
+# NOTE: Update paths below before use
+universe = vanilla
+executable = /path/to/python
+arguments = /path/to/RL_amplitudes_claude/src/train_sft_4pt.py --train_data /path/to/RL_amplitudes_claude/data/transitions_4pt_chunks --output_dir /path/to/RL_amplitudes_claude/models/sft_4pt_500k --epochs 200 --batch_size 256 --lr 1e-4 --warmup_epochs 5 --embed_dim 64 --num_heads 4 --num_layers 3 --ff_dim 128 --features_dim 128 --n_point 4 --max_terms 20 --max_terms_action 10 --max_brackets_per_term 8 --max_brackets 12 --train_split 0.95
+
+output = /path/to/RL_amplitudes_claude/logs/train_4pt_from_scratch.out
+error = /path/to/RL_amplitudes_claude/logs/train_4pt_from_scratch.err
+log = /path/to/RL_amplitudes_claude/logs/train_4pt_from_scratch.log
+
+environment = "PYTHONPATH=/path/to/RL_amplitudes_claude/spinorhelicity:/path/to/RL_amplitudes_claude/src"
+
+request_cpus = 1
+request_memory = 16GB
+request_disk = 4GB
+request_gpus = 1
+
++IsGPUJob = true
++MaxRuntime = 43200
+
+queue 1

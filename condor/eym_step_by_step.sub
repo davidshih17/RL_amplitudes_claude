@@ -1,0 +1,20 @@
+# NOTE: Update paths below before use
+universe = vanilla
+executable = /path/to/python
+arguments = -u /path/to/RL_amplitudes_claude/src/eval_large_expr.py --input /path/to/RL_amplitudes_claude/data/EYM_PPPPH_for_ML.txt --n_point 5 --model /path/to/RL_amplitudes_claude/models/sft_5pt_500k/best_model.pt --step_by_step --max_steps 500 --sample_timeout 3600 --timeout 30 --max_backtracks 10 --reject_term_increase 1 --max_group_size 25 --seed 42 --verbose
+
+output = /path/to/RL_amplitudes_claude/output/large_expr/eym_step_by_step.log
+error = /path/to/RL_amplitudes_claude/output/large_expr/eym_step_by_step.err
+log = /path/to/RL_amplitudes_claude/logs/eym_step_by_step.log
+
+environment = "PYTHONPATH=/path/to/RL_amplitudes_claude/spinorhelicity:/path/to/RL_amplitudes_claude/spinorhelicity/environment:/path/to/RL_amplitudes_claude/src"
+
+request_cpus = 4
+request_memory = 16GB
+request_disk = 4GB
+request_gpus = 1
+
++IsGPUJob = true
++MaxRuntime = 14400
+
+queue 1

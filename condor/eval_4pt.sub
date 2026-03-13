@@ -1,0 +1,23 @@
+# NOTE: Update paths below before use
+# HTCondor submission for 4pt SFT evaluation
+# 1000 workers, ~10 samples each (10020 total)
+
+universe = vanilla
+executable = /bin/bash
+arguments = /path/to/RL_amplitudes_claude/scripts/run_eval_4pt_worker.sh $(Process) 1000 10020
+
+output = /path/to/output/eval_4pt/$(Process).out
+error = /path/to/output/eval_4pt/$(Process).err
+log = /path/to/output/eval_4pt/condor.log
+
+environment = "PYTHONPATH=/path/to/RL_amplitudes_claude/spinorhelicity:/path/to/RL_amplitudes_claude/src"
+
+request_cpus = 2
+request_memory = 8GB
+request_disk = 2GB
+
+getenv = True
++IsGPUJob = false
++MaxRuntime = 7200
+
+queue 1000

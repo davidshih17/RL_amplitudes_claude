@@ -1,0 +1,1418 @@
+INFO - 12/21/25 15:47:22 - 0:00:00 - ============ Initialized logger ============
+INFO - 12/21/25 15:47:22 - 0:00:00 - accumulate_gradients: 1
+                                     all_momenta: False
+                                     amp: -1
+                                     attention_dropout: 0
+                                     batch_size: 32
+                                     beam_early_stopping: True
+                                     beam_eval: True
+                                     beam_length_penalty: 1
+                                     beam_size: 5
+                                     clip_grad_norm: 5
+                                     command: python main.py --exp_id "beam5"
+                                     cpu: True
+                                     debug_slurm: False
+                                     dropout: 0
+                                     dump_path: /het/p4/dshih/jet_images-deep_learning/RL_amplitudes_claude/results/paper_model_eval/eval_paper_4pt/beam5
+                                     emb_dim: 512
+                                     env_base_seed: -1
+                                     env_name: char_env
+                                     epoch_size: 1000
+                                     eval_only: True
+                                     eval_verbose: 1
+                                     eval_verbose_print: False
+                                     exp_id: beam5
+                                     exp_name: eval_paper_4pt
+                                     export_data: False
+                                     fp16: False
+                                     global_rank: 0
+                                     int_base: 10
+                                     is_master: True
+                                     is_slurm_job: False
+                                     l_scale: 0.75
+                                     lib_path: 
+                                     local_rank: 0
+                                     master_port: -1
+                                     max_epoch: 1
+                                     max_len: 1000
+                                     max_scale: 2
+                                     max_scrambles: 3
+                                     max_terms: 3
+                                     min_scrambles: 1
+                                     mma_path: None
+                                     multi_gpu: False
+                                     multi_node: False
+                                     n_dec_layers: 3
+                                     n_enc_layers: 3
+                                     n_gpu_per_node: 1
+                                     n_heads: 8
+                                     n_max_positions: 2560
+                                     n_nodes: 1
+                                     node_id: 0
+                                     npt_list: [4]
+                                     nucleus_p: 0.95
+                                     nucleus_sampling: False
+                                     num_workers: 1
+                                     numeral_decomp: True
+                                     numerator_only: True
+                                     numerical_check: 2
+                                     optimizer: adam,lr=0.0001
+                                     positional_encoding: True
+                                     reduced_voc: True
+                                     reload_checkpoint: 
+                                     reload_data: spin_hel,data/n4_i1_3/data.prefix.counts.train_1000,data/n4_i1_3/data.prefix.counts.valid_1000,data/n4_i1_3/data.prefix.counts.test_1000
+                                     reload_model: n4_i1_3_l1000_10Mex.pth
+                                     reload_size: 
+                                     save_info_scaling: False
+                                     save_info_scr: False
+                                     save_periodic: 0
+                                     scaling_eval: False
+                                     share_inout_emb: True
+                                     sinusoidal_embeddings: False
+                                     stopping_criterion: 
+                                     tasks: spin_hel
+                                     temperature: 1.5
+                                     test_file: True
+                                     valid_file: False
+                                     validation_metrics: 
+                                     world_size: 1
+INFO - 12/21/25 15:47:22 - 0:00:00 - The experiment will be stored in /het/p4/dshih/jet_images-deep_learning/RL_amplitudes_claude/results/paper_model_eval/eval_paper_4pt/beam5
+                                     
+INFO - 12/21/25 15:47:22 - 0:00:00 - Running command: python main.py
+
+WARNING - 12/21/25 15:47:22 - 0:00:00 - Signal handler installed.
+INFO - 12/21/25 15:47:22 - 0:00:00 - words: {'<s>': 0, '</s>': 1, '<pad>': 2, 'add': 3, 'div': 4, 'mul': 5, 'pow': 6, 'INT+': 7, 'INT-': 8, '0': 9, '1': 10, '2': 11, '3': 12, '4': 13, '5': 14, '6': 15, '7': 16, '8': 17, '9': 18, '10': 19, 'ab12': 20, 'ab13': 21, 'ab14': 22, 'ab23': 23, 'ab24': 24, 'ab34': 25, 'sb12': 26, 'sb13': 27, 'sb14': 28, 'sb23': 29, 'sb24': 30, 'sb34': 31}
+INFO - 12/21/25 15:47:22 - 0:00:00 - Training tasks: spin_hel
+INFO - 12/21/25 15:47:22 - 0:00:00 - Reloading modules from n4_i1_3_l1000_10Mex.pth ...
+DEBUG - 12/21/25 15:47:22 - 0:00:00 - TransformerModel(
+                                        (position_embeddings): Embedding(2560, 512)
+                                        (embeddings): Embedding(32, 512, padding_idx=1)
+                                        (layer_norm_emb): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        (attentions): ModuleList(
+                                          (0-2): 3 x MultiHeadAttention(
+                                            (q_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (k_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (v_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (out_lin): Linear(in_features=512, out_features=512, bias=True)
+                                          )
+                                        )
+                                        (layer_norm1): ModuleList(
+                                          (0-2): 3 x LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                        (ffns): ModuleList(
+                                          (0-2): 3 x TransformerFFN(
+                                            (lin1): Linear(in_features=512, out_features=2048, bias=True)
+                                            (lin2): Linear(in_features=2048, out_features=512, bias=True)
+                                          )
+                                        )
+                                        (layer_norm2): ModuleList(
+                                          (0-2): 3 x LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                      ): TransformerModel(
+                                        (position_embeddings): Embedding(2560, 512)
+                                        (embeddings): Embedding(32, 512, padding_idx=1)
+                                        (layer_norm_emb): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        (attentions): ModuleList(
+                                          (0-2): 3 x MultiHeadAttention(
+                                            (q_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (k_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (v_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (out_lin): Linear(in_features=512, out_features=512, bias=True)
+                                          )
+                                        )
+                                        (layer_norm1): ModuleList(
+                                          (0-2): 3 x LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                        (ffns): ModuleList(
+                                          (0-2): 3 x TransformerFFN(
+                                            (lin1): Linear(in_features=512, out_features=2048, bias=True)
+                                            (lin2): Linear(in_features=2048, out_features=512, bias=True)
+                                          )
+                                        )
+                                        (layer_norm2): ModuleList(
+                                          (0-2): 3 x LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                      )
+DEBUG - 12/21/25 15:47:22 - 0:00:00 - TransformerModel(
+                                        (position_embeddings): Embedding(2560, 512)
+                                        (embeddings): Embedding(32, 512, padding_idx=1)
+                                        (layer_norm_emb): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        (attentions): ModuleList(
+                                          (0-2): 3 x MultiHeadAttention(
+                                            (q_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (k_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (v_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (out_lin): Linear(in_features=512, out_features=512, bias=True)
+                                          )
+                                        )
+                                        (layer_norm1): ModuleList(
+                                          (0-2): 3 x LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                        (ffns): ModuleList(
+                                          (0-2): 3 x TransformerFFN(
+                                            (lin1): Linear(in_features=512, out_features=2048, bias=True)
+                                            (lin2): Linear(in_features=2048, out_features=512, bias=True)
+                                          )
+                                        )
+                                        (layer_norm2): ModuleList(
+                                          (0-2): 3 x LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                        (layer_norm15): ModuleList(
+                                          (0-2): 3 x LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                        (encoder_attn): ModuleList(
+                                          (0-2): 3 x MultiHeadAttention(
+                                            (q_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (k_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (v_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (out_lin): Linear(in_features=512, out_features=512, bias=True)
+                                          )
+                                        )
+                                        (proj): Linear(in_features=512, out_features=32, bias=True)
+                                      ): TransformerModel(
+                                        (position_embeddings): Embedding(2560, 512)
+                                        (embeddings): Embedding(32, 512, padding_idx=1)
+                                        (layer_norm_emb): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        (attentions): ModuleList(
+                                          (0-2): 3 x MultiHeadAttention(
+                                            (q_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (k_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (v_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (out_lin): Linear(in_features=512, out_features=512, bias=True)
+                                          )
+                                        )
+                                        (layer_norm1): ModuleList(
+                                          (0-2): 3 x LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                        (ffns): ModuleList(
+                                          (0-2): 3 x TransformerFFN(
+                                            (lin1): Linear(in_features=512, out_features=2048, bias=True)
+                                            (lin2): Linear(in_features=2048, out_features=512, bias=True)
+                                          )
+                                        )
+                                        (layer_norm2): ModuleList(
+                                          (0-2): 3 x LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                        (layer_norm15): ModuleList(
+                                          (0-2): 3 x LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                        (encoder_attn): ModuleList(
+                                          (0-2): 3 x MultiHeadAttention(
+                                            (q_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (k_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (v_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (out_lin): Linear(in_features=512, out_features=512, bias=True)
+                                          )
+                                        )
+                                        (proj): Linear(in_features=512, out_features=32, bias=True)
+                                      )
+INFO - 12/21/25 15:47:22 - 0:00:00 - Number of parameters (encoder): 10785280
+INFO - 12/21/25 15:47:22 - 0:00:00 - Number of parameters (decoder): 13940256
+INFO - 12/21/25 15:47:22 - 0:00:00 - Found 135 parameters in model.
+INFO - 12/21/25 15:47:23 - 0:00:01 - Optimizers: model
+INFO - 12/21/25 15:47:23 - 0:00:01 - Writing evaluation results in /het/p4/dshih/jet_images-deep_learning/RL_amplitudes_claude/results/paper_model_eval/eval_paper_4pt/beam5/eval.spin_hel.test.0 ...
+INFO - 12/21/25 15:47:23 - 0:00:01 - Creating test iterator for spin_hel ...
+INFO - 12/21/25 15:47:23 - 0:00:01 - Preparing to load data from data/n4_i1_3/data.prefix.counts.test_1000 ...
+INFO - 12/21/25 15:47:23 - 0:00:01 - words: {'<s>': 0, '</s>': 1, '<pad>': 2, 'add': 3, 'div': 4, 'mul': 5, 'pow': 6, 'INT+': 7, 'INT-': 8, '0': 9, '1': 10, '2': 11, '3': 12, '4': 13, '5': 14, '6': 15, '7': 16, '8': 17, '9': 18, '10': 19, 'ab12': 20, 'ab13': 21, 'ab14': 22, 'ab23': 23, 'ab24': 24, 'ab34': 25, 'sb12': 26, 'sb13': 27, 'sb14': 28, 'sb23': 29, 'sb24': 30, 'sb34': 31}
+INFO - 12/21/25 15:47:23 - 0:00:01 - Loading data from data/n4_i1_3/data.prefix.counts.test_1000 ...
+INFO - 12/21/25 15:47:23 - 0:00:01 - Loaded 10020 equations from the disk.
+INFO - 12/21/25 15:47:23 - 0:00:01 - (96/10020) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:47:24 - 0:00:02 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:47:24 - 0:00:02 - (128/10020) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:47:26 - 0:00:04 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:47:26 - 0:00:04 - (160/10020) Found 30/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 15:47:27 - 0:00:05 - Exception TypeError when checking hypothesis: ['mul', 'INT-', '1', 'mul', 'pow', 'ab23', 'INT-', '1', 'mul', 'pow', 'sb13', 'INT-', '2']
+INFO - 12/21/25 15:47:27 - 0:00:05 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:47:27 - 0:00:05 - (192/10020) Found 24/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:47:36 - 0:00:14 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:47:36 - 0:00:14 - (224/10020) Found 26/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:47:50 - 0:00:28 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:47:50 - 0:00:28 - (256/10020) Found 24/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:48:01 - 0:00:39 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:48:01 - 0:00:39 - (288/10020) Found 26/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:48:05 - 0:00:43 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:48:05 - 0:00:43 - (320/10020) Found 25/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:48:12 - 0:00:50 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:48:12 - 0:00:50 - (352/10020) Found 24/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:48:18 - 0:00:55 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:48:18 - 0:00:56 - (384/10020) Found 27/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 15:48:26 - 0:01:04 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'sb23', 'INT-', '1', 'mul', 'pow', 'sb24', 'INT-', '1', 'add', 'mul', 'pow', 'ab12', 'INT+', '2', 'mul', 'pow', 'ab34', 'INT+', '2', 'mul', 'pow', 'sb14', 'INT+', '4', 'mul', 'pow']
+INFO - 12/21/25 15:48:27 - 0:01:05 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:48:27 - 0:01:05 - (416/10020) Found 25/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:48:40 - 0:01:18 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:48:40 - 0:01:18 - (448/10020) Found 23/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:48:46 - 0:01:24 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:48:46 - 0:01:24 - (480/10020) Found 23/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 15:48:52 - 0:01:30 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'sb24', 'INT-', '2', 'add', 'mul', 'pow', 'ab13', 'INT+', '2', 'mul', 'ab24', 'mul', 'ab34', 'mul', 'sb12', 'mul', 'sb13', 'sb23', 'mul', 'pow', 'ab24', 'INT+', '2', 'mul', 'ab13', 'mul', 'ab34', 'mul', 'sb12', 'mul', 'sb24']
+INFO - 12/21/25 15:48:54 - 0:01:32 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:48:54 - 0:01:32 - (512/10020) Found 21/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 15:48:59 - 0:01:37 - Exception TypeError when checking hypothesis: ['add', 'mul', 'pow', 'ab13', 'INT+', '3', 'mul', 'pow', 'ab34', 'INT+', '2', 'mul', 'pow', 'sb24', 'INT+', '2', 'mul', 'pow', 'sb34', 'INT+', '2', 'sb23', 'mul', 'INT-', '1', 'mul', 'pow', 'ab13', 'INT+', '2', 'mul', 'pow', 'sb24', 'INT+', '3', 'mul', 'ab12', 'mul', 'ab14', 'mul', 'ab23', 'mul', 'sb12']
+ERROR - 12/21/25 15:48:59 - 0:01:37 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab13', 'INT+', '2', 'mul', 'pow', 'sb13', 'INT+', '2', 'mul', 'pow', 'sb24', 'INT+', '3', 'mul', 'ab34']
+INFO - 12/21/25 15:48:59 - 0:01:37 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:49:00 - 0:01:38 - (544/10020) Found 26/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:49:07 - 0:01:45 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:49:07 - 0:01:45 - (576/10020) Found 25/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 15:49:16 - 0:01:54 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'sb13', 'INT-', '2', 'mul', 'pow', 'sb14', 'INT-', '1', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab13', 'INT+', '3', 'mul', 'pow', 'sb34', 'INT+', '2', 'mul', 'ab14', 'mul', 'ab23', 'mul', 'ab24', 'mul', 'sb23', 'sb24', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab12', 'INT+', '2', 'mul', 'pow', 'ab13', 'INT+', '2', 'mul', 'pow', 'sb34', 'INT+', '2', 'mul', 'ab14', 'mul', 'ab34', 'mul', 'sb12', 'sb24', 'mul', 'INT-', '1', 'mul', 'pow', 'ab13', 'INT+', '2', 'mul', 'pow', 'sb34', 'INT+', '2', 'mul', 'ab12', 'mul', 'ab14', 'mul', 'ab23', 'mul', 'ab34', 'add']
+INFO - 12/21/25 15:49:17 - 0:01:55 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:49:18 - 0:01:56 - (608/10020) Found 21/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:49:24 - 0:02:02 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:49:24 - 0:02:02 - (640/10020) Found 24/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:49:31 - 0:02:09 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:49:31 - 0:02:09 - (672/10020) Found 25/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:49:46 - 0:02:24 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:49:46 - 0:02:24 - (704/10020) Found 25/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:49:57 - 0:02:35 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:49:57 - 0:02:35 - (736/10020) Found 28/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:50:05 - 0:02:43 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:50:05 - 0:02:43 - (768/10020) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:50:12 - 0:02:50 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:50:12 - 0:02:50 - (800/10020) Found 24/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:50:18 - 0:02:56 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:50:18 - 0:02:56 - (832/10020) Found 29/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 15:50:20 - 0:02:58 - Exception TypeError when checking hypothesis: ['add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab13', 'INT+', '2', 'mul', 'pow', 'sb13', 'INT+', '2', 'mul', 'pow', 'sb14', 'INT+', '2', 'ab12', 'mul', 'pow', 'sb14', 'INT+', '2', 'mul', 'ab12', 'mul', 'ab23', 'mul', 'ab34', 'mul', 'sb23', '2', 'sb34']
+INFO - 12/21/25 15:50:21 - 0:02:59 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:50:21 - 0:02:59 - (864/10020) Found 28/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:50:29 - 0:03:07 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:50:30 - 0:03:08 - (896/10020) Found 26/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:50:43 - 0:03:21 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:50:43 - 0:03:21 - (928/10020) Found 26/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 15:50:55 - 0:03:33 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab34', 'INT-', '1', 'add', 'mul', 'pow', 'ab13', 'INT+', '2', 'mul', 'ab24', 'mul', 'sb13', 'mul', 'sb14', 'sb34', 'add', 'mul', 'pow', 'ab23', 'INT+', '2', 'mul', 'ab14', 'mul', 'sb13', 'mul', 'sb24', 'sb34', 'mul', 'INT-', '1', 'mul', 'pow', 'ab12', 'INT+', '2', 'mul', 'ab24', 'mul', 'sb12', 'mul', 'sb14', 'sb24', 'sb24']
+INFO - 12/21/25 15:50:55 - 0:03:33 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:50:55 - 0:03:33 - (960/10020) Found 24/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:51:02 - 0:03:40 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:51:02 - 0:03:40 - (992/10020) Found 25/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:51:06 - 0:03:44 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:51:06 - 0:03:44 - (1024/10020) Found 26/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 15:51:12 - 0:03:50 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab34', 'INT-', '1', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab14', 'INT+', '2', 'mul', 'pow', 'ab24', 'INT+', '2', 'mul', 'ab13', 'sb14', 'add', 'mul', 'pow', 'ab14', 'INT+', '2', 'mul', 'ab12', 'mul', 'ab23', 'mul', 'ab34', 'sb13', 'mul', 'INT-', '1', 'mul', 'pow', 'ab24', 'INT+', '2', 'mul', 'ab12', 'mul', 'ab13', 'mul', 'ab14']
+ERROR - 12/21/25 15:51:12 - 0:03:50 - Exception TypeError when checking hypothesis: ['add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab12', 'INT+', '2', 'mul', 'pow', 'ab24', 'INT+', '2', 'mul', 'pow', 'sb34', 'INT+', '2', 'sb14', 'add', 'mul', 'pow', 'ab12', 'INT+', '3', 'mul', 'ab24', 'mul', 'sb13', 'mul', 'sb14', 'sb34', 'mul', 'pow', 'ab12', 'INT+', '3', 'mul', 'ab24', 'mul', 'sb13', 'mul', 'sb14', 'sb34', 'sb34']
+INFO - 12/21/25 15:51:12 - 0:03:50 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:51:13 - 0:03:51 - (1056/10020) Found 27/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:51:21 - 0:03:59 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:51:22 - 0:04:00 - (1088/10020) Found 28/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:51:37 - 0:04:15 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:51:37 - 0:04:15 - (1120/10020) Found 27/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:51:43 - 0:04:21 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:51:44 - 0:04:22 - (1152/10020) Found 25/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 15:51:50 - 0:04:28 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'sb34', 'INT-', '1', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'sb12', 'INT+', '2', 'mul', 'pow', 'sb14', 'INT+', '3', 'mul', 'ab23', 'sb13', 'mul', 'INT-', '1', 'mul', 'pow', 'sb14', 'INT+', '4', 'mul', 'ab34', 'add']
+INFO - 12/21/25 15:51:51 - 0:04:29 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:51:51 - 0:04:29 - (1184/10020) Found 27/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 15:51:58 - 0:04:36 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab24', 'INT-', '1', 'mul', 'pow', 'sb13', 'INT-', '3', 'mul', 'pow', 'sb14', 'INT-', '1', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab14', 'INT+', '2', 'mul', 'pow', 'sb14', 'INT+', '2', 'mul', 'sb23', 'mul', 'sb24', 'sb34', 'mul', 'INT-', '1', 'mul', 'pow', 'sb13', 'INT+', '2', 'mul', 'pow', 'sb24', 'INT+', '3', 'mul', 'ab12', 'mul', 'ab14']
+INFO - 12/21/25 15:51:58 - 0:04:36 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:51:59 - 0:04:37 - (1216/10020) Found 23/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:52:06 - 0:04:44 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:52:06 - 0:04:44 - (1248/10020) Found 25/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:52:12 - 0:04:50 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:52:13 - 0:04:51 - (1280/10020) Found 28/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:52:21 - 0:04:59 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:52:21 - 0:04:59 - (1312/10020) Found 27/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:52:27 - 0:05:05 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:52:27 - 0:05:05 - (1344/10020) Found 26/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:52:33 - 0:05:11 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:52:33 - 0:05:11 - (1376/10020) Found 24/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 15:52:45 - 0:05:23 - Exception TypeError when checking hypothesis: ['mul', 'INT-', '1', 'mul', 'pow', 'ab14', 'INT+', '2', 'mul', 'pow', 'ab34', 'INT+', '2', 'mul', 'pow', 'sb12', 'INT-', '1', 'mul', 'pow', 'sb24', 'INT-', '1', 'mul', 'ab12', 'mul', 'ab24']
+ERROR - 12/21/25 15:52:45 - 0:05:23 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab23', 'INT-', '2', 'mul', 'pow', 'ab34', 'INT-', '1', 'mul', 'pow', 'sb23', 'INT-', '1', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab12', 'INT+', '4', 'mul', 'pow', 'sb13', 'INT+', '3', 'ab13', 'add', 'mul', 'pow', 'ab12', 'INT+', '2', 'mul', 'pow', 'ab24', 'INT+', '3', 'mul', 'pow', 'sb34', 'INT+', '2', 'sb24', 'mul', 'pow', 'ab12', 'INT+', '3', 'mul', 'pow', 'ab24', 'INT+', '2', 'mul', 'sb13', 'mul', 'sb24', 'sb34', 'sb34']
+INFO - 12/21/25 15:52:45 - 0:05:23 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:52:46 - 0:05:24 - (1408/10020) Found 26/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 15:52:51 - 0:05:29 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab23', 'INT+', '2', 'mul', 'pow', 'ab24', 'INT-', '1', 'mul', 'pow', 'ab34', 'INT-', '1', 'mul', 'pow', 'sb13', 'INT-', '1', 'mul', 'pow', 'sb23', 'INT-', '1', 'mul', 'ab13']
+INFO - 12/21/25 15:52:52 - 0:05:30 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:52:52 - 0:05:30 - (1440/10020) Found 26/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:53:00 - 0:05:38 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:53:00 - 0:05:38 - (1472/10020) Found 22/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:53:03 - 0:05:41 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:53:03 - 0:05:41 - (1504/10020) Found 25/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 15:53:10 - 0:05:48 - Exception TypeError when checking hypothesis: ['pow']
+INFO - 12/21/25 15:53:11 - 0:05:49 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:53:11 - 0:05:49 - (1536/10020) Found 25/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:53:16 - 0:05:54 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:53:16 - 0:05:54 - (1568/10020) Found 22/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:53:25 - 0:06:03 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:53:26 - 0:06:04 - (1600/10020) Found 23/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 15:53:30 - 0:06:08 - Exception TypeError when checking hypothesis: ['mul', 'INT-', '1', 'mul', 'pow', 'ab23', 'INT-', '1', 'mul', 'pow', 'ab34', 'INT-', '1', 'mul', 'pow', 'sb12', 'INT-', '1', 'mul', 'pow', 'sb23', 'INT+', '3', 'mul', 'ab13', 'mul', 'ab14']
+INFO - 12/21/25 15:53:31 - 0:06:09 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:53:31 - 0:06:09 - (1632/10020) Found 28/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:53:41 - 0:06:19 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:53:41 - 0:06:19 - (1664/10020) Found 23/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:53:45 - 0:06:23 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:53:45 - 0:06:23 - (1696/10020) Found 25/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:53:52 - 0:06:30 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:53:52 - 0:06:30 - (1728/10020) Found 29/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:53:56 - 0:06:34 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:53:57 - 0:06:35 - (1760/10020) Found 25/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:54:07 - 0:06:45 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:54:07 - 0:06:45 - (1792/10020) Found 25/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:54:12 - 0:06:50 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:54:12 - 0:06:50 - (1824/10020) Found 24/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 15:54:18 - 0:06:56 - Exception TypeError when checking hypothesis: ['mul', 'INT-', '1', 'mul', 'pow', 'ab14', 'INT-', '1', 'mul', 'pow', 'ab24', 'INT+', '2', 'mul', 'pow', 'sb12', 'INT-', '1', 'mul', 'pow', 'sb14', 'INT-', '1', 'mul', 'pow', 'sb23', 'INT-', '2', 'mul', 'pow', 'sb24', 'INT-', '1', 'mul', 'ab13', 'mul', 'ab23', 'mul', 'ab34']
+INFO - 12/21/25 15:54:18 - 0:06:56 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:54:18 - 0:06:56 - (1856/10020) Found 27/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 15:54:21 - 0:06:59 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab34', 'INT-', '1', 'add', 'mul', 'pow', 'ab23', 'INT+', '3', 'mul', 'pow', 'sb24', 'INT+', '3', 'mul', 'sb13', 'sb23', 'add', 'mul', 'pow', 'ab12', 'INT+', '2', 'mul', 'pow', 'sb24', 'INT+', '2', 'mul', 'ab23', 'mul', 'sb12', 'mul', 'sb12', 'sb14', 'mul', 'pow', 'ab13', 'INT+', '2', 'mul', 'pow', 'sb12', 'INT+', '2', 'mul', 'ab12', 'mul', 'sb14', 'mul', 'sb14', 'sb34', 'sb34']
+INFO - 12/21/25 15:54:22 - 0:07:00 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:54:22 - 0:07:00 - (1888/10020) Found 28/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:54:24 - 0:07:02 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:54:25 - 0:07:03 - (1920/10020) Found 26/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 15:54:32 - 0:07:10 - Exception TypeError when checking hypothesis: ['mul', 'INT-', '1', 'mul', 'pow', 'ab12', 'INT+', '2', 'mul', 'pow', 'ab14', 'INT-', '1', 'mul', 'pow', 'sb12', 'INT-', '2', 'mul', 'pow', 'sb14', 'INT-', '1', 'mul', 'pow', 'sb23', 'INT+', '3', 'mul', 'pow', 'sb34', 'INT+', '2']
+ERROR - 12/21/25 15:54:32 - 0:07:10 - Exception TypeError when checking hypothesis: ['mul', 'INT-', '1', 'mul', 'pow', 'ab23', 'INT-', '2', 'mul', 'pow', 'sb23', 'INT-', '1', 'mul', 'ab12', 'mul', 'sb13', 'mul', 'sb14']
+INFO - 12/21/25 15:54:32 - 0:07:10 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:54:32 - 0:07:10 - (1952/10020) Found 21/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:54:39 - 0:07:17 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:54:39 - 0:07:17 - (1984/10020) Found 23/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:54:52 - 0:07:30 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:54:53 - 0:07:31 - (2016/10020) Found 21/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:55:11 - 0:07:49 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:55:12 - 0:07:50 - (2048/10020) Found 22/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:55:16 - 0:07:54 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:55:16 - 0:07:54 - (2080/10020) Found 24/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:55:20 - 0:07:58 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:55:20 - 0:07:58 - (2112/10020) Found 26/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:55:29 - 0:08:07 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:55:29 - 0:08:07 - (2144/10020) Found 25/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:55:41 - 0:08:19 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:55:41 - 0:08:19 - (2176/10020) Found 30/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:55:46 - 0:08:24 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:55:46 - 0:08:24 - (2208/10020) Found 26/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:55:52 - 0:08:30 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:55:53 - 0:08:31 - (2240/10020) Found 23/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:55:56 - 0:08:34 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:55:56 - 0:08:34 - (2272/10020) Found 26/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:56:08 - 0:08:46 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:56:09 - 0:08:47 - (2304/10020) Found 26/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:56:17 - 0:08:55 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:56:17 - 0:08:55 - (2336/10020) Found 26/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:56:19 - 0:08:57 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:56:20 - 0:08:58 - (2368/10020) Found 26/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 15:56:27 - 0:09:05 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab13', 'INT-', '1', 'mul', 'pow', 'ab23', 'INT-', '1', 'add', 'mul', 'pow', 'sb34', 'INT+', '6', 'mul', 'ab34', 'sb13', 'add', 'mul', 'pow', 'sb34', 'INT+', '5', 'mul', 'ab23', 'mul', 'sb13', 'sb23', 'mul', 'pow', 'sb34', 'INT+', '5', 'mul', 'ab24', 'add']
+INFO - 12/21/25 15:56:27 - 0:09:05 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:56:27 - 0:09:05 - (2400/10020) Found 27/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:56:39 - 0:09:17 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:56:39 - 0:09:17 - (2432/10020) Found 26/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:56:42 - 0:09:20 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:56:42 - 0:09:20 - (2464/10020) Found 26/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:56:46 - 0:09:24 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:56:46 - 0:09:24 - (2496/10020) Found 27/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:56:49 - 0:09:27 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:56:49 - 0:09:27 - (2528/10020) Found 25/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:56:56 - 0:09:34 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:56:56 - 0:09:34 - (2560/10020) Found 24/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:57:05 - 0:09:43 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:57:06 - 0:09:44 - (2592/10020) Found 28/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 15:57:18 - 0:09:56 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'sb14', 'INT-', '1', 'mul', 'pow', 'sb23', 'INT-', '1', 'add', 'mul', 'pow', 'ab13', 'INT+', '4', 'mul', 'pow', 'sb24', 'INT+', '3', 'mul', 'ab34', 'sb12', 'mul', 'INT-', '1', 'mul', 'pow', 'ab13', 'INT+', '3', 'mul', 'pow', 'ab34', 'INT+', '2', 'mul', 'pow', 'sb24', 'INT+', '4']
+INFO - 12/21/25 15:57:18 - 0:09:56 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:57:19 - 0:09:56 - (2624/10020) Found 26/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:57:25 - 0:10:03 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:57:26 - 0:10:04 - (2656/10020) Found 26/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:57:32 - 0:10:10 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:57:32 - 0:10:10 - (2688/10020) Found 27/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:57:36 - 0:10:14 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:57:36 - 0:10:14 - (2720/10020) Found 26/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 15:57:42 - 0:10:20 - Exception TypeError when checking hypothesis: ['mul', 'INT-', '2', 'mul', 'pow', 'sb24', 'INT-', '4', 'mul', 'pow', 'sb34', 'INT-', '1', 'mul', 'pow', 'sb34', 'INT-', '1', 'mul', 'ab34']
+INFO - 12/21/25 15:57:42 - 0:10:20 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:57:42 - 0:10:20 - (2752/10020) Found 22/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 15:57:47 - 0:10:25 - Exception TypeError when checking hypothesis: []
+INFO - 12/21/25 15:57:48 - 0:10:26 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:57:48 - 0:10:26 - (2784/10020) Found 24/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 15:57:51 - 0:10:29 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab12', 'INT-', '1', 'mul', 'pow', 'sb12', 'INT-', '1', 'mul', 'pow', 'sb13', 'INT-', '1', 'mul', 'pow', 'sb14', 'INT-', '1', 'add', 'mul', 'pow', 'ab14', 'INT+', '3', 'mul', 'sb14', 'sb23', 'mul', 'pow', 'sb23', 'INT+', '2', 'mul', 'ab13', 'mul', 'ab14', 'mul', 'ab24']
+INFO - 12/21/25 15:57:52 - 0:10:30 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:57:52 - 0:10:30 - (2816/10020) Found 27/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:57:59 - 0:10:37 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:57:59 - 0:10:37 - (2848/10020) Found 29/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:58:03 - 0:10:41 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:58:03 - 0:10:41 - (2880/10020) Found 27/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:58:07 - 0:10:45 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:58:07 - 0:10:45 - (2912/10020) Found 22/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 15:58:11 - 0:10:49 - Exception TypeError when checking hypothesis: ['mul', 'INT-', '1', 'mul', 'pow', 'ab12', 'INT-', '1', 'mul', 'pow', 'ab14', 'INT-', '1', 'mul', 'pow', 'sb23', 'INT-', '1', 'mul', 'pow', 'sb24', 'INT+', '3', 'mul', 'ab23']
+INFO - 12/21/25 15:58:11 - 0:10:49 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:58:11 - 0:10:49 - (2944/10020) Found 27/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:58:18 - 0:10:56 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:58:18 - 0:10:56 - (2976/10020) Found 24/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:58:22 - 0:11:00 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:58:22 - 0:11:00 - (3008/10020) Found 27/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:58:32 - 0:11:10 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:58:33 - 0:11:11 - (3040/10020) Found 29/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:58:38 - 0:11:16 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:58:39 - 0:11:17 - (3072/10020) Found 27/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:58:42 - 0:11:20 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:58:43 - 0:11:20 - (3104/10020) Found 28/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:58:44 - 0:11:22 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:58:44 - 0:11:22 - (3136/10020) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:58:45 - 0:11:23 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:58:45 - 0:11:23 - (3168/10020) Found 21/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 15:58:47 - 0:11:25 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab12', 'INT-', '1', 'mul', 'pow', 'ab24', 'INT-', '1', 'mul', 'pow', 'ab34', 'INT-', '2', 'mul', 'pow', 'sb14', 'INT-', '1', 'mul', 'pow', 'sb24', 'INT-', '3']
+INFO - 12/21/25 15:58:47 - 0:11:25 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:58:47 - 0:11:25 - (3200/10020) Found 21/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 15:58:48 - 0:11:26 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab14', 'INT-', '1', 'mul', 'pow', 'ab24', 'INT-', '2', 'mul', 'pow', 'sb23', 'INT-', '2', 'mul', 'pow', 'sb24', 'INT-', '2', 'mul', 'pow', 'sb34', 'INT-', '1', 'mul', 'ab13']
+INFO - 12/21/25 15:58:49 - 0:11:27 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:58:49 - 0:11:27 - (3232/10020) Found 22/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:58:52 - 0:11:30 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:58:52 - 0:11:30 - (3264/10020) Found 24/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:58:54 - 0:11:32 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:58:54 - 0:11:32 - (3296/10020) Found 28/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:58:56 - 0:11:34 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:58:56 - 0:11:34 - (3328/10020) Found 23/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 15:59:06 - 0:11:44 - Exception TypeError when checking hypothesis: ['add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab14', 'INT+', '2', 'mul', 'pow', 'ab34', 'INT+', '4', 'mul', 'pow', 'sb24', 'INT+', '3', 'ab23', 'mul', 'INT-', '1', 'mul', 'pow', 'ab13', 'INT+', '2', 'mul', 'pow', 'ab34', 'INT+', '2', 'mul', 'pow', 'sb12', 'INT+', '2', 'mul', 'pow', 'sb23', 'INT+', '2', 'mul', 'pow', '2', 'INT+', 'mul', 'INT-', 'pow']
+INFO - 12/21/25 15:59:06 - 0:11:44 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:59:06 - 0:11:44 - (3360/10020) Found 11/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:59:17 - 0:11:55 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:59:18 - 0:11:56 - (3392/10020) Found 13/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 15:59:26 - 0:12:04 -     Found 30/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:59:26 - 0:12:04 - (3424/10020) Found 17/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 15:59:35 - 0:12:13 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'sb24', 'INT-', '1', 'add', 'mul', 'pow', 'sb34', 'INT+', '3', 'mul', 'ab12', 'mul', 'ab24', 'mul', 'ab34']
+ERROR - 12/21/25 15:59:35 - 0:12:13 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'sb24', 'INT-', '1', 'add', 'mul', 'pow', 'sb34', 'INT+', '3', 'mul', 'ab12', 'mul', 'ab24', 'mul', 'ab34', 'mul']
+ERROR - 12/21/25 15:59:35 - 0:12:13 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab13', 'INT-', '1', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab13', 'INT+', '2', 'mul', 'pow', 'ab34', 'INT+', '3', 'mul', 'pow', 'sb13', 'INT+', '2', 'sb34', 'mul', 'INT-', '1', 'mul', 'pow', 'ab14', 'INT+', '2', 'mul', 'pow', 'sb12', 'INT+', '2', 'mul', 'ab12', 'mul', 'ab23', 'mul', 'ab34', 'mul', 'sb14']
+INFO - 12/21/25 15:59:37 - 0:12:15 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:59:37 - 0:12:15 - (3456/10020) Found 12/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 15:59:55 - 0:12:33 - Exception TypeError when checking hypothesis: ['mul', 'INT-', '1', 'mul', 'pow', 'sb13', 'INT+', '2', 'mul', 'pow', 'sb24', 'INT+', '3', 'mul', 'ab14', 'mul', 'ab23']
+ERROR - 12/21/25 15:59:55 - 0:12:33 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'sb24', 'INT-', '1', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'sb13', 'INT+', '2', 'mul', 'ab12', 'sb24', 'mul', 'ab23', 'mul', 'sb13', 'mul', 'sb23', 'sb34', 'sb34']
+INFO - 12/21/25 15:59:55 - 0:12:33 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 15:59:56 - 0:12:34 - (3488/10020) Found 16/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:00:04 - 0:12:42 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'sb23', 'INT-', '2', 'mul', 'pow', 'sb34', 'INT-', '4', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab34', 'INT+', '4', 'pow', 'sb13', 'INT+', '2', 'mul', 'pow', 'ab24', 'INT+', '2', 'mul', 'pow', 'sb12', 'INT+', '3', 'mul', 'pow', 'ab34', 'INT+', '2', 'pow']
+ERROR - 12/21/25 16:00:04 - 0:12:42 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'sb23', 'INT-', '2', 'mul', 'pow', 'sb34', 'INT-', '4', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab34', 'INT+', '4', 'pow', 'sb13', 'INT+', '2', 'mul', 'pow', 'ab24', 'INT+', '2', 'mul', 'pow', 'sb12', 'INT+', '3', 'mul', 'pow', 'ab34', 'INT+', '2']
+ERROR - 12/21/25 16:00:06 - 0:12:44 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'sb23', 'INT-', '1', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab24', 'INT+', '2', 'mul', 'pow', 'sb13', 'INT+', '3', 'mul', 'ab12', 'mul', 'ab13', 'sb12', 'mul', 'INT-', '1', 'mul', 'pow', 'ab24', 'INT+', '3', 'mul', 'ab14', 'mul', 'sb12', 'mul', 'sb13', 'add']
+INFO - 12/21/25 16:00:06 - 0:12:44 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:00:07 - 0:12:45 - (3520/10020) Found 17/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:00:24 - 0:13:02 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:00:25 - 0:13:03 - (3552/10020) Found 13/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:00:30 - 0:13:08 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:00:30 - 0:13:08 - (3584/10020) Found 10/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:00:42 - 0:13:20 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'sb14', 'INT-', '2', 'mul', 'pow', 'sb34', 'INT-', '1', 'add', 'mul', 'pow', 'ab13', 'INT+', '2', 'mul', 'pow', 'sb13', 'INT+', '2', 'mul', 'ab23', 'sb12', 'mul', 'pow', 'ab23', 'INT+', '3', 'mul', 'sb12', 'pow', 'sb23', 'INT+', '2', 'sb12']
+INFO - 12/21/25 16:00:43 - 0:13:21 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:00:44 - 0:13:22 - (3616/10020) Found 12/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:00:54 - 0:13:32 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:00:54 - 0:13:32 - (3648/10020) Found 11/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:01:04 - 0:13:42 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:01:05 - 0:13:43 - (3680/10020) Found 15/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:01:30 - 0:14:08 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab24', 'INT-', '1', 'mul', 'pow', 'sb13', 'INT-', '1', 'mul', 'pow', 'sb34', 'INT-', '1', 'mul', 'ab14']
+INFO - 12/21/25 16:01:31 - 0:14:09 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:01:31 - 0:14:09 - (3712/10020) Found 12/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:01:40 - 0:14:18 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:01:41 - 0:14:19 - (3744/10020) Found 19/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:01:54 - 0:14:32 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:01:54 - 0:14:32 - (3776/10020) Found 16/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:02:10 - 0:14:48 - Exception TypeError when checking hypothesis: ['mul']
+ERROR - 12/21/25 16:02:12 - 0:14:50 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'sb14', 'INT-', '1', 'mul', 'pow', 'sb24', 'INT-', '1', 'add', 'mul', 'pow', 'ab24', 'INT+', '2', 'mul', 'ab13', 'mul', 'ab14', 'mul', 'sb12', 'sb24', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab34', 'INT+', '2', 'mul', 'ab12', 'mul', 'ab14', 'mul', 'sb14', 'sb23', 'mul', 'INT-', '1', 'mul', 'pow', 'sb12', 'INT+', '2', 'mul', 'ab12', 'mul', 'ab13', 'mul', 'ab14']
+INFO - 12/21/25 16:02:12 - 0:14:50 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:02:13 - 0:14:51 - (3808/10020) Found 12/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:02:23 - 0:15:01 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:02:23 - 0:15:01 - (3840/10020) Found 13/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:02:36 - 0:15:14 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'sb12', 'INT-', '3', 'mul', 'pow', 'sb13', 'INT-', '2', 'add', 'mul', 'pow', 'ab23', 'INT+', '2', 'mul', 'ab12', 'sb34', 'mul', 'pow', 'sb34', 'INT+', '2', 'mul', 'ab23', 'mul', 'mul', 'ab12', 'mul', 'ab23', 'sb14']
+ERROR - 12/21/25 16:02:38 - 0:15:16 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'sb24', 'INT-', '1', 'add', 'mul', 'pow', 'sb13', 'INT+', '3', 'mul', 'pow', 'sb34', 'INT+', '2', 'mul', 'ab13', 'mul', 'ab23', 'sb24', 'mul', 'INT-', '1', 'mul', 'pow', 'sb34', 'INT+', '3', 'mul', 'ab23', 'mul', 'ab34', 'mul', 'sb13', 'add']
+ERROR - 12/21/25 16:02:38 - 0:15:16 - Exception TypeError when checking hypothesis: ['mul', 'INT-', '1', 'mul', 'pow', 'ab34', 'INT+', '2', 'mul', 'pow', 'sb12', 'INT-', '1', 'mul', 'pow', 'sb23', 'INT-', '3', 'mul', 'ab23']
+INFO - 12/21/25 16:02:38 - 0:15:16 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:02:39 - 0:15:17 - (3872/10020) Found 17/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:02:53 - 0:15:31 - Exception TypeError when checking hypothesis: ['mul', 'INT-', '1', 'mul', 'pow', 'ab23', 'INT+', '5', 'mul', 'pow', 'sb12', 'INT-', '2', 'mul', 'pow', 'sb13', 'INT-', '1', 'mul', 'pow', 'sb14', 'INT-', '1', 'mul', 'pow', 'sb23', 'INT-', '1', 'mul', 'pow', 'sb34', 'INT+', '2']
+INFO - 12/21/25 16:02:55 - 0:15:33 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:02:55 - 0:15:33 - (3904/10020) Found 10/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:03:11 - 0:15:48 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:03:11 - 0:15:49 - (3936/10020) Found 15/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:03:15 - 0:15:53 - Exception TypeError when checking hypothesis: ['mul', 'INT-', '1', 'mul', 'pow', 'ab23', 'INT+', '2', 'mul', 'pow', 'sb12', 'INT-', '1', 'mul', 'pow', 'sb13', 'INT-', '1', 'mul', 'pow', 'sb34', 'INT-', '4', 'mul', 'ab12', 'mul', 'ab13']
+INFO - 12/21/25 16:03:15 - 0:15:53 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:03:15 - 0:15:53 - (3968/10020) Found 16/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:03:23 - 0:16:01 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:03:25 - 0:16:03 - (4000/10020) Found 13/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:03:52 - 0:16:30 - Exception TypeError when checking hypothesis: ['mul', 'INT-', '1', 'mul', 'pow', 'ab34', 'INT-', '4', 'mul', 'pow', 'sb13', 'INT-', '1', 'mul', 'pow', 'sb24', 'INT-', '2', 'mul', 'ab12', 'mul', 'ab14', 'mul', 'ab23', 'mul', 'sb14']
+INFO - 12/21/25 16:03:55 - 0:16:33 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:03:55 - 0:16:33 - (4032/10020) Found 15/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:04:03 - 0:16:41 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab14', 'INT+', '2', 'mul', 'pow', 'ab34', 'INT+', '2', 'mul', 'pow', 'sb12', 'INT-', '2', 'mul', 'pow', 'sb24', 'INT-', '1', 'mul', 'ab23', 'mul', 'sb14']
+ERROR - 12/21/25 16:04:04 - 0:16:42 - Exception TypeError when checking hypothesis: ['mul', 'INT-', '2', 'mul', 'pow', 'ab34', 'INT-', '1', 'mul', 'pow', 'sb23', 'INT+', '2', 'mul', 'ab23', 'mul', 'ab24']
+ERROR - 12/21/25 16:04:04 - 0:16:42 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab34', 'INT-', '2', 'mul', 'pow', 'sb13', 'INT-', '1', 'add', 'mul', 'pow', 'sb12', 'INT+', '3', 'mul', 'pow', 'sb24', 'INT+', '2', 'mul', 'ab12', 'sb14', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'sb12', 'INT+', '2', 'mul', 'pow', 'sb14', 'INT+', '2', 'mul', 'ab13', 'mul', 'sb23', 'sb24', 'mul', 'INT-', '1', 'mul', 'pow', 'sb12', 'INT+', '2', 'mul', 'pow', 'sb24', 'INT+', '2', 'mul', 'ab23', 'add']
+INFO - 12/21/25 16:04:04 - 0:16:42 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:04:05 - 0:16:43 - (4064/10020) Found 18/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:04:17 - 0:16:55 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:04:17 - 0:16:55 - (4096/10020) Found 20/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:04:36 - 0:17:14 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:04:37 - 0:17:15 - (4128/10020) Found 18/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:04:53 - 0:17:31 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:04:53 - 0:17:31 - (4160/10020) Found 18/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:05:01 - 0:17:39 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab34', 'INT-', '1', 'add', 'mul', 'pow', 'ab14', 'INT+', '3']
+INFO - 12/21/25 16:05:03 - 0:17:41 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:05:03 - 0:17:41 - (4192/10020) Found 14/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:05:11 - 0:17:49 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:05:12 - 0:17:50 - (4224/10020) Found 14/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:05:28 - 0:18:06 -     Found 28/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:05:28 - 0:18:06 - (4256/10020) Found 18/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:05:34 - 0:18:12 - Exception TypeError when checking hypothesis: ['mul', 'INT-', '1', 'mul', 'pow', 'ab13', 'INT+', '2', 'mul', 'pow', 'ab24', 'INT-', '3', 'mul', 'pow', 'ab34', 'INT-', '3', 'mul', 'pow', 'sb24', 'INT+', '2', 'mul', 'ab14', 'mul', 'sb12']
+ERROR - 12/21/25 16:05:36 - 0:18:14 - Exception TypeError when checking hypothesis: ['pow', 'ab13', 'INT+', 'INT+', '3']
+INFO - 12/21/25 16:05:37 - 0:18:15 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:05:37 - 0:18:15 - (4288/10020) Found 21/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:05:55 - 0:18:33 -     Found 30/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:05:55 - 0:18:33 - (4320/10020) Found 18/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:06:13 - 0:18:51 - Exception TypeError when checking hypothesis: ['pow']
+INFO - 12/21/25 16:06:14 - 0:18:52 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:06:15 - 0:18:53 - (4352/10020) Found 18/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:06:30 - 0:19:08 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:06:30 - 0:19:08 - (4384/10020) Found 15/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:07:01 - 0:19:39 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab24', 'INT-', '1', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab13', 'INT+', '4', 'mul', 'pow', 'ab23', 'INT+', '2', 'mul', 'pow', 'sb12', 'INT+', '2', 'mul', 'pow', 'sb24', 'INT+', '2', 'mul', 'ab12', 'sb13', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab13', 'INT+', '3', 'mul', 'pow', 'ab23', 'INT+', '2', 'mul', 'pow', 'sb24', 'INT+', '2', 'mul', 'ab14', 'mul', 'ab34', 'mul', 'sb12', 'mul', 'sb14', 'sb34', 'mul', 'INT-', '1', 'mul', 'pow', 'ab13', 'INT+', '2', 'mul', 'pow', 'ab34', 'INT+', '2', 'mul', 'pow', 'sb24', 'INT+', '3', 'mul', 'ab12', 'mul', 'ab23', 'mul', 'sb12', 'mul', 'sb34']
+INFO - 12/21/25 16:07:03 - 0:19:41 -     Found 30/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:07:03 - 0:19:41 - (4416/10020) Found 19/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:07:12 - 0:19:50 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:07:12 - 0:19:50 - (4448/10020) Found 15/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:07:26 - 0:20:04 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:07:26 - 0:20:04 - (4480/10020) Found 12/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:07:34 - 0:20:12 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab34', 'INT-', '1', 'mul', 'pow', 'sb13', 'INT-', '1', 'add', 'mul', 'pow', 'sb12', 'INT+', '2', 'mul', 'pow', 'sb14', 'INT+', '2', 'ab14', 'mul', 'INT-', '1', 'mul', 'pow', 'sb12', 'INT+', '3', 'mul', 'ab12', 'mul', 'sb14']
+ERROR - 12/21/25 16:07:34 - 0:20:12 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab12', 'INT-', '1', 'mul', 'pow', 'ab24', 'INT-', '1', 'mul', 'pow', 'sb14', 'INT-', '1', 'ab34', 'sb34']
+ERROR - 12/21/25 16:07:34 - 0:20:12 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab12', 'INT-', '1', 'mul', 'pow', 'ab24', 'INT-', '1', 'mul', 'pow', 'sb14', 'INT-', '1', 'ab34', 'sb23']
+INFO - 12/21/25 16:07:37 - 0:20:15 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:07:37 - 0:20:15 - (4512/10020) Found 17/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:08:00 - 0:20:38 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'sb23', 'INT-', '1', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab13', 'INT+', '3', 'mul', 'pow', 'sb12', 'INT+', '2', 'mul', 'pow', 'sb24', 'INT+', '2', 'mul', 'pow', 'sb34', 'INT+', '2', 'mul', 'ab14', 'sb14', 'mul', 'INT-', '1', 'mul', 'pow', 'ab13', 'INT+', '3', 'mul', 'pow', 'sb24', 'INT+', '2', 'mul', 'pow', 'sb34', 'INT+', '2', 'mul', 'ab34', 'add']
+INFO - 12/21/25 16:08:02 - 0:20:40 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:08:02 - 0:20:40 - (4544/10020) Found 21/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:08:15 - 0:20:53 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:08:15 - 0:20:53 - (4576/10020) Found 18/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:08:23 - 0:21:01 - Exception TypeError when checking hypothesis: ['pow']
+ERROR - 12/21/25 16:08:23 - 0:21:01 - Exception TypeError when checking hypothesis: ['pow']
+INFO - 12/21/25 16:08:25 - 0:21:03 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:08:25 - 0:21:03 - (4608/10020) Found 19/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:08:35 - 0:21:13 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:08:35 - 0:21:13 - (4640/10020) Found 22/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:08:47 - 0:21:25 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:08:47 - 0:21:25 - (4672/10020) Found 17/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:09:02 - 0:21:40 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:09:02 - 0:21:40 - (4704/10020) Found 15/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:09:09 - 0:21:47 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'sb12', 'INT-', '2', 'mul', 'pow', 'sb23', 'INT-', '1', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab12', 'INT+', '2', 'mul', 'pow', 'sb34', 'INT+', '2', 'mul', 'ab13', 'sb12', 'mul', 'INT-', '1', 'mul', 'pow', 'sb34', 'INT+', '3', 'mul', 'ab12', 'add']
+INFO - 12/21/25 16:09:10 - 0:21:48 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:09:10 - 0:21:48 - (4736/10020) Found 18/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:09:24 - 0:22:02 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:09:24 - 0:22:02 - (4768/10020) Found 19/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:09:31 - 0:22:09 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:09:32 - 0:22:10 - (4800/10020) Found 15/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:09:48 - 0:22:26 - Exception TypeError when checking hypothesis: ['pow']
+INFO - 12/21/25 16:09:50 - 0:22:28 -     Found 30/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:09:50 - 0:22:28 - (4832/10020) Found 18/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:10:01 - 0:22:39 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:10:02 - 0:22:40 - (4864/10020) Found 14/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:10:14 - 0:22:52 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab23', 'INT-', '1', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'sb12', 'INT+', '2', 'mul', 'pow', 'sb34', 'INT+', '2', 'mul', 'ab24', 'mul', 'ab34', 'sb24', 'mul', 'pow', 'sb23', 'INT+', '2', 'mul', 'ab23', 'mul', 'ab24', 'mul', 'sb12', 'mul', 'sb14', 'sb24', 'sb24']
+ERROR - 12/21/25 16:10:16 - 0:22:54 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab12', 'INT+', '3', 'mul', 'pow', 'ab23', 'INT+', '2', 'mul', 'pow', 'sb13', 'INT-', '2', 'mul', 'pow', 'sb24', 'INT-', '1', 'mul', 'ab14', 'mul', 'ab24', 'mul', 'sb14']
+INFO - 12/21/25 16:10:16 - 0:22:54 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:10:17 - 0:22:55 - (4896/10020) Found 17/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:10:29 - 0:23:07 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:10:29 - 0:23:07 - (4928/10020) Found 18/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:10:43 - 0:23:21 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:10:44 - 0:23:22 - (4960/10020) Found 19/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:10:51 - 0:23:29 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab14', 'INT-', '2', 'mul', 'pow', 'sb12', 'INT-', '2', 'mul', 'pow', 'sb23', 'INT-', '1', 'add', 'mul', 'pow', 'sb14', 'INT+', '2', 'mul', 'ab14', 'sb34', 'add', 'mul', 'ab13', 'mul', 'sb13', 'mul', 'sb14', 'sb34', 'mul', 'ab24', 'mul', 'sb14', 'mul', 'sb24', 'sb34', 'sb34']
+INFO - 12/21/25 16:10:52 - 0:23:30 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:10:52 - 0:23:30 - (4992/10020) Found 20/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:10:56 - 0:23:34 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab24', 'INT-', '1', 'add', 'mul', 'pow', 'ab24', 'INT+', '2', 'mul', 'pow', 'sb24', 'INT+', '2', 'sb14', 'mul', 'INT-', '1', 'mul', 'pow', 'ab14', 'INT+', '2', 'pow', 'sb14', 'INT+', '3', 'sb14']
+ERROR - 12/21/25 16:10:57 - 0:23:35 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab14', 'INT-', '2', 'mul', 'pow', 'ab23', 'INT-', '2', 'mul', 'pow', 'sb14', 'INT-', '2', 'add', 'mul', 'pow', 'ab23', 'INT+', '2', 'mul', 'pow', 'ab34', 'INT+', '2', 'mul', 'pow', 'sb13', 'INT+', '2', 'pow', 'sb23', 'INT+', '2', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab34', 'INT+', '3', 'mul', 'pow', 'sb13', 'INT+', '2', 'mul', 'ab24', 'mul', 'sb24', 'sb34', 'mul', 'INT-', '1', 'mul', 'pow', 'sb13', 'INT+', '3', 'mul', 'ab13', 'mul', 'ab14', 'mul', 'ab23', 'mul', 'ab34', 'mul', 'sb12']
+INFO - 12/21/25 16:10:58 - 0:23:36 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:10:58 - 0:23:36 - (5024/10020) Found 22/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:11:05 - 0:23:43 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:11:05 - 0:23:43 - (5056/10020) Found 16/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:11:12 - 0:23:50 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab14', 'INT-', '1', 'mul', 'pow', 'sb23', 'INT-', '2', 'add', 'mul', 'pow', 'ab12', 'INT+', '3', 'mul', 'pow', 'sb12', 'INT+', '2', 'mul', 'ab23', 'mul', 'ab24', 'sb34', 'mul', 'pow', 'ab24', 'INT+', '2', 'mul', 'ab12', 'mul', 'ab14', 'mul', 'ab23', 'mul', 'sb14', 'mul', 'sb24', '2', 'sb34']
+INFO - 12/21/25 16:11:13 - 0:23:51 -     Found 30/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:11:13 - 0:23:51 - (5088/10020) Found 17/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:11:20 - 0:23:58 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab12', 'INT+', '3', 'mul', 'pow', 'ab13', 'INT+', '2', 'mul', 'pow', 'ab14', 'INT-', '1', 'mul', 'pow', 'sb24', 'INT+', '4']
+ERROR - 12/21/25 16:11:20 - 0:23:58 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab14', 'INT-', '1', 'mul', 'pow', 'sb12', 'INT-', '3', 'mul', 'pow', 'sb24', 'INT-', '1', 'add', 'mul', 'pow', 'ab12', 'INT+', '2', 'mul', 'pow', 'ab13', 'INT+', '2', 'mul', 'ab23', 'mul', 'ab24', 'ab34', 'mul', 'INT+', '2', 'mul', 'pow', 'ab12', 'INT+', '3', 'mul', 'ab13', 'mul', 'ab23', 'mul', 'ab34']
+INFO - 12/21/25 16:11:21 - 0:23:59 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:11:22 - 0:24:00 - (5120/10020) Found 15/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:11:38 - 0:24:16 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab34', 'INT-', '3', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab34', 'INT+', '2', 'mul', 'pow', 'sb14', 'INT+', '2', 'mul', 'pow', 'sb23', 'INT+', '2', 'mul', 'pow', 'sb24', 'INT+', '2', 'pow', 'sb34', 'INT+', '2', 'add', 'mul', 'pow', 'ab13', 'INT+', '2', 'mul', 'pow', 'sb12', 'INT+', '2', 'mul', 'pow', 'sb34', 'INT+', '3', 'mul', 'sb12', 'mul', 'sb14', 'sb23', 'mul', 'pow', 'sb12', 'INT+', '2', 'mul', 'pow', 'sb24', 'INT+', '2', 'mul', 'ab12', 'mul', 'ab13', 'mul', 'sb13', 'mul', 'sb14', 'mul', 'sb23', 'sb34', 'sb34']
+ERROR - 12/21/25 16:11:38 - 0:24:16 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab34', 'INT-', '3', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab34', 'INT+', '2', 'mul', 'pow', 'sb14', 'INT+', '2', 'mul', 'pow', 'sb23', 'INT+', '2', 'mul', 'pow', 'sb24', 'INT+', '2', 'pow', 'sb34', 'INT+', '2', 'add', 'mul', 'pow', 'ab13', 'INT+', '2', 'mul', 'pow', 'sb12', 'INT+', '2', 'mul', 'pow', 'sb34', 'INT+', '3', 'mul', 'sb14', 'mul', 'sb23', 'sb24', 'mul', 'pow', 'sb12', 'INT+', '2', 'mul', 'pow', 'sb24', 'INT+', '2', 'mul', 'ab12', 'mul', 'ab13', 'mul', 'sb13', 'mul', 'sb14', 'mul', 'sb23', 'sb34', 'sb34']
+INFO - 12/21/25 16:11:40 - 0:24:18 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:11:41 - 0:24:19 - (5152/10020) Found 15/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:12:10 - 0:24:48 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:12:11 - 0:24:49 - (5184/10020) Found 20/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:12:17 - 0:24:55 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab14', 'INT-', '1', 'mul', 'pow', 'ab24', 'INT-', '1', 'mul', 'pow', 'ab34', 'INT-', '1', 'mul', 'pow', 'sb13', 'INT-', '1', 'mul', 'pow', 'sb14', 'INT-', '1', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab13', 'INT+', '3', 'mul', 'ab12', 'sb12', 'mul', 'INT-', '1', 'mul', 'pow', 'ab13', 'INT+', '2', 'mul', 'ab12', 'add']
+INFO - 12/21/25 16:12:18 - 0:24:56 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:12:18 - 0:24:56 - (5216/10020) Found 17/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:12:27 - 0:25:05 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:12:28 - 0:25:06 - (5248/10020) Found 24/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:12:50 - 0:25:28 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:12:50 - 0:25:28 - (5280/10020) Found 21/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:13:01 - 0:25:39 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:13:01 - 0:25:39 - (5312/10020) Found 12/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:13:18 - 0:25:56 -     Found 30/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:13:19 - 0:25:57 - (5344/10020) Found 17/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:13:26 - 0:26:04 - Exception TypeError when checking hypothesis: ['mul', 'INT-', '1', 'mul', 'pow', 'ab13', 'INT-', '1', 'mul', 'pow', 'ab24', 'INT+', '2', 'mul', 'pow', 'ab34', 'INT-', '1', 'mul', 'pow', 'sb12', 'INT-', '1', 'mul', 'pow', 'sb24', 'INT-', '1', 'mul', 'pow', 'sb34', 'INT-', '1', 'mul', 'ab14']
+INFO - 12/21/25 16:13:29 - 0:26:07 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:13:29 - 0:26:07 - (5376/10020) Found 20/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:13:39 - 0:26:17 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab13', 'INT-', '3', 'mul', 'pow', 'ab14', 'INT-', '1', 'mul', 'pow', 'sb24', 'INT-', '4', 'mul', 'pow', 'sb34', 'INT-', '1', 'add', 'mul', 'pow', 'ab12', 'INT+', '2', 'mul', 'pow', 'ab13', 'INT+', '2', 'pow', 'sb13', 'INT+', '2', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab12', 'INT+', '3', 'mul', 'ab34', 'mul', 'sb14', 'sb23', 'mul', 'pow', 'ab12', 'INT+', '2', 'mul', 'ab14', 'mul', 'ab23', 'mul', 'sb12', 'mul', 'sb34']
+INFO - 12/21/25 16:13:41 - 0:26:19 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:13:41 - 0:26:19 - (5408/10020) Found 15/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:13:51 - 0:26:29 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:13:51 - 0:26:29 - (5440/10020) Found 18/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:13:58 - 0:26:36 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:13:58 - 0:26:36 - (5472/10020) Found 15/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:14:07 - 0:26:45 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab23', 'INT-', '1', 'add', 'mul', 'pow', 'sb13', 'INT+', '2', 'mul', 'pow', 'sb23', 'INT+', '2', 'mul', 'ab24', 'mul', 'sb14', 'sb24', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'sb13', 'INT+', '2', 'mul', 'pow', 'sb23', 'INT+', '2', 'mul', 'ab12', 'mul', 'sb12', 'sb14', 'mul', 'INT-', '1', 'mul', 'pow', 'sb13', 'INT+', '2', 'mul', 'ab24', 'mul', 'sb12', 'mul', 'sb23', 'add']
+ERROR - 12/21/25 16:14:08 - 0:26:46 - Exception TypeError when checking hypothesis: ['mul', 'INT-', '1', 'mul', 'pow', 'ab13', 'INT-', '2', 'mul', 'pow', 'ab14', 'INT-', '1', 'mul', 'pow', 'ab34', 'INT-', '1', 'mul', 'pow', 'sb13', 'INT-', '2', 'mul', 'pow', 'sb24', 'INT-', '3', 'mul', 'ab23']
+INFO - 12/21/25 16:14:09 - 0:26:47 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:14:09 - 0:26:47 - (5504/10020) Found 23/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:14:14 - 0:26:52 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:14:14 - 0:26:52 - (5536/10020) Found 15/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:14:18 - 0:26:56 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'sb23', 'INT-', '2', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab34', 'INT+', '3', 'pow', 'sb34', 'INT+', '2', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab34', 'INT+', '2', 'mul', 'ab14', 'mul', 'sb14', 'sb34', 'mul', 'INT-', '1', 'mul', 'ab13', 'mul', 'ab24', 'mul', 'ab34', 'mul', 'sb12', 'mul', 'sb34']
+INFO - 12/21/25 16:14:20 - 0:26:58 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:14:20 - 0:26:58 - (5568/10020) Found 21/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:14:46 - 0:27:24 - Exception TypeError when checking hypothesis: ['mul', 'INT-', '1', 'mul', 'pow', 'ab13', 'INT-', '1', 'mul', 'pow', 'sb12', 'INT-', '3', 'mul', 'pow', 'sb34', 'INT+', '2', 'mul', 'ab24']
+INFO - 12/21/25 16:14:46 - 0:27:24 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:14:46 - 0:27:24 - (5600/10020) Found 17/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:14:53 - 0:27:31 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab13', 'INT-', '1', 'mul', 'pow', 'ab34', 'INT-', '3', 'mul', 'pow', 'sb14', 'INT+', '2', 'mul', 'pow', 'sb34', 'INT-', '5', 'mul', 'ab14', 'mul', 'ab23', 'mul', 'sb23', '2']
+ERROR - 12/21/25 16:14:54 - 0:27:32 - Exception TypeError when checking hypothesis: ['mul', 'INT-', '1', 'mul', 'pow', 'ab12', 'INT-', '1', 'mul', 'pow', 'ab24', 'INT+', '3', 'pow', 'sb23', 'INT-', '1', 'INT+']
+INFO - 12/21/25 16:14:55 - 0:27:33 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:14:56 - 0:27:33 - (5632/10020) Found 16/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:15:00 - 0:27:38 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:15:00 - 0:27:38 - (5664/10020) Found 16/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:15:20 - 0:27:58 -     Found 30/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:15:20 - 0:27:58 - (5696/10020) Found 15/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:15:26 - 0:28:04 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:15:26 - 0:28:04 - (5728/10020) Found 22/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:15:40 - 0:28:18 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:15:41 - 0:28:19 - (5760/10020) Found 20/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:15:44 - 0:28:22 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:15:45 - 0:28:23 - (5792/10020) Found 14/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:15:50 - 0:28:28 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:15:50 - 0:28:28 - (5824/10020) Found 16/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:15:55 - 0:28:33 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:15:55 - 0:28:33 - (5856/10020) Found 16/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:16:01 - 0:28:39 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:16:01 - 0:28:39 - (5888/10020) Found 20/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:16:15 - 0:28:53 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab12', 'INT-', '4', 'mul', 'pow', 'ab24', 'INT-', '1', 'mul', 'pow', 'sb14', 'INT-', '1', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'sb34', 'INT+', '3', 'mul', 'ab34', 'sb13', 'mul', 'INT-', '1', 'mul', 'pow', 'sb34', 'INT+', '2', 'mul', 'ab24', 'add']
+INFO - 12/21/25 16:16:16 - 0:28:54 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:16:17 - 0:28:55 - (5920/10020) Found 21/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:16:21 - 0:28:59 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:16:21 - 0:28:59 - (5952/10020) Found 16/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:16:32 - 0:29:10 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:16:32 - 0:29:10 - (5984/10020) Found 19/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:16:36 - 0:29:14 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab12', 'INT-', '2', 'mul', 'pow', 'sb13', 'INT-', '1', 'mul', 'pow', 'sb23', 'INT-', '2', 'mul', 'pow', 'sb34', 'INT-', '1', 'mul', 'ab14']
+ERROR - 12/21/25 16:16:36 - 0:29:14 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab12', 'INT-', '2', 'mul', 'pow', 'ab34', 'INT-', '2', 'mul', 'pow', 'sb12', 'INT-', '1', 'mul', 'pow', 'sb13', 'INT-', '1', 'mul', 'pow', 'sb24', 'INT-', '3', 'add', 'mul', 'pow', 'sb14', 'INT+', '2', 'mul', 'pow', 'sb23', 'INT+', '3', 'mul', 'ab13', 'ab23', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab14', 'INT+', '2', 'mul', 'pow', 'sb14', 'INT+', '2', 'mul', 'sb12', 'mul', 'sb24', 'sb34', 'mul', 'pow', 'ab13', 'INT+', '2', 'mul', 'sb12', 'mul', 'sb13', 'mul', 'sb14', 'mul', 'sb23', 'sb34', 'sb34']
+INFO - 12/21/25 16:16:37 - 0:29:15 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:16:37 - 0:29:15 - (6016/10020) Found 21/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:16:40 - 0:29:18 - Exception TypeError when checking hypothesis: ['mul', 'INT-', '1', 'mul', 'pow', 'ab12', 'INT-', '1', 'mul', 'pow', 'ab23', 'INT-', '5', 'mul', 'pow', 'ab34', 'INT+', '2', 'mul', 'pow', 'sb12', 'INT+', '2', 'mul', 'pow', 'sb13', 'INT-', '1', 'mul', 'ab14']
+INFO - 12/21/25 16:16:42 - 0:29:20 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:16:42 - 0:29:20 - (6048/10020) Found 13/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:16:53 - 0:29:31 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:16:53 - 0:29:31 - (6080/10020) Found 27/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:17:02 - 0:29:40 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab12', 'INT-', '2', 'mul', 'pow', 'ab13', 'INT-', '2', 'mul', 'pow', 'ab24', 'INT+', '2', 'mul', 'pow', 'sb13', 'INT-', '1', 'mul', 'pow', 'sb14', 'INT-', '1', 'mul', 'pow', 'sb24', 'INT-', '1', 'mul', 'pow', 'sb34']
+INFO - 12/21/25 16:17:02 - 0:29:40 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:17:02 - 0:29:40 - (6112/10020) Found 16/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:17:13 - 0:29:51 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab12', 'INT-', '2', 'mul', 'pow', 'ab14', 'INT-', '1', 'mul', 'pow', 'sb12', 'INT-', '1', 'mul', 'pow', 'sb34', 'INT-', '1', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab34', 'INT+', '2', 'mul', 'pow', 'sb13', 'INT+', '3', 'mul', 'ab24', 'sb24', 'mul', 'INT-', '1', 'mul', 'pow', 'ab34', 'INT+', '2', 'mul', 'pow', 'sb13', 'INT+', '2', 'mul', 'ab24', 'add']
+INFO - 12/21/25 16:17:13 - 0:29:51 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:17:13 - 0:29:51 - (6144/10020) Found 15/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:17:30 - 0:30:08 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:17:30 - 0:30:08 - (6176/10020) Found 18/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:17:40 - 0:30:18 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab12', 'INT-', '1', 'mul', 'pow', 'sb13', 'INT-', '1', 'mul', 'pow', 'sb34', 'INT-', '1', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab14', 'INT+', '2', 'mul', 'pow', 'ab23', 'INT+', '4', 'mul', 'pow', 'ab34', 'INT+', '3', 'mul', 'sb12', 'sb14', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab23', 'INT+', '4', 'mul', 'pow', 'ab34', 'INT+', '4', 'mul', 'ab12', 'mul', 'sb12', 'sb23', 'mul', 'INT-', '1', 'mul', 'pow', 'ab13', 'INT+', '2', 'mul', 'pow', 'ab23', 'INT+', '3', 'mul', 'pow', 'ab34', 'INT+', '2', 'mul', 'pow', 'sb12', 'INT+', '2', 'mul', 'ab14', 'mul', 'ab24']
+INFO - 12/21/25 16:17:42 - 0:30:20 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:17:43 - 0:30:21 - (6208/10020) Found 19/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:17:50 - 0:30:28 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:17:50 - 0:30:28 - (6240/10020) Found 18/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:18:00 - 0:30:38 - Exception TypeError when checking hypothesis: ['mul', 'INT-', '1', 'mul', 'pow', 'ab12', 'INT-', '1', 'mul', 'pow', 'ab23', 'INT+', '2', 'mul', 'pow', 'sb12', 'INT-', '3', 'mul', 'pow', 'sb13', 'INT-', '1', 'mul', 'pow', 'sb14', 'INT-', '1', 'mul', 'ab13']
+INFO - 12/21/25 16:18:01 - 0:30:39 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:18:02 - 0:30:40 - (6272/10020) Found 20/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:18:12 - 0:30:50 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:18:12 - 0:30:50 - (6304/10020) Found 13/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:18:21 - 0:30:59 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab12', 'INT-', '1', 'mul', 'pow', 'ab23', 'INT-', '1', 'mul', 'pow', 'sb13', 'INT-', '1', 'mul', 'pow', 'sb34', 'INT-', '1', 'add', 'mul', 'ab12', 'mul', 'ab14', 'sb13', 'add', 'mul', 'INT-', '1', 'mul', 'ab12', 'mul', 'ab24', 'mul', 'sb23']
+ERROR - 12/21/25 16:18:21 - 0:30:59 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab12', 'INT-', '1', 'mul', 'pow', 'ab23', 'INT-', '1', 'mul', 'pow', 'sb12', 'INT-', '1', 'mul', 'pow', 'sb13', 'INT-', '1', 'add', 'mul', 'ab14', 'mul', 'ab34', 'sb13', 'add', 'mul', 'INT-', '1', 'mul', 'ab14', 'mul', 'ab24', 'mul', 'sb12']
+INFO - 12/21/25 16:18:22 - 0:31:00 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:18:23 - 0:31:01 - (6336/10020) Found 17/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:18:47 - 0:31:25 - Exception TypeError when checking hypothesis: ['mul', 'INT-', '2', 'mul', 'pow', 'ab12', 'INT-', '1', 'mul', 'pow', 'ab14', 'INT-', '1', 'mul', 'pow', 'ab34', 'INT-', '1', 'mul', 'pow', 'sb14', 'INT-', '1', 'sb23', '1']
+ERROR - 12/21/25 16:18:47 - 0:31:25 - Exception TypeError when checking hypothesis: ['mul', 'INT-', '1', 'mul', 'pow', 'ab12', 'INT-', '1', 'mul', 'pow', 'ab13', 'INT+', '2', 'mul', 'pow', 'ab14', 'INT-', '1', 'mul', 'pow', 'sb12', 'INT-', '1', 'mul', 'ab23']
+INFO - 12/21/25 16:18:47 - 0:31:25 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:18:48 - 0:31:26 - (6368/10020) Found 19/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:18:58 - 0:31:35 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:18:58 - 0:31:36 - (6400/10020) Found 14/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:19:09 - 0:31:47 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:19:09 - 0:31:47 - (6432/10020) Found 21/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:19:21 - 0:31:59 - Exception TypeError when checking hypothesis: ['mul', 'INT-', '1', 'mul', 'pow', 'ab12', 'INT+', '2', 'mul', 'pow', 'ab13', 'INT-', '4', 'mul', 'pow', 'ab24', 'INT+', '3', 'mul', 'pow', 'sb12', 'INT+', '2', 'mul', 'pow', 'sb23', 'INT+', '2', 'mul', 'pow', 'sb24', 'INT-', '1', 'mul', 'ab14']
+INFO - 12/21/25 16:19:22 - 0:32:00 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:19:23 - 0:32:01 - (6464/10020) Found 13/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:19:35 - 0:32:13 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab12', 'INT-', '1', 'mul', 'pow', 'ab13', 'INT-', '2', 'mul', 'pow', 'ab23', 'INT-', '1', 'mul', 'pow', 'sb24', 'INT-', '3', 'add', 'mul', 'pow', 'ab23', 'INT+', '3', 'mul', 'pow', 'sb12', 'INT+', '2', 'pow', 'sb13', 'INT+', '2', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab34', 'INT+', '3', 'mul', 'pow', 'sb13', 'INT+', '2', 'pow', 'sb14', 'INT+', '2', 'mul', 'INT-', '1', 'mul', 'pow', 'ab24', 'INT+', '2', 'mul', 'pow', 'sb12', 'INT+', '3', 'mul', 'ab23', 'pow', 'sb14', 'INT+', '2', 'sb14']
+INFO - 12/21/25 16:19:37 - 0:32:15 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:19:37 - 0:32:15 - (6496/10020) Found 14/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:19:48 - 0:32:26 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:19:49 - 0:32:27 - (6528/10020) Found 22/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:19:59 - 0:32:37 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:19:59 - 0:32:37 - (6560/10020) Found 17/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:20:07 - 0:32:45 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:20:07 - 0:32:45 - (6592/10020) Found 12/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:20:09 - 0:32:47 - Exception TypeError when checking hypothesis: ['mul', 'INT+', '2', 'mul', 'pow', 'ab12', 'INT+', '2', 'mul', 'pow', 'sb12', 'INT-', '1', 'mul', 'pow', 'sb13', 'INT+', '3', 'mul', 'pow', 'sb14', 'INT-', '2', 'mul', 'sb23', 'mul', 'sb34']
+ERROR - 12/21/25 16:20:10 - 0:32:48 - Exception TypeError when checking hypothesis: []
+INFO - 12/21/25 16:20:11 - 0:32:49 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:20:11 - 0:32:49 - (6624/10020) Found 10/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:20:15 - 0:32:53 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:20:15 - 0:32:53 - (6656/10020) Found 13/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:20:23 - 0:33:01 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:20:23 - 0:33:01 - (6688/10020) Found 14/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:20:39 - 0:33:17 -     Found 30/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:20:39 - 0:33:17 - (6720/10020) Found 13/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:20:51 - 0:33:29 -     Found 30/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:20:51 - 0:33:29 - (6752/10020) Found 10/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:21:05 - 0:33:43 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'sb24', 'INT-', '2', 'add', 'mul', 'pow', 'sb34', 'INT+', '2', 'mul', 'ab14', 'mul', 'sb14', 'sb23', 'mul', 'INT-', '2', 'mul', 'pow', 'sb34', 'INT+', '2', 'mul', 'ab12', 'mul', 'sb13', 'mul', 'sb23']
+INFO - 12/21/25 16:21:08 - 0:33:45 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:21:08 - 0:33:46 - (6784/10020) Found 10/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:21:31 - 0:34:09 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:21:32 - 0:34:10 - (6816/10020) Found 13/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:21:49 - 0:34:27 -     Found 29/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:21:51 - 0:34:29 - (6848/10020) Found 12/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:22:25 - 0:35:03 -     Found 29/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:22:25 - 0:35:03 - (6880/10020) Found 10/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:22:43 - 0:35:21 -     Found 28/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:22:44 - 0:35:22 - (6912/10020) Found 10/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:22:55 - 0:35:33 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'sb14', 'INT-', '1', 'mul', 'pow', 'sb24', 'INT-', '1', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab24', 'INT+', '2', 'mul', 'sb12', 'sb24', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'sb12', 'INT+', '2', 'mul', 'ab12', 'ab24', 'mul', 'INT-', '1', 'mul', 'ab24', 'mul', 'ab34', 'add']
+ERROR - 12/21/25 16:22:55 - 0:35:33 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab24', 'INT+', '2', 'mul', 'pow', 'sb14', 'INT-', '1', 'mul', 'pow', 'sb34', 'INT-', '1', 'mul', 'ab23']
+INFO - 12/21/25 16:22:57 - 0:35:35 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:22:59 - 0:35:37 - (6944/10020) Found 14/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:23:40 - 0:36:18 - Exception TypeError when checking hypothesis: ['add', 'mul', 'INT-', '1', 'mul', 'pow', 'sb12', 'INT+', '2', 'mul', 'pow', 'sb34', 'INT+', '2', 'mul', 'ab14', 'ab23', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'sb14', 'INT+', '2', 'mul', 'pow', 'sb23', 'INT+', '2', 'mul', 'ab13', 'ab24', 'mul', 'INT-', '1', 'mul', 'ab14', 'mul', 'ab23', 'mul', 'sb12', 'mul', 'sb13', 'mul', 'sb24']
+ERROR - 12/21/25 16:23:40 - 0:36:18 - Exception TypeError when checking hypothesis: ['add', 'mul', 'INT-', '1', 'mul', 'pow', 'sb14', 'INT+', '2', 'mul', 'pow', 'sb23', 'INT+', '2', 'mul', 'ab13', 'ab24', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'sb12', 'INT+', '2', 'mul', 'pow', 'sb34', 'INT+', '2', 'mul', 'ab14', 'ab23', 'mul', 'INT-', '1', 'mul', 'ab14', 'mul', 'ab23', 'mul', 'sb12', 'mul', 'sb13', 'mul', 'sb24']
+INFO - 12/21/25 16:23:41 - 0:36:19 -     Found 27/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:23:42 - 0:36:20 - (6976/10020) Found 10/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:23:55 - 0:36:33 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'sb34', 'INT-', '1', 'add', 'mul', 'pow', 'ab12', 'INT+', '3', 'mul', 'pow', 'mul', 'INT+', '2', 'mul', 'ab13', 'ab34', 'mul', 'pow', 'ab12', 'INT+', '2', 'mul', 'pow', 'ab13', 'INT+', '2', 'mul', 'ab14', 'mul', 'ab23', 'ab24']
+ERROR - 12/21/25 16:23:55 - 0:36:33 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'sb34', 'INT-', '1', 'add', 'mul', 'pow', 'ab12', 'INT+', '3', 'mul', 'pow', 'mul', 'INT+', '2', 'mul', 'ab13', 'ab34', 'mul', 'pow', 'ab12', 'INT+', '2', 'mul', 'pow', 'ab13', 'INT+', '2', 'mul', 'ab23', 'ab24']
+INFO - 12/21/25 16:23:57 - 0:36:35 -     Found 28/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:23:57 - 0:36:35 - (7008/10020) Found 9/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:24:07 - 0:36:45 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'sb14', 'INT-', '1', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'sb24', 'INT+', '2', 'mul', 'ab23', 'mul', 'ab34', 'sb13', 'mul', 'INT-', '2', 'mul', 'pow', 'sb24', 'INT+', '2', 'mul', 'ab24', 'mul', 'ab34', 'mul', 'sb14']
+INFO - 12/21/25 16:24:10 - 0:36:48 -     Found 28/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:24:11 - 0:36:49 - (7040/10020) Found 8/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:24:22 - 0:37:00 - Exception TypeError when checking hypothesis: ['add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab12', 'INT+', '2', 'mul', 'pow', 'sb12', 'INT+', '3', 'mul', 'ab13', 'mul', 'ab34', 'sb14', 'add', 'mul', 'pow', 'ab13', 'INT+', '2', 'mul', 'pow', 'sb12', 'INT+', '2', 'mul', 'ab23', 'mul', 'ab24', 'mul', 'sb13', 'sb24', 'mul', 'INT-', '1', 'mul', 'pow', 'ab23', 'INT+', '2', 'mul', 'pow', 'ab34', 'INT+', '2', 'mul', 'pow', 'sb24', 'INT+', '2', 'mul', 'sb13', 'mul', 'sb23']
+INFO - 12/21/25 16:24:23 - 0:37:01 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:24:23 - 0:37:01 - (7072/10020) Found 12/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:24:40 - 0:37:18 - Exception TypeError when checking hypothesis: ['add', 'mul', 'pow', 'ab12', 'INT+', '2', 'mul', 'pow', 'sb23', 'INT+', '2', 'mul', 'ab34', 'sb24', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab13', 'INT+', '2', 'mul', 'pow', 'sb23', 'INT+', '2', 'mul', 'ab12', 'sb13', 'mul', 'INT-', '1', 'mul', 'ab12', 'mul', 'ab13', 'mul', 'ab14', 'mul', 'sb12', 'mul', 'sb23', 'mul', 'sb34']
+INFO - 12/21/25 16:24:42 - 0:37:20 -     Found 30/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:24:43 - 0:37:21 - (7104/10020) Found 14/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:25:08 - 0:37:46 - Exception TypeError when checking hypothesis: ['add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab12', 'INT+', '3', 'mul', 'pow', 'sb14', 'INT+', '3', 'ab14', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab12', 'INT+', '2', 'mul', 'pow', 'ab23', 'INT+', '2', 'mul', 'pow', 'sb34', 'INT+', '2', 'sb12', 'mul', 'pow', 'ab12', 'INT+', '3', 'mul', 'ab23', 'mul', 'sb12', 'mul', 'sb14', 'sb34', 'sb34']
+INFO - 12/21/25 16:25:09 - 0:37:47 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:25:10 - 0:37:48 - (7136/10020) Found 15/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:25:20 - 0:37:58 -     Found 30/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:25:21 - 0:37:59 - (7168/10020) Found 11/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:25:41 - 0:38:19 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'sb12', 'INT-', '1', 'mul', 'pow', 'sb14', 'INT-', '2', 'mul', 'pow', 'sb24', 'INT-', '2', 'add', 'mul', 'INT+', '2', 'mul', 'pow', 'ab13', 'INT+', '3', 'mul', 'ab14', 'ab24', 'mul', 'INT-', '1', 'mul', 'pow', 'ab13', 'INT+', '2', 'mul', 'pow', 'ab14', 'INT+', '2', 'ab23', 'mul']
+INFO - 12/21/25 16:25:43 - 0:38:21 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:25:43 - 0:38:21 - (7200/10020) Found 15/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:25:52 - 0:38:30 - Exception TypeError when checking hypothesis: ['mul', 'INT-', '1', 'mul', 'pow', 'ab24', 'INT+', '2', 'mul', 'pow', 'sb13', 'INT-', '1', 'mul', 'pow', 'sb14', 'INT+', '3', 'mul', 'pow', 'sb24', 'INT+', '2', 'mul', 'ab13', 'mul', 'ab14']
+INFO - 12/21/25 16:25:54 - 0:38:32 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:25:55 - 0:38:33 - (7232/10020) Found 12/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:26:21 - 0:38:59 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:26:22 - 0:39:00 - (7264/10020) Found 15/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:26:40 - 0:39:18 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab34', 'INT-', '2', 'mul', 'pow', 'sb24', 'INT-', '2', 'mul', 'pow', 'sb34', 'INT-', '3', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab13', 'INT+', '3', 'mul', 'pow', 'ab24', 'INT+', '2', 'mul', 'ab23', 'sb13', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab14', 'INT+', '2', 'mul', 'pow', 'ab23', 'INT+', '2', 'mul', 'ab13', 'mul', 'ab24', 'sb14', 'mul', 'INT-', '1', 'mul', 'pow', 'ab23', 'INT+', '3', 'mul', 'ab12', 'mul', 'ab13', 'mul', 'ab24', 'mul', 'mul', 'mul', 'ab14', 'sb12']
+ERROR - 12/21/25 16:26:40 - 0:39:18 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab34', 'INT-', '2', 'mul', 'pow', 'sb24', 'INT-', '2', 'mul', 'pow', 'sb34', 'INT-', '3', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab13', 'INT+', '3', 'mul', 'pow', 'ab24', 'INT+', '2', 'mul', 'ab23', 'sb13', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab14', 'INT+', '2', 'mul', 'pow', 'ab23', 'INT+', '2', 'mul', 'ab13', 'mul', 'ab24', 'sb14', 'mul', 'INT-', '1', 'mul', 'pow', 'ab23', 'INT+', '3', 'mul', 'ab12', 'mul', 'ab13', 'mul', 'ab24', 'mul', 'mul', 'mul', 'ab34', 'sb23']
+INFO - 12/21/25 16:26:42 - 0:39:20 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:26:42 - 0:39:20 - (7296/10020) Found 8/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:27:01 - 0:39:39 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:27:01 - 0:39:39 - (7328/10020) Found 15/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:27:13 - 0:39:51 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:27:13 - 0:39:51 - (7360/10020) Found 15/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:27:24 - 0:40:02 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:27:24 - 0:40:02 - (7392/10020) Found 14/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:27:37 - 0:40:14 - Exception TypeError when checking hypothesis: ['mul', 'INT-', '1', 'mul', 'pow', 'ab12', 'INT+', '2', 'mul', 'pow', 'ab14', 'INT-', '1', 'mul', 'pow', 'ab34', 'INT-', '1', 'mul', 'ab13', 'mul', 'sb34']
+INFO - 12/21/25 16:27:38 - 0:40:16 -     Found 28/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:27:38 - 0:40:16 - (7424/10020) Found 13/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:28:00 - 0:40:38 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:28:00 - 0:40:38 - (7456/10020) Found 16/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:28:23 - 0:41:01 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:28:23 - 0:41:01 - (7488/10020) Found 17/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:28:45 - 0:41:23 -     Found 29/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:28:47 - 0:41:25 - (7520/10020) Found 13/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:29:27 - 0:42:05 -     Found 28/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:29:27 - 0:42:05 - (7552/10020) Found 13/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:29:44 - 0:42:22 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:29:44 - 0:42:22 - (7584/10020) Found 14/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:30:02 - 0:42:40 -     Found 30/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:30:02 - 0:42:40 - (7616/10020) Found 16/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:30:16 - 0:42:54 - Exception TypeError when checking hypothesis: ['pow']
+ERROR - 12/21/25 16:30:18 - 0:42:56 - Exception TypeError when checking hypothesis: ['mul', 'INT+', '2', 'mul', 'pow', 'sb12', 'INT+', '2', 'mul', 'pow', 'sb13', 'INT-', '1', 'mul', 'pow', 'sb24', 'INT-', '3', 'mul', 'ab23']
+INFO - 12/21/25 16:30:18 - 0:42:56 -     Found 29/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:30:19 - 0:42:57 - (7648/10020) Found 12/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:30:37 - 0:43:15 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'sb13', 'INT-', '2', 'mul', 'pow', 'sb14', 'INT-', '1', 'mul', 'ab14']
+ERROR - 12/21/25 16:30:38 - 0:43:16 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab12', 'INT+', '3', 'mul', 'pow', 'sb12', 'INT-', '3', 'mul', 'pow', 'sb13', 'INT-', '1', 'mul', 'pow', 'sb34', 'INT-', '1', 'mul', 'ab13']
+ERROR - 12/21/25 16:30:39 - 0:43:17 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'sb12', 'INT-', '2', 'mul', 'pow', 'sb13', 'INT-', '1', 'mul', 'ab13', 'ab24', 'sb34']
+INFO - 12/21/25 16:30:41 - 0:43:19 -     Found 30/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:30:42 - 0:43:20 - (7680/10020) Found 13/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:31:01 - 0:43:39 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:31:02 - 0:43:40 - (7712/10020) Found 12/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:31:23 - 0:44:01 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab34', 'INT-', '1', 'mul', 'pow', 'sb24', 'INT-', '1', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'sb12', 'INT+', '3', 'ab12', 'mul', 'pow', 'sb12', 'INT+', '2', 'mul', 'ab14', 'mul', 'sb14']
+ERROR - 12/21/25 16:31:25 - 0:44:03 - Exception TypeError when checking hypothesis: ['1']
+INFO - 12/21/25 16:31:26 - 0:44:04 -     Found 28/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:31:27 - 0:44:05 - (7744/10020) Found 12/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:31:46 - 0:44:24 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:31:48 - 0:44:26 - (7776/10020) Found 9/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:32:13 - 0:44:51 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab23', 'INT-', '4', 'mul', 'pow', 'ab24', 'INT-', '1', 'mul', 'pow', 'sb14', 'INT-', '1', 'add', 'mul', 'pow', 'sb12', 'INT+', '4', 'mul', 'pow', 'sb23', 'INT+', '2', 'mul', 'ab34', 'sb24', 'mul', 'INT-', '1', 'mul', 'pow', 'sb12', 'INT+', '5', 'mul', 'ab13', 'pow', 'sb23', 'INT+', '2', 'sb24']
+ERROR - 12/21/25 16:32:15 - 0:44:53 - Exception TypeError when checking hypothesis: ['pow']
+ERROR - 12/21/25 16:32:18 - 0:44:56 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab23', 'INT-', '1', 'mul', 'pow', 'ab34', 'INT-', '1', 'add', 'mul', 'ab12', 'mul', 'sb14', 'sb23', 'add', 'mul', 'ab14', 'mul', 'sb14', 'sb34', 'mul', 'ab23', 'mul', 'sb23', 'sb34', 'sb34']
+INFO - 12/21/25 16:32:18 - 0:44:56 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:32:18 - 0:44:56 - (7808/10020) Found 10/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:32:31 - 0:45:09 - Exception TypeError when checking hypothesis: ['pow']
+INFO - 12/21/25 16:32:34 - 0:45:12 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:32:35 - 0:45:13 - (7840/10020) Found 14/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:32:49 - 0:45:27 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:32:49 - 0:45:27 - (7872/10020) Found 13/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:33:05 - 0:45:43 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab23', 'INT-', '2', 'mul', 'pow', 'ab24', 'INT-', '1', 'mul', 'pow', 'sb14', 'INT-', '1', 'add', 'mul', 'pow', 'ab13', 'INT+', '2', 'mul', 'pow', 'ab14', 'INT+', '2', 'mul', 'pow', 'ab34', 'INT+', '2', 'pow', 'sb23', 'INT+', '2', 'mul', 'INT+', '2', 'mul', 'pow', 'ab14', 'INT+', '4', 'mul', 'ab13', 'mul', 'ab34', 'add']
+INFO - 12/21/25 16:33:06 - 0:45:44 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:33:06 - 0:45:44 - (7904/10020) Found 12/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:33:23 - 0:46:01 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:33:24 - 0:46:02 - (7936/10020) Found 11/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:33:42 - 0:46:20 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:33:43 - 0:46:21 - (7968/10020) Found 20/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:33:51 - 0:46:29 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:33:52 - 0:46:30 - (8000/10020) Found 18/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:34:05 - 0:46:43 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:34:05 - 0:46:43 - (8032/10020) Found 16/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:34:18 - 0:46:56 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:34:19 - 0:46:57 - (8064/10020) Found 7/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:34:41 - 0:47:19 -     Found 30/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:34:44 - 0:47:22 - (8096/10020) Found 13/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:35:07 - 0:47:45 -     Found 29/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:35:08 - 0:47:46 - (8128/10020) Found 10/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:35:42 - 0:48:20 -     Found 29/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:35:43 - 0:48:21 - (8160/10020) Found 11/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:36:16 - 0:48:54 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'sb23', 'INT-', '1', 'add', 'mul', 'pow', 'ab23', 'INT+', '3', 'mul', 'pow', 'sb13', 'INT+', '2', 'mul', 'sb12', 'sb14', 'add', 'mul', 'pow', 'ab23', 'INT+', '2', 'mul', 'pow', 'sb13', 'INT+', '2', 'mul', 'pow', 'sb14', 'INT+', '2', 'ab34', 'mul', 'pow', 'ab23', 'INT+', '2', 'mul', 'pow', 'sb13', 'INT+', '2', 'mul', 'pow', 'sb14', 'INT+', '2', 'mul', 'ab34']
+INFO - 12/21/25 16:36:20 - 0:48:58 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:36:21 - 0:48:59 - (8192/10020) Found 14/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:36:45 - 0:49:23 -     Found 30/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:36:47 - 0:49:25 - (8224/10020) Found 12/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:37:21 - 0:49:59 - Exception TypeError when checking hypothesis: ['mul', 'INT-', '1', 'mul', 'pow', 'ab12', 'INT+', '2', 'mul', 'pow', 'ab14', 'INT-', '2', 'mul', 'pow', 'ab23', 'INT+', '2', 'mul', 'pow', 'sb14', 'INT-', '2', 'mul', 'pow', 'sb24', 'INT-', '2', 'mul', 'pow', 'sb34', 'INT+', '2', 'mul', 'ab13']
+INFO - 12/21/25 16:37:24 - 0:50:02 -     Found 29/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:37:25 - 0:50:03 - (8256/10020) Found 11/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:37:45 - 0:50:23 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab14', 'INT-', '2', 'mul', 'pow', 'sb12', 'INT-', '1', 'mul', 'pow', 'sb13', 'INT+', '2', 'mul', 'pow', 'sb34', 'INT-', '1', 'mul', 'pow', 'sb13', '2']
+ERROR - 12/21/25 16:37:47 - 0:50:25 - Exception TypeError when checking hypothesis: ['mul', 'INT-', '2', 'mul', 'pow', 'ab14', 'INT-', '1', 'mul', 'pow', 'ab24', 'INT-', '1', 'mul', 'pow', 'ab34', 'INT-', '2', 'mul', 'pow', 'sb12', 'INT-', '2', 'mul', 'pow', 'sb34', 'INT-', '2', 'mul', 'ab12']
+INFO - 12/21/25 16:37:48 - 0:50:26 -     Found 30/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:37:48 - 0:50:26 - (8288/10020) Found 12/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:38:10 - 0:50:48 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab14', 'INT-', '2', 'mul', 'pow', 'ab23', 'INT-', '4', 'mul', 'pow', 'sb12', 'INT-', '1', 'add', 'mul', 'pow', 'ab13', 'INT+', '3', 'mul', 'pow', 'ab34', 'INT+', '4', 'pow', 'sb14', 'INT+', '4', 'mul', 'INT-', '1', 'mul', 'pow', 'ab13', 'INT+', '3', 'mul', 'pow', 'ab23', 'INT+', '2', 'mul', 'pow', 'ab34', 'INT+', '2', 'mul', 'pow', 'sb12', 'INT+', '2', 'mul', 'pow', 'sb14', 'INT+', '2']
+INFO - 12/21/25 16:38:15 - 0:50:53 -     Found 29/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:38:15 - 0:50:53 - (8320/10020) Found 11/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:38:23 - 0:51:01 - Exception TypeError when checking hypothesis: ['mul', 'INT-', '1', 'mul', 'pow', 'ab12', 'INT+', '2', 'mul', 'pow', 'ab14', 'INT-', '1', 'mul', 'pow', 'sb12', 'INT+', '2', 'mul', 'pow', 'sb24', 'INT-', '1', 'mul', 'ab24']
+INFO - 12/21/25 16:38:26 - 0:51:04 -     Found 30/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:38:26 - 0:51:04 - (8352/10020) Found 14/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:38:38 - 0:51:16 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:38:38 - 0:51:16 - (8384/10020) Found 11/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:38:49 - 0:51:27 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab14', 'INT-', '1', 'mul', 'pow', 'sb13', 'INT-', '1', 'mul', 'pow', 'sb14', 'INT-', '1', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab12', 'INT+', '2', 'mul', 'pow', 'ab24', 'INT+', '2', 'mul', 'pow', 'sb34', 'INT+', '2', 'mul', 'ab13', 'ab23', 'mul', 'pow', 'ab12', 'INT+', '3', 'mul', 'pow', 'ab24', 'INT+', '2', 'mul', 'ab23', 'mul', 'sb24', '2', 'sb34']
+INFO - 12/21/25 16:38:53 - 0:51:31 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:38:53 - 0:51:31 - (8416/10020) Found 8/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:39:09 - 0:51:47 -     Found 30/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:39:10 - 0:51:48 - (8448/10020) Found 12/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:39:26 - 0:52:04 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:39:26 - 0:52:04 - (8480/10020) Found 16/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:39:35 - 0:52:13 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab23', 'INT+', '5', 'mul', 'pow', 'ab24', 'INT-', '1', 'mul', 'pow', 'sb13', 'INT-', '5', 'mul', 'pow', 'sb24', 'INT-', '1']
+INFO - 12/21/25 16:39:38 - 0:52:16 -     Found 29/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:39:39 - 0:52:17 - (8512/10020) Found 11/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:39:55 - 0:52:33 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab14', 'INT-', '1', 'mul', 'pow', 'ab23', 'INT-', '3', 'mul', 'pow', 'ab34', 'INT-', '4', 'mul', 'pow', 'sb23', 'INT-', '2', 'add', 'mul', 'pow', 'ab24', 'INT+', '4', 'mul', 'pow', 'sb13', 'INT+', '4', 'mul', 'ab23', 'sb14', 'mul', 'INT+', '2', 'mul', 'pow', 'ab24', 'INT+', '5', 'mul', 'pow', 'sb13', 'INT+', '3', 'mul', 'pow', 'sb14', 'INT+', '2', 'pow']
+INFO - 12/21/25 16:39:59 - 0:52:37 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:40:00 - 0:52:38 - (8544/10020) Found 13/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:40:26 - 0:53:04 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:40:28 - 0:53:06 - (8576/10020) Found 15/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:41:01 - 0:53:39 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:41:02 - 0:53:40 - (8608/10020) Found 13/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:41:28 - 0:54:06 - Exception TypeError when checking hypothesis: ['pow']
+INFO - 12/21/25 16:41:28 - 0:54:06 -     Found 30/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:41:29 - 0:54:07 - (8640/10020) Found 10/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:41:59 - 0:54:37 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab13', 'INT-', '3', 'mul', 'pow', 'sb12', 'INT-', '1', 'mul', 'pow', 'sb23', 'INT-', '1', 'mul', 'pow', 'sb24', 'INT-', '1', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab12', 'INT+', '3', 'mul', 'pow', 'ab24', 'INT+', '2', 'mul', 'pow', 'sb12', 'INT+', '2', 'ab13', 'add', 'mul', 'pow', 'ab14', 'INT+', '2', 'mul', 'pow', 'ab23', 'INT+', '2', 'mul', 'ab12', 'mul', 'ab24', 'mul', 'sb12', 'sb34', 'mul', 'INT-', '1', 'mul', 'pow', 'ab23', 'INT+', '2', 'mul', 'ab12', 'mul', 'ab14', 'mul', 'ab24', 'mul', 'ab34', 'add']
+INFO - 12/21/25 16:42:01 - 0:54:39 -     Found 30/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:42:02 - 0:54:40 - (8672/10020) Found 13/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:42:28 - 0:55:06 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab13', 'INT-', '3', 'mul', 'pow', 'ab14', 'INT-', '1', 'mul', 'pow', 'ab23', 'INT-', '1', 'mul', 'pow', 'sb23', 'INT-', '1', 'add', 'mul', 'pow', 'ab12', 'INT+', '2', 'mul', 'sb13', 'mul', 'sb14', 'sb23', 'mul', 'ab12', 'mul', 'ab24', 'mul', 'sb13', 'mul', 'sb24', 'mul', 'sb34']
+INFO - 12/21/25 16:42:30 - 0:55:08 -     Found 30/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:42:30 - 0:55:08 - (8704/10020) Found 13/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:42:51 - 0:55:29 - Exception TypeError when checking hypothesis: ['5']
+ERROR - 12/21/25 16:42:51 - 0:55:29 - Exception TypeError when checking hypothesis: ['4']
+INFO - 12/21/25 16:42:52 - 0:55:30 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:42:52 - 0:55:30 - (8736/10020) Found 12/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:43:01 - 0:55:39 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab24', 'INT-', '4', 'mul', 'pow', 'ab34', 'INT-', '1', 'mul', 'pow', 'sb12', 'INT-', '1', 'mul', 'pow', 'sb24', 'INT-', '3', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab12', 'INT+', '2', 'mul', 'pow', 'sb14', 'INT+', '5', 'mul', 'ab23', 'sb13', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab23', 'INT+', '3', 'mul', 'pow', 'sb14', 'INT+', '3', 'mul', 'pow', 'sb34', 'INT+', '2', 'sb13', 'mul', 'INT-', '1', 'mul', 'pow', 'sb14', 'INT+', '6', 'mul', 'ab12', 'mul', 'ab24', 'mul', 'sb34']
+INFO - 12/21/25 16:43:04 - 0:55:42 -     Found 30/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:43:04 - 0:55:42 - (8768/10020) Found 12/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:43:16 - 0:55:54 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:43:16 - 0:55:54 - (8800/10020) Found 10/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:43:29 - 0:56:07 - Exception TypeError when checking hypothesis: ['mul', 'INT-', '2', 'mul', 'pow', 'ab13', 'INT-', '2', 'mul', 'pow', 'ab14', 'INT-', '1', 'mul', 'pow', 'ab24', 'INT+', '2', 'mul', 'pow', 'sb14', 'INT-', '1', 'mul', 'pow', 'sb24', 'INT-', '3', 'mul', 'pow', 'sb34', 'INT-', '1', 'mul', 'ab23']
+INFO - 12/21/25 16:43:32 - 0:56:10 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:43:33 - 0:56:11 - (8832/10020) Found 18/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:43:47 - 0:56:25 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:43:48 - 0:56:26 - (8864/10020) Found 12/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:44:03 - 0:56:41 - Exception TypeError when checking hypothesis: ['add', 'mul', 'pow', 'ab12', 'INT+', '2', 'mul', 'pow', 'ab23', 'INT+', '3', 'mul', 'pow', 'ab34', 'INT+', '3', 'mul', 'ab13', 'sb14', 'mul', 'INT-', '1', 'mul', 'pow', 'ab14', 'INT+', '2', 'mul', 'pow', 'ab23', 'INT+', '5', 'mul', 'ab34', 'mul', 'sb24']
+INFO - 12/21/25 16:44:06 - 0:56:44 -     Found 27/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:44:08 - 0:56:46 - (8896/10020) Found 14/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:44:47 - 0:57:25 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab13', 'INT-', '1', 'add', 'mul', 'pow', 'ab12', 'INT+', '2', 'mul', 'pow', 'sb23', 'INT+', '2', 'mul', 'ab24', 'sb14', 'mul', 'pow', 'sb23', 'INT+', '2', 'mul', 'pow', 'sb34', 'INT+', '2', 'mul', 'ab23', 'mul', 'ab24']
+INFO - 12/21/25 16:44:47 - 0:57:25 -     Found 30/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:44:47 - 0:57:25 - (8928/10020) Found 14/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:44:57 - 0:57:35 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab13', 'INT-', '1', 'mul', 'pow', 'ab34', 'INT-', '1', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab14', 'INT+', '2', 'mul', 'pow', 'sb34', 'INT+', '3', 'sb14', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'sb34', 'INT+', '3', 'mul', 'ab14', 'mul', 'ab23', 'sb23', 'mul', 'INT-', '1', 'mul', 'pow', 'sb34', 'INT+', '2', 'mul', 'ab12', 'mul', 'ab24', 'add']
+INFO - 12/21/25 16:44:59 - 0:57:37 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:44:59 - 0:57:37 - (8960/10020) Found 13/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:45:16 - 0:57:54 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab13', 'INT-', '1', 'mul', 'pow', 'ab24', 'INT-', '1', 'mul', 'pow', 'ab34', 'INT-', '1', 'mul', 'pow', 'sb13', 'INT-', '2', 'mul', 'pow', 'sb34', 'INT-', '1', 'add', 'mul', 'pow', 'ab14', 'INT+', '2', 'mul', 'pow', 'sb14', 'INT+', '4', 'mul', 'ab23', 'sb23', 'add', 'mul', 'pow', 'sb12', 'INT+', '2', 'mul', 'ab12', 'mul', 'ab13', 'mul', 'ab23', 'mul', 'sb13', 'mul', 'sb14', 'sb34', 'mul', 'INT-', '1', 'mul', 'pow', 'sb14', 'INT+', '3', 'mul', 'ab12', 'mul', 'ab13', 'mul', 'ab14', 'mul', 'sb12', 'sb13', 'sb13']
+INFO - 12/21/25 16:45:16 - 0:57:54 -     Found 29/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:45:17 - 0:57:55 - (8992/10020) Found 12/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:45:37 - 0:58:15 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:45:38 - 0:58:16 - (9024/10020) Found 13/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:45:49 - 0:58:27 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:45:50 - 0:58:28 - (9056/10020) Found 18/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:46:07 - 0:58:45 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:46:07 - 0:58:45 - (9088/10020) Found 13/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:46:22 - 0:59:00 -     Found 30/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:46:23 - 0:59:01 - (9120/10020) Found 15/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:46:33 - 0:59:11 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab13', 'INT-', '1', 'mul', 'pow', 'ab23', 'INT-', '1', 'mul', 'pow', 'sb24', 'INT-', '2', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'sb12', 'INT+', '3', 'mul', 'ab14', 'mul', 'ab24', 'sb34', 'mul', 'INT-', '1', 'mul', 'pow', 'sb12', 'INT+', '2', 'mul', 'ab24', 'mul', 'ab34', 'add']
+INFO - 12/21/25 16:46:36 - 0:59:14 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:46:36 - 0:59:14 - (9152/10020) Found 14/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:46:52 - 0:59:30 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab14', 'INT-', '1', 'mul', 'pow', 'sb14', 'INT-', '2', 'mul', 'pow', 'sb23', 'INT-', '1', 'mul', 'pow', 'sb34', 'INT-', '1', 'add', 'mul', 'pow', 'sb13', 'INT+', '2', 'mul', 'sb12', 'sb24', 'add', 'mul', 'pow', 'sb14', 'INT+', '2', 'mul', 'sb13', 'mul', 'sb23']
+ERROR - 12/21/25 16:46:53 - 0:59:31 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab13', 'INT-', '1', 'mul', 'pow', 'ab24', 'INT-', '1', 'mul', 'pow', 'ab34', 'INT-', '2', 'mul', 'pow', 'sb23', 'INT-', '1', 'mul', 'pow', 'sb24', 'INT-', '2', 'mul', 'pow', 'sb34', 'INT-', '2', 'add', 'mul', 'pow', 'ab13', 'INT+', '2', 'pow', 'ab24', 'INT+', '2', 'mul', 'INT-', '1', 'mul', 'pow', 'ab23', 'INT+', '2', 'mul', 'pow', 'ab14', 'INT+', '2']
+INFO - 12/21/25 16:46:54 - 0:59:32 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:46:55 - 0:59:33 - (9184/10020) Found 8/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:47:16 - 0:59:54 -     Found 30/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:47:16 - 0:59:54 - (9216/10020) Found 13/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:47:45 - 1:00:23 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'sb14', 'INT-', '1', 'mul', 'pow', 'sb23', 'INT-', '1', 'add', 'mul', 'pow', 'ab24', 'INT+', '2', 'mul', 'pow', 'sb12', 'INT+', '2', 'mul', 'pow', 'sb24', 'INT+', '2', 'mul', 'ab13', 'mul', 'ab23', 'sb34', 'add', 'mul', 'pow', 'ab34', 'INT+', '3', 'mul', 'pow', 'sb34', 'INT+', '2', 'mul', 'ab13', 'mul', 'sb13', 'mul', 'sb14', 'sb24', 'mul', 'INT-', '1', 'mul', 'pow', 'ab34', 'INT+', '2', 'mul', 'pow', 'sb14', 'INT+', '3', 'mul', 'ab13', 'mul', 'ab14', 'mul', 'sb23', 'mul', 'sb34']
+INFO - 12/21/25 16:47:47 - 1:00:25 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:47:48 - 1:00:26 - (9248/10020) Found 12/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:48:13 - 1:00:51 -     Found 28/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:48:14 - 1:00:52 - (9280/10020) Found 18/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:48:26 - 1:01:04 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:48:27 - 1:01:05 - (9312/10020) Found 14/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:48:52 - 1:01:30 -     Found 30/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:48:53 - 1:01:31 - (9344/10020) Found 10/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:49:13 - 1:01:51 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:49:13 - 1:01:51 - (9376/10020) Found 13/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:49:32 - 1:02:10 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'sb34', 'INT-', '1', 'add', 'mul', 'pow', 'ab34', 'INT+', '2', 'mul', 'pow', 'sb12', 'INT+', '2', 'mul', 'ab12', 'mul', 'ab14', 'sb34', 'mul', 'pow', 'ab34', 'INT+', '3', 'mul', 'ab14', 'mul', 'sb14', 'mul', 'sb23', 'sb34', 'sb34']
+ERROR - 12/21/25 16:49:32 - 1:02:10 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'sb34', 'INT-', '1', 'add', 'mul', 'pow', 'ab34', 'INT+', '2', 'mul', 'pow', 'sb12', 'INT+', '2', 'mul', 'ab12', 'mul', 'ab14', 'sb34', 'mul', 'pow', 'ab34', 'INT+', '3', 'mul', 'ab12', 'mul', 'sb13', 'mul', 'sb23', 'sb24', 'sb24']
+INFO - 12/21/25 16:49:33 - 1:02:11 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:49:34 - 1:02:12 - (9408/10020) Found 12/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:50:03 - 1:02:41 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab12', 'INT-', '2', 'mul', 'pow', 'sb13', 'INT-', '2', 'add', 'mul', 'pow', 'ab24', 'INT+', '2', 'mul', 'ab34', 'mul', 'sb12', 'sb14', 'mul', 'INT-', '2', 'mul', 'pow', 'ab34', 'INT+', '2', 'mul', 'ab23', 'mul', 'sb13']
+ERROR - 12/21/25 16:50:04 - 1:02:42 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab12', 'INT-', '1', 'mul', 'pow', 'ab34', 'INT-', '3', 'mul', 'ab23', 'ab34', 'sb34']
+ERROR - 12/21/25 16:50:04 - 1:02:42 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab12', 'INT-', '1', 'mul', 'pow', 'ab34', 'INT-', '3', 'mul', 'ab23', 'ab34', '3']
+INFO - 12/21/25 16:50:05 - 1:02:43 -     Found 30/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:50:05 - 1:02:43 - (9440/10020) Found 15/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:50:19 - 1:02:57 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab12', 'INT-', '1', 'mul', 'pow', 'ab14', 'INT-', '1', 'mul', 'pow', 'ab24', 'INT-', '1', 'mul', 'pow', 'sb13', 'INT-', '2', 'mul', 'pow', 'sb24', 'INT-', '1', 'mul', 'pow', 'sb34']
+ERROR - 12/21/25 16:50:20 - 1:02:58 - Exception TypeError when checking hypothesis: ['mul', 'INT-', '1', 'mul', 'pow', 'ab12', 'INT-', '1', 'mul', 'pow', 'ab14', 'INT-', '1', 'mul', 'pow', 'ab23', 'INT-', '2', 'mul', 'pow', 'sb13', 'INT-', '1', 'mul', 'pow', 'sb24', 'INT-', '1', 'mul', 'pow', 'sb34', 'INT-', '1', 'mul', 'sb23']
+ERROR - 12/21/25 16:50:22 - 1:03:00 - Exception TypeError when checking hypothesis: ['mul', 'INT-', '1', 'mul', 'pow', 'ab12', 'INT-', '1', 'mul', 'pow', 'ab13', 'INT-', '3', 'mul', 'pow', 'ab24', 'INT-', '1', 'mul', 'pow', 'sb12', 'INT-', '1', 'mul', 'pow', 'sb23', 'INT-', '1', 'mul', 'pow', 'sb34', 'INT-', '1', 'mul', 'ab23']
+INFO - 12/21/25 16:50:22 - 1:03:00 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:50:23 - 1:03:01 - (9472/10020) Found 19/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:50:41 - 1:03:19 -     Found 30/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:50:41 - 1:03:19 - (9504/10020) Found 12/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:50:54 - 1:03:32 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:50:55 - 1:03:33 - (9536/10020) Found 11/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:51:08 - 1:03:46 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'sb12', 'INT-', '2', 'mul', 'pow', 'sb34', 'INT-', '4', 'add', 'mul', 'pow', 'ab23', 'INT+', '3', 'mul', 'pow', 'ab24', 'INT+', '4', 'mul', 'ab34', 'sb14']
+ERROR - 12/21/25 16:51:09 - 1:03:47 - Exception TypeError when checking hypothesis: ['pow']
+INFO - 12/21/25 16:51:10 - 1:03:48 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:51:10 - 1:03:48 - (9568/10020) Found 13/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:51:25 - 1:04:03 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:51:26 - 1:04:04 - (9600/10020) Found 15/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:51:37 - 1:04:15 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:51:38 - 1:04:16 - (9632/10020) Found 11/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:51:48 - 1:04:26 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab12', 'INT-', '1', 'mul', 'pow', 'ab24', 'INT-', '1', 'mul', 'pow', 'ab34', 'INT-', '1', 'mul', 'pow', 'sb12', 'INT-', '2', 'mul', 'pow', 'sb14', 'INT-', '2', 'mul', 'pow', 'sb34', 'INT-', '1', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'sb23', 'INT+', '4', 'ab14', 'mul', 'INT-', '1', 'mul', 'pow', 'mul', 'pow', 'sb23', 'INT+', '3', 'ab14']
+INFO - 12/21/25 16:51:51 - 1:04:29 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:51:52 - 1:04:30 - (9664/10020) Found 12/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:52:14 - 1:04:52 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab12', 'INT-', '1', 'mul', 'pow', 'ab23', 'INT-', '1', 'mul', 'pow', 'sb23', 'INT-', '1', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab14', 'INT+', '3', 'mul', 'pow', 'sb13', 'INT+', '2', 'mul', 'ab13', 'mul', 'ab34', 'mul', 'sb12', 'sb24', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab14', 'INT+', '3', 'mul', 'pow', 'ab34', 'INT+', '2', 'mul', 'sb12', 'mul', 'sb13', 'mul', 'sb24', 'sb34', 'mul', 'pow', 'ab14', 'INT+', '2', 'mul', 'pow', 'ab34', 'INT+', '2', 'mul', 'ab13', 'mul', 'sb12', 'mul', 'sb13', 'mul', 'sb23', 'sb34', 'sb34']
+ERROR - 12/21/25 16:52:14 - 1:04:52 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab12', 'INT-', '1', 'mul', 'pow', 'ab23', 'INT-', '1', 'mul', 'pow', 'sb23', 'INT-', '1', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab14', 'INT+', '3', 'mul', 'pow', 'ab34', 'INT+', '2', 'mul', 'sb12', 'mul', 'sb13', 'mul', 'sb24', 'sb34', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab14', 'INT+', '3', 'mul', 'pow', 'sb13', 'INT+', '2', 'mul', 'ab13', 'mul', 'ab34', 'mul', 'sb12', 'sb24', 'mul', 'pow', 'ab14', 'INT+', '2', 'mul', 'pow', 'ab34', 'INT+', '2', 'mul', 'ab24', 'mul', 'sb12', 'mul', 'sb23', 'mul', 'sb24', 'sb34', 'sb34']
+ERROR - 12/21/25 16:52:17 - 1:04:55 - Exception TypeError when checking hypothesis: ['mul', 'INT-', '1', 'mul', 'pow', 'ab13', 'INT-', '1', 'mul', 'pow', 'sb14', 'INT-', '1', 'mul', 'ab24']
+INFO - 12/21/25 16:52:17 - 1:04:55 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:52:18 - 1:04:56 - (9696/10020) Found 18/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:52:25 - 1:05:03 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab23', 'INT-', '1', 'mul', 'pow', 'ab24', 'INT-', '1', 'mul', 'pow', 'sb12', 'INT-', '1', 'add', 'mul', 'INT+', '2', 'mul', 'pow', 'ab14', 'INT+', '2', 'mul', 'ab34', 'sb24', 'mul', 'INT-', '1', 'mul', 'ab13', 'mul', 'ab14', 'mul', 'ab24', 'mul', 'mul', 'INT+', '2', 'mul', 'ab13', 'mul', 'ab14', 'sb12']
+INFO - 12/21/25 16:52:27 - 1:05:05 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:52:27 - 1:05:05 - (9728/10020) Found 15/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:52:41 - 1:05:19 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:52:41 - 1:05:19 - (9760/10020) Found 12/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:52:59 - 1:05:37 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:53:00 - 1:05:38 - (9792/10020) Found 9/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:53:11 - 1:05:49 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab12', 'INT-', '1', 'mul', 'pow', 'ab23', 'INT-', '1', 'mul', 'pow', 'ab34', 'INT-', '1', 'mul', 'pow', 'sb34', 'INT-', '3', 'sb14', 'sb23']
+INFO - 12/21/25 16:53:14 - 1:05:52 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:53:16 - 1:05:54 - (9824/10020) Found 14/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:53:58 - 1:06:36 -     Found 30/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:53:59 - 1:06:37 - (9856/10020) Found 9/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:54:18 - 1:06:56 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab12', 'INT-', '1', 'mul', 'pow', 'ab13', 'INT-', '2', 'mul', 'pow', 'sb12', 'INT-', '1', 'add', 'mul', 'pow', 'sb13', 'INT+', '5', 'mul', 'ab12', 'mul', 'ab13', 'mul', 'ab14', 'mul', 'ab24', 'ab34', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab24', 'INT+', '3', 'mul', 'pow', 'ab34', 'INT+', '2', 'mul', 'pow', 'sb13', 'INT+', '3', 'mul', 'ab12', 'mul', 'sb23', 'sb34']
+INFO - 12/21/25 16:54:21 - 1:06:59 -     Found 31/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:54:22 - 1:07:00 - (9888/10020) Found 16/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:54:38 - 1:07:16 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab12', 'INT-', '1', 'mul', 'pow', 'ab13', 'INT-', '1', 'mul', 'pow', 'ab34', 'INT-', '1', 'add', 'mul', 'pow', 'ab14', 'INT+', '3', 'mul', 'pow', 'ab23', 'INT+', '2', 'mul', 'pow', 'sb34', 'INT+', '2', 'mul', 'sb13', 'sb24', 'mul', 'INT-', '1', 'mul', 'pow', 'ab14', 'INT+', '3', 'mul', 'pow', 'sb14', 'INT+', '2', 'mul', 'ab12', 'mul', 'sb13', 'add']
+INFO - 12/21/25 16:54:40 - 1:07:18 -     Found 29/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:54:41 - 1:07:19 - (9920/10020) Found 8/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:55:03 - 1:07:41 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab12', 'INT-', '1', 'mul', 'pow', 'ab13', 'INT-', '1', 'mul', 'pow', 'ab23', 'INT-', '3', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab14', 'INT+', '3', 'mul', 'pow', 'sb13', 'INT+', '2', 'mul', 'pow', 'sb34', 'INT+', '2', 'mul', 'ab34', 'sb14', 'add', 'mul', 'INT-', '1', 'mul', 'pow', 'ab14', 'INT+', '3', 'mul', 'pow', 'sb13', 'INT+', '2', 'mul', 'ab12', 'mul', 'sb12', 'mul', 'sb14', 'sb34', 'mul', 'INT-', '1', 'mul', 'pow', 'ab14', 'INT+', '3', 'mul', 'pow', 'sb13', 'INT+', '2', 'mul', 'ab23', 'mul', 'sb14', 'add']
+INFO - 12/21/25 16:55:08 - 1:07:46 -     Found 30/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:55:08 - 1:07:46 - (9952/10020) Found 14/32 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:55:21 - 1:07:59 -     Found 30/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:55:21 - 1:07:59 - (9984/10020) Found 14/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:55:22 - 1:08:00 - Exception TypeError when checking hypothesis: ['mul', 'INT-', '3', 'mul', 'pow', 'ab13', 'INT-', '1', 'mul', 'pow', 'sb12', 'INT-', '3', 'mul', 'pow', 'sb23', 'INT+', '2', 'mul', 'pow', 'sb34', 'INT+', '2', 'mul', 'ab23']
+ERROR - 12/21/25 16:55:23 - 1:08:01 - Exception TypeError when checking hypothesis: ['mul', 'INT+', '2', 'mul', 'pow', 'ab12', 'INT-', '1', 'mul', 'pow', 'ab13', 'INT+', '2', 'mul', 'pow', 'sb13', 'INT-', '1', 'mul', 'pow', 'sb24', 'INT-', '1', 'mul', 'ab14']
+INFO - 12/21/25 16:55:25 - 1:08:03 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:55:25 - 1:08:03 - (10016/10020) Found 18/32 valid top-1 predictions. Generating solutions ...
+ERROR - 12/21/25 16:55:27 - 1:08:05 - Exception TypeError when checking hypothesis: ['mul', 'INT-', '1', 'mul', 'pow', 'ab12', 'INT-', '1', 'mul', 'pow', 'sb12', 'INT-', '1', 'mul', 'pow', 'sb24', 'INT-', '1', 'mul', 'ab23']
+ERROR - 12/21/25 16:55:27 - 1:08:05 - Exception TypeError when checking hypothesis: ['mul', 'INT-', '1', 'mul', 'pow', 'ab12', 'INT-', '1', 'mul', 'pow', 'ab13', 'INT+', '2', 'mul', 'pow', 'ab24', 'INT-', '2', 'mul', 'pow', 'sb12', 'INT-', '3', 'sb24', 'mul']
+INFO - 12/21/25 16:55:28 - 1:08:06 -     Found 32/32 solutions in beam hypotheses.
+INFO - 12/21/25 16:55:28 - 1:08:06 - (10020/10020) Found 2/4 valid top-1 predictions. Generating solutions ...
+INFO - 12/21/25 16:55:28 - 1:08:06 -     Found 4/4 solutions in beam hypotheses.
+INFO - 12/21/25 16:55:28 - 1:08:06 - Evaluation results written in /het/p4/dshih/jet_images-deep_learning/RL_amplitudes_claude/results/paper_model_eval/eval_paper_4pt/beam5/eval.spin_hel.test.0
+INFO - 12/21/25 16:55:28 - 1:08:06 - 9821/10020 (98.01397205588822%) equations were evaluated correctly.
+INFO - 12/21/25 16:55:28 - 1:08:06 - tensor([[0, 0, 0, 0, 0],
+                                             [0, 0, 0, 0, 0],
+                                             [0, 0, 0, 0, 0],
+                                             ...,
+                                             [0, 0, 0, 0, 0],
+                                             [0, 0, 0, 0, 0],
+                                             [1, 0, 0, 0, 0]])
+INFO - 12/21/25 16:55:28 - 1:08:06 - 3: 1 / 1 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 4: 2 / 2 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 5: 12 / 12 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 6: 26 / 26 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 7: 46 / 46 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 8: 92 / 92 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 9: 146 / 146 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 10: 141 / 142 (99.29577464788733%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 11: 218 / 219 (99.54337899543378%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 12: 208 / 208 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 13: 250 / 250 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 14: 285 / 286 (99.65034965034965%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 15: 347 / 347 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 16: 304 / 305 (99.67213114754098%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 17: 308 / 308 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 18: 339 / 340 (99.70588235294117%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 19: 310 / 310 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 20: 308 / 310 (99.35483870967742%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 21: 311 / 311 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 22: 325 / 326 (99.69325153374233%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 23: 308 / 309 (99.67637540453075%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 24: 297 / 298 (99.66442953020135%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 25: 276 / 277 (99.63898916967509%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 26: 275 / 275 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 27: 246 / 247 (99.59514170040485%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 28: 245 / 245 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 29: 220 / 222 (99.09909909909909%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 30: 190 / 190 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 31: 221 / 223 (99.10313901345292%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 32: 202 / 203 (99.50738916256158%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 33: 186 / 189 (98.41269841269842%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 34: 184 / 186 (98.9247311827957%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 35: 183 / 184 (99.45652173913044%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 36: 125 / 125 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 37: 143 / 145 (98.62068965517241%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 38: 121 / 122 (99.18032786885246%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 39: 156 / 159 (98.11320754716981%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 40: 112 / 114 (98.24561403508773%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 41: 121 / 122 (99.18032786885246%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 42: 91 / 93 (97.84946236559139%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 43: 112 / 114 (98.24561403508773%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 44: 105 / 106 (99.05660377358491%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 45: 110 / 111 (99.09909909909909%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 46: 74 / 76 (97.36842105263158%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 47: 70 / 76 (92.10526315789474%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 48: 71 / 71 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 49: 66 / 67 (98.50746268656717%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 50: 65 / 67 (97.01492537313433%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 51: 76 / 77 (98.7012987012987%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 52: 53 / 54 (98.14814814814815%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 53: 42 / 47 (89.36170212765957%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 54: 53 / 54 (98.14814814814815%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 55: 52 / 55 (94.54545454545455%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 56: 55 / 58 (94.82758620689656%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 57: 39 / 42 (92.85714285714286%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 58: 51 / 55 (92.72727272727273%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 59: 36 / 37 (97.29729729729729%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 60: 46 / 47 (97.87234042553192%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 61: 40 / 42 (95.23809523809524%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 62: 39 / 44 (88.63636363636364%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 63: 40 / 43 (93.02325581395348%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 64: 26 / 28 (92.85714285714286%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 65: 18 / 23 (78.26086956521739%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 66: 39 / 43 (90.69767441860465%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 67: 29 / 31 (93.54838709677419%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 68: 25 / 26 (96.15384615384616%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 69: 19 / 21 (90.47619047619048%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 70: 19 / 21 (90.47619047619048%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 71: 22 / 22 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 72: 19 / 22 (86.36363636363636%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 73: 26 / 27 (96.29629629629629%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 74: 12 / 13 (92.3076923076923%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 75: 22 / 22 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 76: 20 / 24 (83.33333333333333%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 77: 16 / 19 (84.21052631578948%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 78: 13 / 16 (81.25%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 79: 16 / 17 (94.11764705882354%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 80: 11 / 11 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 81: 13 / 14 (92.85714285714286%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 82: 9 / 11 (81.81818181818181%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 83: 9 / 9 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 84: 8 / 11 (72.72727272727273%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 85: 9 / 11 (81.81818181818181%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 86: 9 / 10 (90.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 87: 11 / 12 (91.66666666666667%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 88: 5 / 6 (83.33333333333333%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 89: 6 / 9 (66.66666666666667%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 90: 9 / 11 (81.81818181818181%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 91: 3 / 4 (75.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 92: 7 / 9 (77.77777777777777%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 93: 8 / 10 (80.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 94: 6 / 7 (85.71428571428571%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 95: 11 / 12 (91.66666666666667%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 96: 3 / 4 (75.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 97: 4 / 4 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 98: 2 / 4 (50.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 99: 6 / 8 (75.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 100: 2 / 2 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 101: 3 / 3 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 102: 5 / 5 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 103: 6 / 7 (85.71428571428571%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 104: 8 / 9 (88.88888888888889%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 105: 8 / 9 (88.88888888888889%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 106: 2 / 3 (66.66666666666667%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 107: 2 / 3 (66.66666666666667%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 108: 3 / 4 (75.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 109: 4 / 4 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 110: 3 / 3 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 111: 4 / 4 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 112: 2 / 3 (66.66666666666667%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 113: 1 / 4 (25.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 114: 1 / 1 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 115: 3 / 3 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 116: 2 / 2 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 117: 1 / 1 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 118: 3 / 4 (75.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 119: 1 / 2 (50.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 120: 3 / 4 (75.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 121: 3 / 4 (75.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 122: 3 / 3 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 123: 3 / 4 (75.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 124: 1 / 1 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 125: 3 / 3 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 126: 2 / 2 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 127: 2 / 3 (66.66666666666667%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 128: 3 / 4 (75.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 129: 2 / 3 (66.66666666666667%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 130: 3 / 4 (75.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 131: 3 / 3 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 132: 2 / 2 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 133: 2 / 2 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 134: 2 / 4 (50.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 136: 1 / 1 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 138: 1 / 1 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 139: 5 / 5 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 140: 2 / 2 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 141: 1 / 1 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 142: 1 / 1 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 143: 0 / 1 (0.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 144: 0 / 1 (0.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 147: 1 / 2 (50.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 148: 1 / 1 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 150: 3 / 4 (75.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 152: 1 / 1 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 154: 1 / 1 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 156: 2 / 4 (50.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 159: 3 / 3 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 160: 1 / 1 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 162: 2 / 2 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 163: 1 / 1 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 165: 1 / 1 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 166: 0 / 1 (0.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 168: 2 / 3 (66.66666666666667%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 170: 3 / 4 (75.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 172: 2 / 2 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 173: 1 / 2 (50.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 175: 1 / 1 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 176: 0 / 2 (0.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 178: 0 / 1 (0.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 180: 1 / 1 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 181: 1 / 1 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 182: 0 / 1 (0.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 185: 0 / 1 (0.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 186: 0 / 1 (0.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 187: 0 / 1 (0.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 189: 1 / 1 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 192: 0 / 1 (0.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 193: 0 / 1 (0.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 201: 0 / 1 (0.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 202: 1 / 1 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 203: 1 / 1 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 210: 0 / 1 (0.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 214: 1 / 1 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 215: 1 / 1 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 220: 0 / 2 (0.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 224: 1 / 1 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 225: 1 / 1 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 230: 1 / 1 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 235: 1 / 1 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 237: 1 / 1 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 239: 0 / 1 (0.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 242: 0 / 2 (0.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 245: 0 / 1 (0.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 246: 0 / 1 (0.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 247: 1 / 1 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 261: 1 / 1 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 283: 0 / 1 (0.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 287: 0 / 1 (0.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 293: 0 / 1 (0.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 319: 0 / 1 (0.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 355: 1 / 1 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 381: 1 / 1 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 387: 0 / 1 (0.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 389: 0 / 1 (0.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - 399: 1 / 1 (100.0%)
+INFO - 12/21/25 16:55:28 - 1:08:06 - epoch -> 0.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc -> 98.013972
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_3 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_4 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_5 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_6 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_7 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_8 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_9 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_10 -> 99.295775
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_11 -> 99.543379
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_12 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_13 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_14 -> 99.650350
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_15 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_16 -> 99.672131
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_17 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_18 -> 99.705882
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_19 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_20 -> 99.354839
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_21 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_22 -> 99.693252
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_23 -> 99.676375
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_24 -> 99.664430
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_25 -> 99.638989
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_26 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_27 -> 99.595142
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_28 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_29 -> 99.099099
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_30 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_31 -> 99.103139
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_32 -> 99.507389
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_33 -> 98.412698
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_34 -> 98.924731
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_35 -> 99.456522
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_36 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_37 -> 98.620690
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_38 -> 99.180328
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_39 -> 98.113208
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_40 -> 98.245614
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_41 -> 99.180328
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_42 -> 97.849462
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_43 -> 98.245614
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_44 -> 99.056604
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_45 -> 99.099099
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_46 -> 97.368421
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_47 -> 92.105263
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_48 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_49 -> 98.507463
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_50 -> 97.014925
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_51 -> 98.701299
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_52 -> 98.148148
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_53 -> 89.361702
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_54 -> 98.148148
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_55 -> 94.545455
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_56 -> 94.827586
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_57 -> 92.857143
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_58 -> 92.727273
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_59 -> 97.297297
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_60 -> 97.872340
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_61 -> 95.238095
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_62 -> 88.636364
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_63 -> 93.023256
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_64 -> 92.857143
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_65 -> 78.260870
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_66 -> 90.697674
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_67 -> 93.548387
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_68 -> 96.153846
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_69 -> 90.476190
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_70 -> 90.476190
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_71 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_72 -> 86.363636
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_73 -> 96.296296
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_74 -> 92.307692
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_75 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_76 -> 83.333333
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_77 -> 84.210526
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_78 -> 81.250000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_79 -> 94.117647
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_80 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_81 -> 92.857143
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_82 -> 81.818182
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_83 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_84 -> 72.727273
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_85 -> 81.818182
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_86 -> 90.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_87 -> 91.666667
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_88 -> 83.333333
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_89 -> 66.666667
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_90 -> 81.818182
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_91 -> 75.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_92 -> 77.777778
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_93 -> 80.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_94 -> 85.714286
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_95 -> 91.666667
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_96 -> 75.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_97 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_98 -> 50.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_99 -> 75.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_100 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_101 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_102 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_103 -> 85.714286
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_104 -> 88.888889
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_105 -> 88.888889
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_106 -> 66.666667
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_107 -> 66.666667
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_108 -> 75.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_109 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_110 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_111 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_112 -> 66.666667
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_113 -> 25.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_114 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_115 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_116 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_117 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_118 -> 75.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_119 -> 50.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_120 -> 75.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_121 -> 75.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_122 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_123 -> 75.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_124 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_125 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_126 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_127 -> 66.666667
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_128 -> 75.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_129 -> 66.666667
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_130 -> 75.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_131 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_132 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_133 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_134 -> 50.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_136 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_138 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_139 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_140 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_141 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_142 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_143 -> 0.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_144 -> 0.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_147 -> 50.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_148 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_150 -> 75.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_152 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_154 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_156 -> 50.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_159 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_160 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_162 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_163 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_165 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_166 -> 0.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_168 -> 66.666667
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_170 -> 75.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_172 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_173 -> 50.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_175 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_176 -> 0.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_178 -> 0.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_180 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_181 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_182 -> 0.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_185 -> 0.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_186 -> 0.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_187 -> 0.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_189 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_192 -> 0.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_193 -> 0.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_201 -> 0.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_202 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_203 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_210 -> 0.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_214 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_215 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_220 -> 0.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_224 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_225 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_230 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_235 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_237 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_239 -> 0.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_242 -> 0.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_245 -> 0.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_246 -> 0.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_247 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_261 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_283 -> 0.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_287 -> 0.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_293 -> 0.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_319 -> 0.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_355 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_381 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_387 -> 0.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_389 -> 0.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - test_spin_hel_beam_acc_399 -> 100.000000
+INFO - 12/21/25 16:55:28 - 1:08:06 - __log__:{"epoch": 0, "test_spin_hel_beam_acc": 98.01397205588822, "test_spin_hel_beam_acc_3": 100.0, "test_spin_hel_beam_acc_4": 100.0, "test_spin_hel_beam_acc_5": 100.0, "test_spin_hel_beam_acc_6": 100.0, "test_spin_hel_beam_acc_7": 100.0, "test_spin_hel_beam_acc_8": 100.0, "test_spin_hel_beam_acc_9": 100.0, "test_spin_hel_beam_acc_10": 99.29577464788733, "test_spin_hel_beam_acc_11": 99.54337899543378, "test_spin_hel_beam_acc_12": 100.0, "test_spin_hel_beam_acc_13": 100.0, "test_spin_hel_beam_acc_14": 99.65034965034965, "test_spin_hel_beam_acc_15": 100.0, "test_spin_hel_beam_acc_16": 99.67213114754098, "test_spin_hel_beam_acc_17": 100.0, "test_spin_hel_beam_acc_18": 99.70588235294117, "test_spin_hel_beam_acc_19": 100.0, "test_spin_hel_beam_acc_20": 99.35483870967742, "test_spin_hel_beam_acc_21": 100.0, "test_spin_hel_beam_acc_22": 99.69325153374233, "test_spin_hel_beam_acc_23": 99.67637540453075, "test_spin_hel_beam_acc_24": 99.66442953020135, "test_spin_hel_beam_acc_25": 99.63898916967509, "test_spin_hel_beam_acc_26": 100.0, "test_spin_hel_beam_acc_27": 99.59514170040485, "test_spin_hel_beam_acc_28": 100.0, "test_spin_hel_beam_acc_29": 99.09909909909909, "test_spin_hel_beam_acc_30": 100.0, "test_spin_hel_beam_acc_31": 99.10313901345292, "test_spin_hel_beam_acc_32": 99.50738916256158, "test_spin_hel_beam_acc_33": 98.41269841269842, "test_spin_hel_beam_acc_34": 98.9247311827957, "test_spin_hel_beam_acc_35": 99.45652173913044, "test_spin_hel_beam_acc_36": 100.0, "test_spin_hel_beam_acc_37": 98.62068965517241, "test_spin_hel_beam_acc_38": 99.18032786885246, "test_spin_hel_beam_acc_39": 98.11320754716981, "test_spin_hel_beam_acc_40": 98.24561403508773, "test_spin_hel_beam_acc_41": 99.18032786885246, "test_spin_hel_beam_acc_42": 97.84946236559139, "test_spin_hel_beam_acc_43": 98.24561403508773, "test_spin_hel_beam_acc_44": 99.05660377358491, "test_spin_hel_beam_acc_45": 99.09909909909909, "test_spin_hel_beam_acc_46": 97.36842105263158, "test_spin_hel_beam_acc_47": 92.10526315789474, "test_spin_hel_beam_acc_48": 100.0, "test_spin_hel_beam_acc_49": 98.50746268656717, "test_spin_hel_beam_acc_50": 97.01492537313433, "test_spin_hel_beam_acc_51": 98.7012987012987, "test_spin_hel_beam_acc_52": 98.14814814814815, "test_spin_hel_beam_acc_53": 89.36170212765957, "test_spin_hel_beam_acc_54": 98.14814814814815, "test_spin_hel_beam_acc_55": 94.54545454545455, "test_spin_hel_beam_acc_56": 94.82758620689656, "test_spin_hel_beam_acc_57": 92.85714285714286, "test_spin_hel_beam_acc_58": 92.72727272727273, "test_spin_hel_beam_acc_59": 97.29729729729729, "test_spin_hel_beam_acc_60": 97.87234042553192, "test_spin_hel_beam_acc_61": 95.23809523809524, "test_spin_hel_beam_acc_62": 88.63636363636364, "test_spin_hel_beam_acc_63": 93.02325581395348, "test_spin_hel_beam_acc_64": 92.85714285714286, "test_spin_hel_beam_acc_65": 78.26086956521739, "test_spin_hel_beam_acc_66": 90.69767441860465, "test_spin_hel_beam_acc_67": 93.54838709677419, "test_spin_hel_beam_acc_68": 96.15384615384616, "test_spin_hel_beam_acc_69": 90.47619047619048, "test_spin_hel_beam_acc_70": 90.47619047619048, "test_spin_hel_beam_acc_71": 100.0, "test_spin_hel_beam_acc_72": 86.36363636363636, "test_spin_hel_beam_acc_73": 96.29629629629629, "test_spin_hel_beam_acc_74": 92.3076923076923, "test_spin_hel_beam_acc_75": 100.0, "test_spin_hel_beam_acc_76": 83.33333333333333, "test_spin_hel_beam_acc_77": 84.21052631578948, "test_spin_hel_beam_acc_78": 81.25, "test_spin_hel_beam_acc_79": 94.11764705882354, "test_spin_hel_beam_acc_80": 100.0, "test_spin_hel_beam_acc_81": 92.85714285714286, "test_spin_hel_beam_acc_82": 81.81818181818181, "test_spin_hel_beam_acc_83": 100.0, "test_spin_hel_beam_acc_84": 72.72727272727273, "test_spin_hel_beam_acc_85": 81.81818181818181, "test_spin_hel_beam_acc_86": 90.0, "test_spin_hel_beam_acc_87": 91.66666666666667, "test_spin_hel_beam_acc_88": 83.33333333333333, "test_spin_hel_beam_acc_89": 66.66666666666667, "test_spin_hel_beam_acc_90": 81.81818181818181, "test_spin_hel_beam_acc_91": 75.0, "test_spin_hel_beam_acc_92": 77.77777777777777, "test_spin_hel_beam_acc_93": 80.0, "test_spin_hel_beam_acc_94": 85.71428571428571, "test_spin_hel_beam_acc_95": 91.66666666666667, "test_spin_hel_beam_acc_96": 75.0, "test_spin_hel_beam_acc_97": 100.0, "test_spin_hel_beam_acc_98": 50.0, "test_spin_hel_beam_acc_99": 75.0, "test_spin_hel_beam_acc_100": 100.0, "test_spin_hel_beam_acc_101": 100.0, "test_spin_hel_beam_acc_102": 100.0, "test_spin_hel_beam_acc_103": 85.71428571428571, "test_spin_hel_beam_acc_104": 88.88888888888889, "test_spin_hel_beam_acc_105": 88.88888888888889, "test_spin_hel_beam_acc_106": 66.66666666666667, "test_spin_hel_beam_acc_107": 66.66666666666667, "test_spin_hel_beam_acc_108": 75.0, "test_spin_hel_beam_acc_109": 100.0, "test_spin_hel_beam_acc_110": 100.0, "test_spin_hel_beam_acc_111": 100.0, "test_spin_hel_beam_acc_112": 66.66666666666667, "test_spin_hel_beam_acc_113": 25.0, "test_spin_hel_beam_acc_114": 100.0, "test_spin_hel_beam_acc_115": 100.0, "test_spin_hel_beam_acc_116": 100.0, "test_spin_hel_beam_acc_117": 100.0, "test_spin_hel_beam_acc_118": 75.0, "test_spin_hel_beam_acc_119": 50.0, "test_spin_hel_beam_acc_120": 75.0, "test_spin_hel_beam_acc_121": 75.0, "test_spin_hel_beam_acc_122": 100.0, "test_spin_hel_beam_acc_123": 75.0, "test_spin_hel_beam_acc_124": 100.0, "test_spin_hel_beam_acc_125": 100.0, "test_spin_hel_beam_acc_126": 100.0, "test_spin_hel_beam_acc_127": 66.66666666666667, "test_spin_hel_beam_acc_128": 75.0, "test_spin_hel_beam_acc_129": 66.66666666666667, "test_spin_hel_beam_acc_130": 75.0, "test_spin_hel_beam_acc_131": 100.0, "test_spin_hel_beam_acc_132": 100.0, "test_spin_hel_beam_acc_133": 100.0, "test_spin_hel_beam_acc_134": 50.0, "test_spin_hel_beam_acc_136": 100.0, "test_spin_hel_beam_acc_138": 100.0, "test_spin_hel_beam_acc_139": 100.0, "test_spin_hel_beam_acc_140": 100.0, "test_spin_hel_beam_acc_141": 100.0, "test_spin_hel_beam_acc_142": 100.0, "test_spin_hel_beam_acc_143": 0.0, "test_spin_hel_beam_acc_144": 0.0, "test_spin_hel_beam_acc_147": 50.0, "test_spin_hel_beam_acc_148": 100.0, "test_spin_hel_beam_acc_150": 75.0, "test_spin_hel_beam_acc_152": 100.0, "test_spin_hel_beam_acc_154": 100.0, "test_spin_hel_beam_acc_156": 50.0, "test_spin_hel_beam_acc_159": 100.0, "test_spin_hel_beam_acc_160": 100.0, "test_spin_hel_beam_acc_162": 100.0, "test_spin_hel_beam_acc_163": 100.0, "test_spin_hel_beam_acc_165": 100.0, "test_spin_hel_beam_acc_166": 0.0, "test_spin_hel_beam_acc_168": 66.66666666666667, "test_spin_hel_beam_acc_170": 75.0, "test_spin_hel_beam_acc_172": 100.0, "test_spin_hel_beam_acc_173": 50.0, "test_spin_hel_beam_acc_175": 100.0, "test_spin_hel_beam_acc_176": 0.0, "test_spin_hel_beam_acc_178": 0.0, "test_spin_hel_beam_acc_180": 100.0, "test_spin_hel_beam_acc_181": 100.0, "test_spin_hel_beam_acc_182": 0.0, "test_spin_hel_beam_acc_185": 0.0, "test_spin_hel_beam_acc_186": 0.0, "test_spin_hel_beam_acc_187": 0.0, "test_spin_hel_beam_acc_189": 100.0, "test_spin_hel_beam_acc_192": 0.0, "test_spin_hel_beam_acc_193": 0.0, "test_spin_hel_beam_acc_201": 0.0, "test_spin_hel_beam_acc_202": 100.0, "test_spin_hel_beam_acc_203": 100.0, "test_spin_hel_beam_acc_210": 0.0, "test_spin_hel_beam_acc_214": 100.0, "test_spin_hel_beam_acc_215": 100.0, "test_spin_hel_beam_acc_220": 0.0, "test_spin_hel_beam_acc_224": 100.0, "test_spin_hel_beam_acc_225": 100.0, "test_spin_hel_beam_acc_230": 100.0, "test_spin_hel_beam_acc_235": 100.0, "test_spin_hel_beam_acc_237": 100.0, "test_spin_hel_beam_acc_239": 0.0, "test_spin_hel_beam_acc_242": 0.0, "test_spin_hel_beam_acc_245": 0.0, "test_spin_hel_beam_acc_246": 0.0, "test_spin_hel_beam_acc_247": 100.0, "test_spin_hel_beam_acc_261": 100.0, "test_spin_hel_beam_acc_283": 0.0, "test_spin_hel_beam_acc_287": 0.0, "test_spin_hel_beam_acc_293": 0.0, "test_spin_hel_beam_acc_319": 0.0, "test_spin_hel_beam_acc_355": 100.0, "test_spin_hel_beam_acc_381": 100.0, "test_spin_hel_beam_acc_387": 0.0, "test_spin_hel_beam_acc_389": 0.0, "test_spin_hel_beam_acc_399": 100.0}

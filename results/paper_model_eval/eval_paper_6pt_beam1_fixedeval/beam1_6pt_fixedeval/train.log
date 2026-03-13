@@ -1,0 +1,2032 @@
+INFO - 02/11/26 16:53:56 - 0:00:00 - ============ Initialized logger ============
+INFO - 02/11/26 16:53:56 - 0:00:00 - accumulate_gradients: 1
+                                     all_momenta: False
+                                     amp: -1
+                                     attention_dropout: 0
+                                     batch_size: 32
+                                     beam_early_stopping: True
+                                     beam_eval: True
+                                     beam_length_penalty: 1
+                                     beam_size: 1
+                                     clip_grad_norm: 5
+                                     command: python scripts/eval_paper_model_beam_fixed.py --npt 6 --beam_size 1 --exp_id "beam1_6pt_fixedeval"
+                                     cpu: False
+                                     debug_slurm: False
+                                     dropout: 0
+                                     dump_path: /het/p4/dshih/jet_images-deep_learning/RL_amplitudes_claude/working/results/paper_model_eval/eval_paper_6pt_beam1_fixedeval/beam1_6pt_fixedeval
+                                     emb_dim: 512
+                                     env_base_seed: -1
+                                     env_name: char_env
+                                     epoch_size: 1000
+                                     eval_only: True
+                                     eval_verbose: 1
+                                     eval_verbose_print: False
+                                     exp_id: beam1_6pt_fixedeval
+                                     exp_name: eval_paper_6pt_beam1_fixedeval
+                                     export_data: False
+                                     fp16: False
+                                     global_rank: 0
+                                     int_base: 10
+                                     is_master: True
+                                     is_slurm_job: False
+                                     l_scale: 0.75
+                                     lib_path: 
+                                     local_rank: 0
+                                     master_port: -1
+                                     max_epoch: 1
+                                     max_len: 1000
+                                     max_scale: 2
+                                     max_scrambles: 3
+                                     max_terms: 3
+                                     min_scrambles: 1
+                                     mma_path: None
+                                     multi_gpu: False
+                                     multi_node: False
+                                     n_dec_layers: 3
+                                     n_enc_layers: 3
+                                     n_gpu_per_node: 1
+                                     n_heads: 8
+                                     n_max_positions: 2560
+                                     n_nodes: 1
+                                     node_id: 0
+                                     npt_list: [6]
+                                     nucleus_p: 0.95
+                                     nucleus_sampling: False
+                                     num_workers: 1
+                                     numeral_decomp: True
+                                     numerator_only: True
+                                     numerical_check: 2
+                                     optimizer: adam,lr=0.0001
+                                     positional_encoding: True
+                                     reduced_voc: True
+                                     reload_checkpoint: 
+                                     reload_data: spin_hel,/het/p4/dshih/jet_images-deep_learning/RL_amplitudes_claude/shared/spinorhelicity/data/n6_i1_3/data.prefix.counts.train_1000,/het/p4/dshih/jet_images-deep_learning/RL_amplitudes_claude/shared/spinorhelicity/data/n6_i1_3/data.prefix.counts.valid_1000,/het/p4/dshih/jet_images-deep_learning/RL_amplitudes_claude/shared/spinorhelicity/data/n6_i1_3/data.prefix.counts.test_1000
+                                     reload_model: /het/p4/dshih/jet_images-deep_learning/RL_amplitudes_claude/shared/spinorhelicity/n6_simplifier.pth
+                                     reload_size: 
+                                     save_info_scaling: False
+                                     save_info_scr: False
+                                     save_periodic: 0
+                                     scaling_eval: False
+                                     share_inout_emb: True
+                                     sinusoidal_embeddings: False
+                                     stopping_criterion: 
+                                     tasks: spin_hel
+                                     temperature: 1.5
+                                     test_file: True
+                                     valid_file: False
+                                     validation_metrics: 
+                                     world_size: 1
+INFO - 02/11/26 16:53:56 - 0:00:00 - The experiment will be stored in /het/p4/dshih/jet_images-deep_learning/RL_amplitudes_claude/working/results/paper_model_eval/eval_paper_6pt_beam1_fixedeval/beam1_6pt_fixedeval
+                                     
+INFO - 02/11/26 16:53:56 - 0:00:00 - Running command: python scripts/eval_paper_model_beam_fixed.py --npt 6 --beam_size 1
+
+WARNING - 02/11/26 16:53:56 - 0:00:00 - Signal handler installed.
+INFO - 02/11/26 16:53:56 - 0:00:00 - words: {'<s>': 0, '</s>': 1, '<pad>': 2, 'add': 3, 'div': 4, 'mul': 5, 'pow': 6, 'INT+': 7, 'INT-': 8, '0': 9, '1': 10, '2': 11, '3': 12, '4': 13, '5': 14, '6': 15, '7': 16, '8': 17, '9': 18, '10': 19, 'ab12': 20, 'ab13': 21, 'ab14': 22, 'ab15': 23, 'ab16': 24, 'ab23': 25, 'ab24': 26, 'ab25': 27, 'ab26': 28, 'ab34': 29, 'ab35': 30, 'ab36': 31, 'ab45': 32, 'ab46': 33, 'ab56': 34, 'sb12': 35, 'sb13': 36, 'sb14': 37, 'sb15': 38, 'sb16': 39, 'sb23': 40, 'sb24': 41, 'sb25': 42, 'sb26': 43, 'sb34': 44, 'sb35': 45, 'sb36': 46, 'sb45': 47, 'sb46': 48, 'sb56': 49}
+INFO - 02/11/26 16:53:56 - 0:00:00 - Training tasks: spin_hel
+INFO - 02/11/26 16:53:56 - 0:00:00 - Reloading modules from /het/p4/dshih/jet_images-deep_learning/RL_amplitudes_claude/shared/spinorhelicity/n6_simplifier.pth ...
+DEBUG - 02/11/26 16:53:56 - 0:00:00 - TransformerModel(
+                                        (position_embeddings): Embedding(2560, 512)
+                                        (embeddings): Embedding(50, 512, padding_idx=1)
+                                        (layer_norm_emb): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        (attentions): ModuleList(
+                                          (0-2): 3 x MultiHeadAttention(
+                                            (q_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (k_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (v_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (out_lin): Linear(in_features=512, out_features=512, bias=True)
+                                          )
+                                        )
+                                        (layer_norm1): ModuleList(
+                                          (0-2): 3 x LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                        (ffns): ModuleList(
+                                          (0-2): 3 x TransformerFFN(
+                                            (lin1): Linear(in_features=512, out_features=2048, bias=True)
+                                            (lin2): Linear(in_features=2048, out_features=512, bias=True)
+                                          )
+                                        )
+                                        (layer_norm2): ModuleList(
+                                          (0-2): 3 x LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                      ): TransformerModel(
+                                        (position_embeddings): Embedding(2560, 512)
+                                        (embeddings): Embedding(50, 512, padding_idx=1)
+                                        (layer_norm_emb): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        (attentions): ModuleList(
+                                          (0-2): 3 x MultiHeadAttention(
+                                            (q_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (k_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (v_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (out_lin): Linear(in_features=512, out_features=512, bias=True)
+                                          )
+                                        )
+                                        (layer_norm1): ModuleList(
+                                          (0-2): 3 x LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                        (ffns): ModuleList(
+                                          (0-2): 3 x TransformerFFN(
+                                            (lin1): Linear(in_features=512, out_features=2048, bias=True)
+                                            (lin2): Linear(in_features=2048, out_features=512, bias=True)
+                                          )
+                                        )
+                                        (layer_norm2): ModuleList(
+                                          (0-2): 3 x LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                      )
+DEBUG - 02/11/26 16:53:56 - 0:00:00 - TransformerModel(
+                                        (position_embeddings): Embedding(2560, 512)
+                                        (embeddings): Embedding(50, 512, padding_idx=1)
+                                        (layer_norm_emb): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        (attentions): ModuleList(
+                                          (0-2): 3 x MultiHeadAttention(
+                                            (q_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (k_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (v_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (out_lin): Linear(in_features=512, out_features=512, bias=True)
+                                          )
+                                        )
+                                        (layer_norm1): ModuleList(
+                                          (0-2): 3 x LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                        (ffns): ModuleList(
+                                          (0-2): 3 x TransformerFFN(
+                                            (lin1): Linear(in_features=512, out_features=2048, bias=True)
+                                            (lin2): Linear(in_features=2048, out_features=512, bias=True)
+                                          )
+                                        )
+                                        (layer_norm2): ModuleList(
+                                          (0-2): 3 x LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                        (layer_norm15): ModuleList(
+                                          (0-2): 3 x LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                        (encoder_attn): ModuleList(
+                                          (0-2): 3 x MultiHeadAttention(
+                                            (q_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (k_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (v_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (out_lin): Linear(in_features=512, out_features=512, bias=True)
+                                          )
+                                        )
+                                        (proj): Linear(in_features=512, out_features=50, bias=True)
+                                      ): TransformerModel(
+                                        (position_embeddings): Embedding(2560, 512)
+                                        (embeddings): Embedding(50, 512, padding_idx=1)
+                                        (layer_norm_emb): LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        (attentions): ModuleList(
+                                          (0-2): 3 x MultiHeadAttention(
+                                            (q_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (k_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (v_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (out_lin): Linear(in_features=512, out_features=512, bias=True)
+                                          )
+                                        )
+                                        (layer_norm1): ModuleList(
+                                          (0-2): 3 x LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                        (ffns): ModuleList(
+                                          (0-2): 3 x TransformerFFN(
+                                            (lin1): Linear(in_features=512, out_features=2048, bias=True)
+                                            (lin2): Linear(in_features=2048, out_features=512, bias=True)
+                                          )
+                                        )
+                                        (layer_norm2): ModuleList(
+                                          (0-2): 3 x LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                        (layer_norm15): ModuleList(
+                                          (0-2): 3 x LayerNorm((512,), eps=1e-12, elementwise_affine=True)
+                                        )
+                                        (encoder_attn): ModuleList(
+                                          (0-2): 3 x MultiHeadAttention(
+                                            (q_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (k_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (v_lin): Linear(in_features=512, out_features=512, bias=True)
+                                            (out_lin): Linear(in_features=512, out_features=512, bias=True)
+                                          )
+                                        )
+                                        (proj): Linear(in_features=512, out_features=50, bias=True)
+                                      )
+INFO - 02/11/26 16:53:56 - 0:00:00 - Number of parameters (encoder): 10794496
+INFO - 02/11/26 16:53:56 - 0:00:00 - Number of parameters (decoder): 13949490
+INFO - 02/11/26 16:53:56 - 0:00:01 - Found 135 parameters in model.
+INFO - 02/11/26 16:53:57 - 0:00:01 - Optimizers: model
+INFO - 02/11/26 16:53:57 - 0:00:01 - Writing evaluation results in /het/p4/dshih/jet_images-deep_learning/RL_amplitudes_claude/working/results/paper_model_eval/eval_paper_6pt_beam1_fixedeval/beam1_6pt_fixedeval/eval.spin_hel.test.0 ...
+INFO - 02/11/26 16:53:57 - 0:00:01 - Creating test iterator for spin_hel ...
+INFO - 02/11/26 16:53:57 - 0:00:01 - Preparing to load data from /het/p4/dshih/jet_images-deep_learning/RL_amplitudes_claude/shared/spinorhelicity/data/n6_i1_3/data.prefix.counts.test_1000 ...
+INFO - 02/11/26 16:53:57 - 0:00:01 - words: {'<s>': 0, '</s>': 1, '<pad>': 2, 'add': 3, 'div': 4, 'mul': 5, 'pow': 6, 'INT+': 7, 'INT-': 8, '0': 9, '1': 10, '2': 11, '3': 12, '4': 13, '5': 14, '6': 15, '7': 16, '8': 17, '9': 18, '10': 19, 'ab12': 20, 'ab13': 21, 'ab14': 22, 'ab15': 23, 'ab16': 24, 'ab23': 25, 'ab24': 26, 'ab25': 27, 'ab26': 28, 'ab34': 29, 'ab35': 30, 'ab36': 31, 'ab45': 32, 'ab46': 33, 'ab56': 34, 'sb12': 35, 'sb13': 36, 'sb14': 37, 'sb15': 38, 'sb16': 39, 'sb23': 40, 'sb24': 41, 'sb25': 42, 'sb26': 43, 'sb34': 44, 'sb35': 45, 'sb36': 46, 'sb45': 47, 'sb46': 48, 'sb56': 49}
+INFO - 02/11/26 16:53:57 - 0:00:01 - Loading data from /het/p4/dshih/jet_images-deep_learning/RL_amplitudes_claude/shared/spinorhelicity/data/n6_i1_3/data.prefix.counts.test_1000 ...
+INFO - 02/11/26 16:53:57 - 0:00:01 - Loaded 9934 equations from the disk.
+INFO - 02/11/26 16:53:57 - 0:00:01 - (32/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:53:58 - 0:00:02 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:53:58 - 0:00:02 - (96/9934) Found 30/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:53:58 - 0:00:03 -     Found 30/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:53:59 - 0:00:03 - (192/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:53:59 - 0:00:03 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:00 - 0:00:04 - (256/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:00 - 0:00:04 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:02 - 0:00:06 - (576/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:02 - 0:00:07 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:03 - 0:00:07 - (640/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:03 - 0:00:08 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:04 - 0:00:08 - (672/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:04 - 0:00:08 -     Found 32/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:04 - 0:00:08 - (736/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:05 - 0:00:09 -     Found 32/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:05 - 0:00:09 - (768/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+ERROR - 02/11/26 16:54:05 - 0:00:09 - Exception TypeError when checking hypothesis: ['mul', 'sb13']
+INFO - 02/11/26 16:54:05 - 0:00:09 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:06 - 0:00:10 - (896/9934) Found 30/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:06 - 0:00:11 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:07 - 0:00:11 - (928/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:07 - 0:00:11 -     Found 32/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:08 - 0:00:12 - (1024/9934) Found 30/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:08 - 0:00:12 -     Found 32/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:09 - 0:00:13 - (1120/9934) Found 30/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:09 - 0:00:13 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:09 - 0:00:14 - (1184/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:10 - 0:00:14 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:10 - 0:00:14 - (1248/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:10 - 0:00:15 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:11 - 0:00:15 - (1280/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:11 - 0:00:15 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:11 - 0:00:15 - (1312/9934) Found 30/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:12 - 0:00:16 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:12 - 0:00:17 - (1440/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:13 - 0:00:17 -     Found 32/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:13 - 0:00:17 - (1504/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:14 - 0:00:18 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:15 - 0:00:19 - (1760/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:16 - 0:00:20 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:17 - 0:00:21 - (1952/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:17 - 0:00:21 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:18 - 0:00:22 - (2112/9934) Found 29/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:19 - 0:00:23 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:19 - 0:00:23 - (2176/9934) Found 30/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:20 - 0:00:24 -     Found 30/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:20 - 0:00:24 - (2208/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:20 - 0:00:24 -     Found 32/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:20 - 0:00:25 - (2240/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:21 - 0:00:25 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:21 - 0:00:25 - (2304/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:21 - 0:00:26 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:22 - 0:00:26 - (2432/9934) Found 29/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:23 - 0:00:27 -     Found 32/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:24 - 0:00:28 - (2624/9934) Found 28/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:24 - 0:00:28 -     Found 30/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:25 - 0:00:29 - (2688/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:25 - 0:00:29 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:25 - 0:00:29 - (2720/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:26 - 0:00:30 -     Found 32/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:26 - 0:00:30 - (2752/9934) Found 30/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:26 - 0:00:30 -     Found 32/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:27 - 0:00:31 - (2816/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:27 - 0:00:31 -     Found 32/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:27 - 0:00:32 - (2880/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:28 - 0:00:32 -     Found 32/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:28 - 0:00:32 - (2912/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:28 - 0:00:33 -     Found 32/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:29 - 0:00:33 - (2944/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:29 - 0:00:33 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:29 - 0:00:33 - (3008/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:30 - 0:00:34 -     Found 32/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:31 - 0:00:35 - (3136/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:31 - 0:00:35 -     Found 32/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:31 - 0:00:35 - (3168/9934) Found 30/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:32 - 0:00:36 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:32 - 0:00:37 - (3296/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:33 - 0:00:37 -     Found 32/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:33 - 0:00:37 - (3328/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:33 - 0:00:37 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:34 - 0:00:38 - (3456/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:35 - 0:00:39 -     Found 32/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:35 - 0:00:39 - (3488/9934) Found 30/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:35 - 0:00:40 -     Found 30/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:36 - 0:00:40 - (3520/9934) Found 30/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:36 - 0:00:40 -     Found 30/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:36 - 0:00:41 - (3552/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:37 - 0:00:41 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:37 - 0:00:42 - (3584/9934) Found 30/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:38 - 0:00:42 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:38 - 0:00:42 - (3616/9934) Found 28/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:39 - 0:00:43 -     Found 29/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:39 - 0:00:43 - (3648/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:39 - 0:00:44 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:40 - 0:00:44 - (3680/9934) Found 29/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:40 - 0:00:45 -     Found 29/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:41 - 0:00:45 - (3712/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:41 - 0:00:45 -     Found 32/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:41 - 0:00:46 - (3744/9934) Found 28/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:42 - 0:00:46 -     Found 30/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:42 - 0:00:47 - (3776/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:43 - 0:00:47 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:43 - 0:00:47 - (3808/9934) Found 28/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:44 - 0:00:48 -     Found 29/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:44 - 0:00:48 - (3840/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:45 - 0:00:49 -     Found 32/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:45 - 0:00:49 - (3872/9934) Found 29/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:45 - 0:00:50 -     Found 30/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:46 - 0:00:50 - (3904/9934) Found 30/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:46 - 0:00:50 -     Found 32/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:47 - 0:00:51 - (3936/9934) Found 26/32 valid top-1 predictions. Generating solutions ...
+ERROR - 02/11/26 16:54:47 - 0:00:51 - Exception TypeError when checking hypothesis: ['add', 'mul', 'INT-', '1', 'mul', 'pow', 'sb25', 'INT+', '2', 'mul', 'ab12', 'mul', 'ab14', 'mul', 'ab35', 'mul', 'ab46', 'mul', 'mul', 'ab13', 'mul', 'ab36', 'mul', 'ab45', 'mul', 'sb12', 'mul', 'sb25', 'mul', 'sb26', 'sb36']
+INFO - 02/11/26 16:54:47 - 0:00:51 -     Found 28/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:48 - 0:00:52 - (3968/9934) Found 30/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:48 - 0:00:52 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:48 - 0:00:53 - (4000/9934) Found 29/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:49 - 0:00:53 -     Found 29/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:49 - 0:00:54 - (4032/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:50 - 0:00:54 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:50 - 0:00:54 - (4064/9934) Found 29/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:51 - 0:00:55 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:51 - 0:00:55 - (4096/9934) Found 30/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:51 - 0:00:56 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:52 - 0:00:56 - (4128/9934) Found 30/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:52 - 0:00:57 -     Found 30/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:53 - 0:00:57 - (4160/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:53 - 0:00:57 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:53 - 0:00:58 - (4192/9934) Found 30/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:54 - 0:00:58 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:54 - 0:00:58 - (4224/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:55 - 0:00:59 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:56 - 0:01:00 - (4320/9934) Found 30/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:56 - 0:01:01 -     Found 30/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:57 - 0:01:01 - (4352/9934) Found 29/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:57 - 0:01:01 -     Found 29/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:58 - 0:01:02 - (4384/9934) Found 28/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:58 - 0:01:02 -     Found 30/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:58 - 0:01:03 - (4416/9934) Found 30/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:54:59 - 0:01:03 -     Found 30/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:54:59 - 0:01:03 - (4448/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:00 - 0:01:04 -     Found 32/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:00 - 0:01:04 - (4480/9934) Found 30/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:00 - 0:01:05 -     Found 32/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:01 - 0:01:05 - (4512/9934) Found 28/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:01 - 0:01:06 -     Found 30/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:02 - 0:01:07 - (4608/9934) Found 26/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:03 - 0:01:07 -     Found 28/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:03 - 0:01:07 - (4640/9934) Found 29/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:04 - 0:01:08 -     Found 30/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:04 - 0:01:08 - (4672/9934) Found 28/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:05 - 0:01:09 -     Found 28/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:05 - 0:01:09 - (4704/9934) Found 25/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:06 - 0:01:10 -     Found 26/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:06 - 0:01:10 - (4736/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:07 - 0:01:11 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:07 - 0:01:11 - (4768/9934) Found 30/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:07 - 0:01:11 -     Found 30/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:08 - 0:01:12 - (4832/9934) Found 30/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:08 - 0:01:13 -     Found 30/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:09 - 0:01:13 - (4864/9934) Found 27/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:09 - 0:01:14 -     Found 28/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:10 - 0:01:14 - (4896/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:10 - 0:01:14 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:11 - 0:01:15 - (4928/9934) Found 28/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:11 - 0:01:15 -     Found 30/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:11 - 0:01:16 - (4960/9934) Found 28/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:12 - 0:01:16 -     Found 29/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:12 - 0:01:16 - (4992/9934) Found 27/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:13 - 0:01:17 -     Found 28/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:13 - 0:01:17 - (5024/9934) Found 29/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:14 - 0:01:18 -     Found 30/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:14 - 0:01:18 - (5056/9934) Found 29/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:15 - 0:01:19 -     Found 30/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:15 - 0:01:19 - (5088/9934) Found 29/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:16 - 0:01:20 -     Found 30/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:16 - 0:01:20 - (5120/9934) Found 30/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:17 - 0:01:21 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:17 - 0:01:21 - (5152/9934) Found 30/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:17 - 0:01:22 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:18 - 0:01:22 - (5184/9934) Found 29/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:18 - 0:01:23 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:19 - 0:01:23 - (5216/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:19 - 0:01:23 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:19 - 0:01:24 - (5248/9934) Found 30/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:20 - 0:01:24 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:20 - 0:01:24 - (5280/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:21 - 0:01:25 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:21 - 0:01:25 - (5312/9934) Found 27/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:22 - 0:01:26 -     Found 29/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:22 - 0:01:26 - (5344/9934) Found 28/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:23 - 0:01:27 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:23 - 0:01:27 - (5376/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:24 - 0:01:28 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:24 - 0:01:28 - (5440/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:25 - 0:01:29 -     Found 32/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:25 - 0:01:29 - (5472/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:25 - 0:01:30 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:26 - 0:01:30 - (5504/9934) Found 29/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:26 - 0:01:30 -     Found 29/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:27 - 0:01:31 - (5536/9934) Found 30/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:27 - 0:01:31 -     Found 32/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:27 - 0:01:32 - (5568/9934) Found 29/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:28 - 0:01:32 -     Found 30/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:28 - 0:01:32 - (5600/9934) Found 27/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:29 - 0:01:33 -     Found 30/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:29 - 0:01:33 - (5632/9934) Found 29/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:30 - 0:01:34 -     Found 29/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:30 - 0:01:34 - (5664/9934) Found 30/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:30 - 0:01:35 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:31 - 0:01:35 - (5696/9934) Found 29/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:31 - 0:01:36 -     Found 30/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:32 - 0:01:36 - (5728/9934) Found 28/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:32 - 0:01:36 -     Found 29/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:33 - 0:01:37 - (5760/9934) Found 29/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:33 - 0:01:37 -     Found 29/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:33 - 0:01:38 - (5792/9934) Found 30/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:34 - 0:01:38 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:34 - 0:01:38 - (5824/9934) Found 30/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:35 - 0:01:39 -     Found 30/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:35 - 0:01:39 - (5856/9934) Found 27/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:35 - 0:01:40 -     Found 30/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:36 - 0:01:40 - (5888/9934) Found 29/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:36 - 0:01:41 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:37 - 0:01:41 - (5920/9934) Found 30/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:37 - 0:01:42 -     Found 32/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:38 - 0:01:42 - (5984/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:39 - 0:01:43 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:39 - 0:01:43 - (6016/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:39 - 0:01:44 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:40 - 0:01:44 - (6048/9934) Found 30/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:40 - 0:01:44 -     Found 30/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:41 - 0:01:45 - (6112/9934) Found 30/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:41 - 0:01:45 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:41 - 0:01:45 - (6144/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:42 - 0:01:46 -     Found 32/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:42 - 0:01:46 - (6176/9934) Found 30/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:43 - 0:01:47 -     Found 30/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:43 - 0:01:47 - (6208/9934) Found 30/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:44 - 0:01:48 -     Found 30/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:44 - 0:01:48 - (6240/9934) Found 28/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:45 - 0:01:49 -     Found 30/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:46 - 0:01:50 - (6368/9934) Found 29/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:47 - 0:01:51 -     Found 30/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:47 - 0:01:51 - (6400/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:47 - 0:01:52 -     Found 32/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:48 - 0:01:52 - (6432/9934) Found 29/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:48 - 0:01:52 -     Found 29/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:48 - 0:01:53 - (6464/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:49 - 0:01:53 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:49 - 0:01:53 - (6496/9934) Found 30/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:50 - 0:01:54 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:50 - 0:01:54 - (6528/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:50 - 0:01:55 -     Found 32/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:51 - 0:01:55 - (6560/9934) Found 28/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:51 - 0:01:56 -     Found 28/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:52 - 0:01:56 - (6624/9934) Found 30/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:53 - 0:01:57 -     Found 30/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:53 - 0:01:57 - (6656/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:54 - 0:01:58 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:54 - 0:01:58 - (6688/9934) Found 29/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:55 - 0:01:59 -     Found 29/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:55 - 0:01:59 - (6720/9934) Found 26/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:56 - 0:02:00 -     Found 29/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:56 - 0:02:00 - (6752/9934) Found 30/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:57 - 0:02:01 -     Found 30/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:57 - 0:02:01 - (6784/9934) Found 29/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:58 - 0:02:02 -     Found 30/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:58 - 0:02:02 - (6816/9934) Found 31/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:55:58 - 0:02:02 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:55:59 - 0:02:03 - (6848/9934) Found 19/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:00 - 0:02:04 -     Found 20/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:00 - 0:02:04 - (6880/9934) Found 21/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:01 - 0:02:05 -     Found 23/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:01 - 0:02:06 - (6912/9934) Found 24/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:02 - 0:02:06 -     Found 26/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:03 - 0:02:07 - (6944/9934) Found 27/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:03 - 0:02:07 -     Found 27/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:04 - 0:02:08 - (6976/9934) Found 22/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:04 - 0:02:09 -     Found 25/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:05 - 0:02:09 - (7008/9934) Found 24/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:06 - 0:02:10 -     Found 25/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:06 - 0:02:10 - (7040/9934) Found 26/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:07 - 0:02:11 -     Found 27/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:07 - 0:02:11 - (7072/9934) Found 23/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:08 - 0:02:12 -     Found 24/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:09 - 0:02:13 - (7104/9934) Found 24/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:09 - 0:02:14 -     Found 28/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:10 - 0:02:14 - (7136/9934) Found 24/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:11 - 0:02:15 -     Found 25/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:11 - 0:02:15 - (7168/9934) Found 24/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:12 - 0:02:16 -     Found 26/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:12 - 0:02:16 - (7200/9934) Found 27/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:13 - 0:02:17 -     Found 27/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:13 - 0:02:18 - (7232/9934) Found 27/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:14 - 0:02:18 -     Found 27/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:14 - 0:02:19 - (7264/9934) Found 29/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:15 - 0:02:19 -     Found 29/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:15 - 0:02:20 - (7296/9934) Found 24/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:17 - 0:02:21 -     Found 25/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:17 - 0:02:21 - (7328/9934) Found 23/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:18 - 0:02:22 -     Found 25/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:18 - 0:02:23 - (7360/9934) Found 27/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:19 - 0:02:23 -     Found 28/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:20 - 0:02:24 - (7392/9934) Found 30/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:20 - 0:02:24 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:20 - 0:02:25 - (7424/9934) Found 28/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:21 - 0:02:25 -     Found 28/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:21 - 0:02:26 - (7456/9934) Found 26/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:22 - 0:02:26 -     Found 26/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:23 - 0:02:27 - (7488/9934) Found 21/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:24 - 0:02:28 -     Found 24/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:24 - 0:02:28 - (7520/9934) Found 26/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:25 - 0:02:29 -     Found 29/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:26 - 0:02:30 - (7552/9934) Found 27/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:26 - 0:02:31 -     Found 28/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:27 - 0:02:31 - (7584/9934) Found 26/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:27 - 0:02:32 -     Found 26/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:28 - 0:02:32 - (7616/9934) Found 28/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:28 - 0:02:33 -     Found 29/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:29 - 0:02:33 - (7648/9934) Found 27/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:30 - 0:02:34 -     Found 28/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:30 - 0:02:34 - (7680/9934) Found 24/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:31 - 0:02:35 -     Found 26/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:31 - 0:02:35 - (7712/9934) Found 26/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:32 - 0:02:36 -     Found 26/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:33 - 0:02:37 - (7744/9934) Found 30/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:33 - 0:02:37 -     Found 30/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:34 - 0:02:38 - (7776/9934) Found 27/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:34 - 0:02:38 -     Found 27/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:35 - 0:02:39 - (7808/9934) Found 20/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:36 - 0:02:40 -     Found 23/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:36 - 0:02:40 - (7840/9934) Found 30/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:37 - 0:02:41 -     Found 30/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:37 - 0:02:41 - (7872/9934) Found 29/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:37 - 0:02:42 -     Found 29/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:38 - 0:02:42 - (7904/9934) Found 26/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:39 - 0:02:43 -     Found 28/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:39 - 0:02:43 - (7936/9934) Found 25/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:40 - 0:02:44 -     Found 28/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:40 - 0:02:44 - (7968/9934) Found 25/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:41 - 0:02:45 -     Found 26/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:41 - 0:02:46 - (8000/9934) Found 28/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:42 - 0:02:46 -     Found 28/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:43 - 0:02:47 - (8032/9934) Found 26/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:43 - 0:02:48 -     Found 26/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:44 - 0:02:48 - (8064/9934) Found 27/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:45 - 0:02:49 -     Found 27/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:45 - 0:02:49 - (8096/9934) Found 23/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:46 - 0:02:50 -     Found 23/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:46 - 0:02:51 - (8128/9934) Found 26/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:47 - 0:02:51 -     Found 28/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:47 - 0:02:52 - (8160/9934) Found 22/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:49 - 0:02:53 -     Found 23/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:49 - 0:02:53 - (8192/9934) Found 25/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:50 - 0:02:54 -     Found 26/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:50 - 0:02:55 - (8224/9934) Found 23/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:51 - 0:02:55 -     Found 24/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:52 - 0:02:56 - (8256/9934) Found 26/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:53 - 0:02:57 -     Found 26/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:53 - 0:02:57 - (8288/9934) Found 27/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:54 - 0:02:58 -     Found 27/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:54 - 0:02:58 - (8320/9934) Found 29/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:55 - 0:02:59 -     Found 30/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:55 - 0:02:59 - (8352/9934) Found 28/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:56 - 0:03:00 -     Found 28/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:56 - 0:03:00 - (8384/9934) Found 20/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:57 - 0:03:01 -     Found 22/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:58 - 0:03:02 - (8416/9934) Found 26/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:56:58 - 0:03:03 -     Found 27/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:56:59 - 0:03:03 - (8448/9934) Found 26/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:57:00 - 0:03:04 -     Found 26/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:57:00 - 0:03:04 - (8480/9934) Found 25/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:57:01 - 0:03:05 -     Found 26/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:57:01 - 0:03:05 - (8512/9934) Found 24/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:57:02 - 0:03:07 -     Found 25/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:57:03 - 0:03:07 - (8544/9934) Found 25/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:57:04 - 0:03:08 -     Found 27/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:57:04 - 0:03:08 - (8576/9934) Found 23/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:57:05 - 0:03:09 -     Found 23/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:57:06 - 0:03:10 - (8608/9934) Found 27/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:57:06 - 0:03:10 -     Found 27/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:57:07 - 0:03:11 - (8640/9934) Found 27/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:57:07 - 0:03:12 -     Found 27/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:57:08 - 0:03:12 - (8672/9934) Found 24/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:57:09 - 0:03:13 -     Found 26/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:57:09 - 0:03:13 - (8704/9934) Found 27/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:57:10 - 0:03:14 -     Found 27/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:57:10 - 0:03:15 - (8736/9934) Found 27/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:57:11 - 0:03:15 -     Found 28/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:57:11 - 0:03:16 - (8768/9934) Found 28/32 valid top-1 predictions. Generating solutions ...
+ERROR - 02/11/26 16:57:12 - 0:03:16 - Exception TypeError when checking hypothesis: ['mul', 'pow', 'ab16', 'INT-', '1', 'mul', 'pow', 'ab23', 'INT-', '1', 'mul', 'pow', 'ab36', 'INT-', '1', 'mul', 'pow', 'sb13', 'INT-', '1', 'mul', 'pow', 'sb16', 'INT-', '1', 'mul', 'pow', 'sb56', 'INT-', '1', 'add', 'mul', 'pow', 'sb45', 'INT+', '2', 'mul', 'sb12', 'sb13', 'mul', 'ab26', 'mul', 'sb12', 'mul', 'sb24', 'mul', 'sb35']
+INFO - 02/11/26 16:57:12 - 0:03:16 -     Found 28/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:57:12 - 0:03:17 - (8800/9934) Found 27/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:57:13 - 0:03:17 -     Found 30/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:57:14 - 0:03:18 - (8832/9934) Found 30/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:57:14 - 0:03:18 -     Found 30/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:57:15 - 0:03:19 - (8864/9934) Found 21/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:57:16 - 0:03:20 -     Found 24/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:57:16 - 0:03:20 - (8896/9934) Found 28/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:57:17 - 0:03:21 -     Found 28/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:57:17 - 0:03:21 - (8928/9934) Found 24/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:57:18 - 0:03:22 -     Found 27/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:57:18 - 0:03:23 - (8960/9934) Found 25/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:57:19 - 0:03:23 -     Found 26/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:57:20 - 0:03:24 - (8992/9934) Found 27/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:57:20 - 0:03:25 -     Found 29/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:57:21 - 0:03:25 - (9024/9934) Found 26/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:57:22 - 0:03:26 -     Found 26/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:57:22 - 0:03:26 - (9056/9934) Found 29/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:57:22 - 0:03:27 -     Found 30/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:57:23 - 0:03:27 - (9088/9934) Found 27/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:57:23 - 0:03:27 -     Found 27/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:57:24 - 0:03:28 - (9120/9934) Found 27/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:57:24 - 0:03:29 -     Found 27/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:57:25 - 0:03:29 - (9152/9934) Found 26/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:57:26 - 0:03:30 -     Found 27/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:57:26 - 0:03:30 - (9184/9934) Found 29/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:57:27 - 0:03:31 -     Found 29/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:57:27 - 0:03:31 - (9216/9934) Found 29/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:57:28 - 0:03:32 -     Found 29/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:57:28 - 0:03:32 - (9248/9934) Found 27/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:57:29 - 0:03:33 -     Found 29/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:57:29 - 0:03:33 - (9280/9934) Found 26/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:57:30 - 0:03:34 -     Found 28/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:57:30 - 0:03:34 - (9312/9934) Found 23/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:57:31 - 0:03:35 -     Found 25/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:57:31 - 0:03:36 - (9344/9934) Found 28/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:57:32 - 0:03:36 -     Found 28/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:57:32 - 0:03:37 - (9376/9934) Found 30/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:57:33 - 0:03:37 -     Found 31/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:57:33 - 0:03:37 - (9408/9934) Found 29/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:57:34 - 0:03:38 -     Found 30/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:57:34 - 0:03:38 - (9440/9934) Found 26/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:57:35 - 0:03:39 -     Found 27/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:57:35 - 0:03:40 - (9472/9934) Found 25/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:57:36 - 0:03:40 -     Found 26/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:57:37 - 0:03:41 - (9504/9934) Found 29/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:57:37 - 0:03:41 -     Found 29/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:57:38 - 0:03:42 - (9536/9934) Found 26/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:57:38 - 0:03:42 -     Found 28/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:57:39 - 0:03:43 - (9568/9934) Found 27/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:57:40 - 0:03:44 -     Found 28/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:57:40 - 0:03:44 - (9600/9934) Found 25/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:57:41 - 0:03:45 -     Found 27/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:57:41 - 0:03:45 - (9632/9934) Found 29/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:57:42 - 0:03:46 -     Found 29/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:57:42 - 0:03:46 - (9664/9934) Found 27/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:57:43 - 0:03:47 -     Found 29/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:57:43 - 0:03:47 - (9696/9934) Found 23/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:57:44 - 0:03:48 -     Found 23/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:57:45 - 0:03:49 - (9728/9934) Found 25/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:57:45 - 0:03:50 -     Found 25/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:57:46 - 0:03:50 - (9760/9934) Found 27/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:57:46 - 0:03:51 -     Found 28/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:57:47 - 0:03:51 - (9792/9934) Found 30/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:57:47 - 0:03:52 -     Found 30/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:57:48 - 0:03:52 - (9824/9934) Found 28/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:57:48 - 0:03:52 -     Found 28/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:57:49 - 0:03:53 - (9856/9934) Found 29/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:57:49 - 0:03:53 -     Found 29/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:57:50 - 0:03:54 - (9888/9934) Found 27/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:57:50 - 0:03:54 -     Found 28/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:57:51 - 0:03:55 - (9920/9934) Found 26/32 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:57:51 - 0:03:55 -     Found 27/32 solutions in beam hypotheses.
+INFO - 02/11/26 16:57:51 - 0:03:56 - (9934/9934) Found 12/14 valid top-1 predictions. Generating solutions ...
+INFO - 02/11/26 16:57:52 - 0:03:56 -     Found 12/14 solutions in beam hypotheses.
+INFO - 02/11/26 16:57:52 - 0:03:56 - Evaluation results written in /het/p4/dshih/jet_images-deep_learning/RL_amplitudes_claude/working/results/paper_model_eval/eval_paper_6pt_beam1_fixedeval/beam1_6pt_fixedeval/eval.spin_hel.test.0
+INFO - 02/11/26 16:57:52 - 0:03:56 - 9253/9934 (93.1447553855446%) equations were evaluated correctly.
+INFO - 02/11/26 16:57:52 - 0:03:56 - tensor([[  0],
+                                             [  0],
+                                             [  0],
+                                             [  0],
+                                             [  0],
+                                             [  0],
+                                             [  3],
+                                             [  1],
+                                             [  9],
+                                             [ 17],
+                                             [  6],
+                                             [ 14],
+                                             [ 21],
+                                             [ 17],
+                                             [ 17],
+                                             [ 29],
+                                             [ 21],
+                                             [ 25],
+                                             [ 22],
+                                             [ 32],
+                                             [ 37],
+                                             [ 53],
+                                             [ 53],
+                                             [ 66],
+                                             [ 49],
+                                             [ 54],
+                                             [ 73],
+                                             [ 66],
+                                             [ 73],
+                                             [ 85],
+                                             [ 82],
+                                             [ 70],
+                                             [ 55],
+                                             [ 64],
+                                             [ 74],
+                                             [ 60],
+                                             [ 85],
+                                             [ 84],
+                                             [ 99],
+                                             [ 75],
+                                             [ 71],
+                                             [ 98],
+                                             [ 94],
+                                             [104],
+                                             [ 92],
+                                             [ 89],
+                                             [ 81],
+                                             [ 83],
+                                             [100],
+                                             [118],
+                                             [ 74],
+                                             [ 89],
+                                             [ 72],
+                                             [ 86],
+                                             [ 87],
+                                             [ 91],
+                                             [ 75],
+                                             [ 92],
+                                             [ 72],
+                                             [ 86],
+                                             [ 82],
+                                             [ 69],
+                                             [ 57],
+                                             [ 89],
+                                             [ 73],
+                                             [ 63],
+                                             [ 80],
+                                             [ 73],
+                                             [ 72],
+                                             [ 65],
+                                             [ 62],
+                                             [ 85],
+                                             [ 70],
+                                             [ 56],
+                                             [ 68],
+                                             [ 63],
+                                             [ 69],
+                                             [ 52],
+                                             [ 61],
+                                             [ 66],
+                                             [ 52],
+                                             [ 66],
+                                             [ 54],
+                                             [ 54],
+                                             [ 40],
+                                             [ 57],
+                                             [ 60],
+                                             [ 54],
+                                             [ 44],
+                                             [ 54],
+                                             [ 63],
+                                             [ 55],
+                                             [ 42],
+                                             [ 45],
+                                             [ 47],
+                                             [ 57],
+                                             [ 54],
+                                             [ 53],
+                                             [ 42],
+                                             [ 37],
+                                             [ 44],
+                                             [ 49],
+                                             [ 40],
+                                             [ 44],
+                                             [ 45],
+                                             [ 50],
+                                             [ 44],
+                                             [ 42],
+                                             [ 46],
+                                             [ 39],
+                                             [ 30],
+                                             [ 38],
+                                             [ 31],
+                                             [ 28],
+                                             [ 41],
+                                             [ 42],
+                                             [ 33],
+                                             [ 33],
+                                             [ 30],
+                                             [ 24],
+                                             [ 36],
+                                             [ 32],
+                                             [ 28],
+                                             [ 30],
+                                             [ 26],
+                                             [ 33],
+                                             [ 36],
+                                             [ 31],
+                                             [ 33],
+                                             [ 32],
+                                             [ 26],
+                                             [ 37],
+                                             [ 29],
+                                             [ 31],
+                                             [ 26],
+                                             [ 25],
+                                             [ 27],
+                                             [ 25],
+                                             [ 18],
+                                             [ 31],
+                                             [ 26],
+                                             [ 23],
+                                             [ 27],
+                                             [ 31],
+                                             [ 28],
+                                             [ 19],
+                                             [ 18],
+                                             [ 19],
+                                             [ 33],
+                                             [ 22],
+                                             [ 26],
+                                             [ 19],
+                                             [ 20],
+                                             [ 16],
+                                             [ 20],
+                                             [ 21],
+                                             [ 13],
+                                             [ 24],
+                                             [ 18],
+                                             [ 17],
+                                             [ 17],
+                                             [ 17],
+                                             [ 20],
+                                             [ 20],
+                                             [ 21],
+                                             [ 20],
+                                             [ 12],
+                                             [ 12],
+                                             [ 24],
+                                             [ 17],
+                                             [ 18],
+                                             [ 18],
+                                             [ 12],
+                                             [ 17],
+                                             [ 25],
+                                             [ 18],
+                                             [ 14],
+                                             [ 15],
+                                             [ 10],
+                                             [ 20],
+                                             [ 12],
+                                             [ 12],
+                                             [ 12],
+                                             [  8],
+                                             [ 13],
+                                             [ 23],
+                                             [ 10],
+                                             [ 19],
+                                             [ 14],
+                                             [ 11],
+                                             [ 13],
+                                             [ 15],
+                                             [  7],
+                                             [ 11],
+                                             [ 11],
+                                             [ 16],
+                                             [  7],
+                                             [ 16],
+                                             [ 17],
+                                             [ 17],
+                                             [ 13],
+                                             [ 14],
+                                             [ 11],
+                                             [  8],
+                                             [ 13],
+                                             [  9],
+                                             [ 10],
+                                             [  3],
+                                             [ 13],
+                                             [  7],
+                                             [  8],
+                                             [  9],
+                                             [ 10],
+                                             [ 17],
+                                             [ 13],
+                                             [  9],
+                                             [ 14],
+                                             [ 11],
+                                             [ 15],
+                                             [  7],
+                                             [  7],
+                                             [  7],
+                                             [  6],
+                                             [  9],
+                                             [ 13],
+                                             [ 11],
+                                             [  9],
+                                             [  5],
+                                             [  9],
+                                             [  5],
+                                             [ 10],
+                                             [ 10],
+                                             [ 11],
+                                             [  5],
+                                             [  7],
+                                             [  6],
+                                             [  7],
+                                             [ 13],
+                                             [  5],
+                                             [ 10],
+                                             [  9],
+                                             [  3],
+                                             [ 10],
+                                             [  4],
+                                             [  4],
+                                             [  8],
+                                             [  6],
+                                             [  4],
+                                             [ 14],
+                                             [  9],
+                                             [ 10],
+                                             [  9],
+                                             [  6],
+                                             [ 10],
+                                             [  5],
+                                             [  4],
+                                             [  1],
+                                             [  4],
+                                             [  2],
+                                             [  7],
+                                             [  7],
+                                             [  8],
+                                             [  7],
+                                             [  6],
+                                             [ 12],
+                                             [  5],
+                                             [  4],
+                                             [  7],
+                                             [  4],
+                                             [  6],
+                                             [  5],
+                                             [  1],
+                                             [  9],
+                                             [  2],
+                                             [  1],
+                                             [  2],
+                                             [  3],
+                                             [  7],
+                                             [  4],
+                                             [  6],
+                                             [  4],
+                                             [  4],
+                                             [  5],
+                                             [  5],
+                                             [  4],
+                                             [  7],
+                                             [  6],
+                                             [  2],
+                                             [  6],
+                                             [  3],
+                                             [  5],
+                                             [  2],
+                                             [  5],
+                                             [  3],
+                                             [  2],
+                                             [  4],
+                                             [  5],
+                                             [  5],
+                                             [  1],
+                                             [  2],
+                                             [  4],
+                                             [  6],
+                                             [  3],
+                                             [  2],
+                                             [  4],
+                                             [  3],
+                                             [  2],
+                                             [  6],
+                                             [  3],
+                                             [  6],
+                                             [  5],
+                                             [  1],
+                                             [  3],
+                                             [  5],
+                                             [  4],
+                                             [  6],
+                                             [  2],
+                                             [  3],
+                                             [  3],
+                                             [  4],
+                                             [  2],
+                                             [  4],
+                                             [  1],
+                                             [  2],
+                                             [  5],
+                                             [  5],
+                                             [  4],
+                                             [  5],
+                                             [  2],
+                                             [  2],
+                                             [  1],
+                                             [  9],
+                                             [  4],
+                                             [  3],
+                                             [  2],
+                                             [  3],
+                                             [  2],
+                                             [  2],
+                                             [  6],
+                                             [  3],
+                                             [  6],
+                                             [  6],
+                                             [  0],
+                                             [  1],
+                                             [  3],
+                                             [  3],
+                                             [  3],
+                                             [  3],
+                                             [  2],
+                                             [  4],
+                                             [  4],
+                                             [  3],
+                                             [  4],
+                                             [  4],
+                                             [  1],
+                                             [  3],
+                                             [  3],
+                                             [  1],
+                                             [  1],
+                                             [  2],
+                                             [  1],
+                                             [  3],
+                                             [  4],
+                                             [  1],
+                                             [  1],
+                                             [  3],
+                                             [  4],
+                                             [  1],
+                                             [  2],
+                                             [  2],
+                                             [  2],
+                                             [  2],
+                                             [  5],
+                                             [  3],
+                                             [  2],
+                                             [  4],
+                                             [  2],
+                                             [  5],
+                                             [  2],
+                                             [  4],
+                                             [  2],
+                                             [  1],
+                                             [  2],
+                                             [  5],
+                                             [  0],
+                                             [  2],
+                                             [  6],
+                                             [  4],
+                                             [  2],
+                                             [  3],
+                                             [  1],
+                                             [  2],
+                                             [  2],
+                                             [  4],
+                                             [  3],
+                                             [  0],
+                                             [  4],
+                                             [  2],
+                                             [  2],
+                                             [  4],
+                                             [  2],
+                                             [  1],
+                                             [  2],
+                                             [  3],
+                                             [  1],
+                                             [  1],
+                                             [  6],
+                                             [  1],
+                                             [  3],
+                                             [  4],
+                                             [  4],
+                                             [  1],
+                                             [  3],
+                                             [  2],
+                                             [  3],
+                                             [  3],
+                                             [  1],
+                                             [  0],
+                                             [  3],
+                                             [  3],
+                                             [  2],
+                                             [  3],
+                                             [  0],
+                                             [  1],
+                                             [  0],
+                                             [  2],
+                                             [  0],
+                                             [  2],
+                                             [  1],
+                                             [  2],
+                                             [  3],
+                                             [  2],
+                                             [  1],
+                                             [  1],
+                                             [  2],
+                                             [  1],
+                                             [  1],
+                                             [  0],
+                                             [  1],
+                                             [  0],
+                                             [  1],
+                                             [  5],
+                                             [  3],
+                                             [  3],
+                                             [  2],
+                                             [  1],
+                                             [  1],
+                                             [  0],
+                                             [  0],
+                                             [  0],
+                                             [  0],
+                                             [  0],
+                                             [  1],
+                                             [  1]])
+INFO - 02/11/26 16:57:52 - 0:03:56 - 5: 0 / 1 (0.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 6: 3 / 3 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 7: 1 / 1 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 8: 9 / 9 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 9: 17 / 17 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 10: 6 / 6 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 11: 14 / 14 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 12: 21 / 21 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 13: 17 / 18 (94.44444444444444%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 14: 17 / 17 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 15: 29 / 30 (96.66666666666667%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 16: 21 / 21 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 17: 25 / 25 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 18: 22 / 23 (95.65217391304348%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 19: 32 / 32 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 20: 37 / 37 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 21: 53 / 55 (96.36363636363636%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 22: 53 / 53 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 23: 66 / 67 (98.50746268656717%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 24: 49 / 49 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 25: 54 / 54 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 26: 73 / 73 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 27: 66 / 67 (98.50746268656717%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 28: 73 / 74 (98.64864864864865%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 29: 85 / 86 (98.83720930232558%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 30: 82 / 85 (96.47058823529412%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 31: 70 / 71 (98.59154929577464%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 32: 55 / 56 (98.21428571428571%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 33: 64 / 64 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 34: 74 / 75 (98.66666666666667%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 35: 60 / 61 (98.36065573770492%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 36: 85 / 87 (97.70114942528735%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 37: 84 / 85 (98.82352941176471%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 38: 99 / 100 (99.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 39: 75 / 77 (97.40259740259741%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 40: 71 / 71 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 41: 98 / 98 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 42: 94 / 96 (97.91666666666667%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 43: 104 / 106 (98.11320754716981%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 44: 92 / 95 (96.84210526315789%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 45: 89 / 91 (97.8021978021978%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 46: 81 / 83 (97.59036144578313%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 47: 83 / 86 (96.51162790697674%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 48: 100 / 105 (95.23809523809524%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 49: 118 / 119 (99.15966386554622%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 50: 74 / 75 (98.66666666666667%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 51: 89 / 92 (96.73913043478261%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 52: 72 / 74 (97.29729729729729%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 53: 86 / 91 (94.50549450549451%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 54: 87 / 90 (96.66666666666667%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 55: 91 / 94 (96.80851063829788%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 56: 75 / 75 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 57: 92 / 95 (96.84210526315789%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 58: 72 / 73 (98.63013698630137%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 59: 86 / 87 (98.85057471264368%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 60: 82 / 86 (95.34883720930233%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 61: 69 / 73 (94.52054794520548%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 62: 57 / 60 (95.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 63: 89 / 93 (95.6989247311828%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 64: 73 / 73 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 65: 63 / 65 (96.92307692307692%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 66: 80 / 82 (97.5609756097561%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 67: 73 / 76 (96.05263157894737%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 68: 72 / 76 (94.73684210526316%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 69: 65 / 67 (97.01492537313433%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 70: 62 / 63 (98.41269841269842%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 71: 85 / 89 (95.50561797752809%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 72: 70 / 73 (95.89041095890411%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 73: 56 / 60 (93.33333333333333%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 74: 68 / 72 (94.44444444444444%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 75: 63 / 66 (95.45454545454545%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 76: 69 / 74 (93.24324324324324%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 77: 52 / 55 (94.54545454545455%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 78: 61 / 63 (96.82539682539682%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 79: 66 / 69 (95.65217391304348%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 80: 52 / 54 (96.29629629629629%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 81: 66 / 68 (97.05882352941177%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 82: 54 / 59 (91.52542372881356%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 83: 54 / 60 (90.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 84: 40 / 45 (88.88888888888889%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 85: 57 / 58 (98.27586206896552%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 86: 60 / 65 (92.3076923076923%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 87: 54 / 60 (90.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 88: 44 / 48 (91.66666666666667%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 89: 54 / 58 (93.10344827586206%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 90: 63 / 65 (96.92307692307692%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 91: 55 / 57 (96.49122807017544%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 92: 42 / 47 (89.36170212765957%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 93: 45 / 49 (91.83673469387755%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 94: 47 / 52 (90.38461538461539%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 95: 57 / 61 (93.44262295081967%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 96: 54 / 56 (96.42857142857143%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 97: 53 / 59 (89.83050847457628%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 98: 42 / 46 (91.30434782608695%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 99: 37 / 41 (90.2439024390244%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 100: 44 / 47 (93.61702127659575%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 101: 49 / 49 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 102: 40 / 43 (93.02325581395348%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 103: 44 / 47 (93.61702127659575%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 104: 45 / 45 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 105: 50 / 53 (94.33962264150944%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 106: 44 / 46 (95.65217391304348%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 107: 42 / 48 (87.5%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 108: 46 / 50 (92.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 109: 39 / 42 (92.85714285714286%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 110: 30 / 33 (90.9090909090909%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 111: 38 / 38 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 112: 31 / 35 (88.57142857142857%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 113: 28 / 30 (93.33333333333333%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 114: 41 / 43 (95.34883720930233%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 115: 42 / 50 (84.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 116: 33 / 35 (94.28571428571429%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 117: 33 / 35 (94.28571428571429%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 118: 30 / 33 (90.9090909090909%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 119: 24 / 27 (88.88888888888889%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 120: 36 / 38 (94.73684210526316%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 121: 32 / 36 (88.88888888888889%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 122: 28 / 31 (90.3225806451613%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 123: 30 / 31 (96.7741935483871%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 124: 26 / 30 (86.66666666666667%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 125: 33 / 35 (94.28571428571429%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 126: 36 / 38 (94.73684210526316%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 127: 31 / 35 (88.57142857142857%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 128: 33 / 36 (91.66666666666667%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 129: 32 / 35 (91.42857142857143%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 130: 26 / 29 (89.65517241379311%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 131: 37 / 38 (97.36842105263158%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 132: 29 / 34 (85.29411764705883%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 133: 31 / 34 (91.17647058823529%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 134: 26 / 27 (96.29629629629629%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 135: 25 / 27 (92.5925925925926%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 136: 27 / 30 (90.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 137: 25 / 29 (86.20689655172414%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 138: 18 / 21 (85.71428571428571%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 139: 31 / 34 (91.17647058823529%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 140: 26 / 28 (92.85714285714286%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 141: 23 / 24 (95.83333333333333%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 142: 27 / 29 (93.10344827586206%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 143: 31 / 32 (96.875%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 144: 28 / 31 (90.3225806451613%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 145: 19 / 20 (95.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 146: 18 / 18 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 147: 19 / 23 (82.6086956521739%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 148: 33 / 39 (84.61538461538461%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 149: 22 / 25 (88.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 150: 26 / 33 (78.78787878787878%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 151: 19 / 21 (90.47619047619048%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 152: 20 / 22 (90.9090909090909%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 153: 16 / 18 (88.88888888888889%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 154: 20 / 22 (90.9090909090909%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 155: 21 / 23 (91.30434782608695%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 156: 13 / 16 (81.25%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 157: 24 / 24 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 158: 18 / 19 (94.73684210526316%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 159: 17 / 17 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 160: 17 / 23 (73.91304347826087%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 161: 17 / 19 (89.47368421052632%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 162: 20 / 22 (90.9090909090909%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 163: 20 / 22 (90.9090909090909%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 164: 21 / 23 (91.30434782608695%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 165: 20 / 21 (95.23809523809524%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 166: 12 / 14 (85.71428571428571%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 167: 12 / 15 (80.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 168: 24 / 24 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 169: 17 / 22 (77.27272727272727%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 170: 18 / 18 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 171: 18 / 18 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 172: 12 / 13 (92.3076923076923%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 173: 17 / 19 (89.47368421052632%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 174: 25 / 25 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 175: 18 / 20 (90.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 176: 14 / 16 (87.5%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 177: 15 / 19 (78.94736842105263%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 178: 10 / 14 (71.42857142857143%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 179: 20 / 22 (90.9090909090909%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 180: 12 / 15 (80.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 181: 12 / 13 (92.3076923076923%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 182: 12 / 14 (85.71428571428571%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 183: 8 / 9 (88.88888888888889%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 184: 13 / 14 (92.85714285714286%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 185: 23 / 25 (92.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 186: 10 / 10 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 187: 19 / 20 (95.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 188: 14 / 18 (77.77777777777777%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 189: 11 / 13 (84.61538461538461%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 190: 13 / 15 (86.66666666666667%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 191: 15 / 19 (78.94736842105263%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 192: 7 / 10 (70.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 193: 11 / 12 (91.66666666666667%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 194: 11 / 12 (91.66666666666667%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 195: 16 / 17 (94.11764705882354%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 196: 7 / 12 (58.333333333333336%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 197: 16 / 18 (88.88888888888889%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 198: 17 / 17 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 199: 17 / 20 (85.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 200: 13 / 15 (86.66666666666667%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 201: 14 / 18 (77.77777777777777%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 202: 11 / 11 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 203: 8 / 8 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 204: 13 / 13 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 205: 9 / 9 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 206: 10 / 10 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 207: 3 / 3 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 208: 13 / 13 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 209: 7 / 8 (87.5%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 210: 8 / 9 (88.88888888888889%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 211: 9 / 11 (81.81818181818181%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 212: 10 / 11 (90.9090909090909%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 213: 17 / 19 (89.47368421052632%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 214: 13 / 15 (86.66666666666667%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 215: 9 / 9 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 216: 14 / 15 (93.33333333333333%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 217: 11 / 16 (68.75%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 218: 15 / 19 (78.94736842105263%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 219: 7 / 7 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 220: 7 / 7 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 221: 7 / 9 (77.77777777777777%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 222: 6 / 7 (85.71428571428571%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 223: 9 / 10 (90.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 224: 13 / 15 (86.66666666666667%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 225: 11 / 11 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 226: 9 / 10 (90.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 227: 5 / 5 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 228: 9 / 10 (90.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 229: 5 / 6 (83.33333333333333%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 230: 10 / 10 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 231: 10 / 14 (71.42857142857143%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 232: 11 / 11 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 233: 5 / 9 (55.55555555555556%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 234: 7 / 8 (87.5%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 235: 6 / 7 (85.71428571428571%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 236: 7 / 8 (87.5%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 237: 13 / 14 (92.85714285714286%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 238: 5 / 6 (83.33333333333333%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 239: 10 / 13 (76.92307692307692%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 240: 9 / 9 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 241: 3 / 6 (50.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 242: 10 / 14 (71.42857142857143%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 243: 4 / 4 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 244: 4 / 4 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 245: 8 / 9 (88.88888888888889%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 246: 6 / 10 (60.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 247: 4 / 6 (66.66666666666667%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 248: 14 / 14 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 249: 9 / 11 (81.81818181818181%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 250: 10 / 10 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 251: 9 / 12 (75.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 252: 6 / 7 (85.71428571428571%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 253: 10 / 10 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 254: 5 / 6 (83.33333333333333%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 255: 4 / 7 (57.142857142857146%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 256: 1 / 4 (25.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 257: 4 / 4 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 258: 2 / 2 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 259: 7 / 8 (87.5%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 260: 7 / 10 (70.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 261: 8 / 10 (80.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 262: 7 / 9 (77.77777777777777%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 263: 6 / 8 (75.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 264: 12 / 13 (92.3076923076923%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 265: 5 / 6 (83.33333333333333%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 266: 4 / 5 (80.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 267: 7 / 7 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 268: 4 / 4 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 269: 6 / 8 (75.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 270: 5 / 7 (71.42857142857143%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 271: 1 / 3 (33.333333333333336%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 272: 9 / 11 (81.81818181818181%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 273: 2 / 2 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 274: 1 / 2 (50.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 275: 2 / 3 (66.66666666666667%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 276: 3 / 3 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 277: 7 / 9 (77.77777777777777%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 278: 4 / 4 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 279: 6 / 6 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 280: 4 / 5 (80.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 281: 4 / 5 (80.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 282: 5 / 5 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 283: 5 / 5 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 284: 4 / 6 (66.66666666666667%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 285: 7 / 7 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 286: 6 / 6 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 287: 2 / 2 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 288: 6 / 8 (75.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 289: 3 / 4 (75.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 290: 5 / 5 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 291: 2 / 2 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 292: 5 / 7 (71.42857142857143%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 293: 3 / 5 (60.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 294: 2 / 3 (66.66666666666667%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 295: 4 / 6 (66.66666666666667%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 296: 5 / 6 (83.33333333333333%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 297: 5 / 6 (83.33333333333333%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 298: 1 / 4 (25.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 299: 2 / 5 (40.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 300: 4 / 5 (80.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 301: 6 / 6 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 302: 3 / 3 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 303: 2 / 2 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 304: 4 / 6 (66.66666666666667%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 305: 3 / 6 (50.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 306: 2 / 4 (50.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 307: 6 / 6 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 308: 3 / 3 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 309: 6 / 6 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 310: 5 / 5 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 311: 1 / 2 (50.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 312: 3 / 4 (75.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 313: 5 / 6 (83.33333333333333%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 314: 4 / 5 (80.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 315: 6 / 6 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 316: 2 / 2 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 317: 3 / 5 (60.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 318: 3 / 4 (75.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 319: 4 / 6 (66.66666666666667%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 320: 2 / 3 (66.66666666666667%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 321: 4 / 5 (80.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 322: 1 / 1 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 323: 2 / 3 (66.66666666666667%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 324: 5 / 5 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 325: 5 / 5 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 326: 4 / 5 (80.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 327: 5 / 7 (71.42857142857143%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 328: 2 / 2 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 329: 2 / 4 (50.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 330: 1 / 2 (50.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 331: 9 / 11 (81.81818181818181%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 332: 4 / 5 (80.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 333: 3 / 4 (75.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 334: 2 / 4 (50.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 335: 3 / 6 (50.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 336: 2 / 2 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 337: 2 / 4 (50.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 338: 6 / 6 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 339: 3 / 6 (50.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 340: 6 / 7 (85.71428571428571%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 341: 6 / 6 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 342: 0 / 2 (0.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 343: 1 / 2 (50.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 344: 3 / 4 (75.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 345: 3 / 3 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 346: 3 / 3 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 347: 3 / 3 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 348: 2 / 2 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 349: 4 / 4 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 350: 4 / 4 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 351: 3 / 4 (75.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 352: 4 / 4 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 353: 4 / 4 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 354: 1 / 1 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 355: 3 / 3 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 356: 3 / 3 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 357: 1 / 1 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 358: 1 / 2 (50.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 359: 2 / 3 (66.66666666666667%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 360: 1 / 2 (50.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 361: 3 / 4 (75.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 362: 4 / 6 (66.66666666666667%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 363: 1 / 1 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 364: 1 / 1 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 365: 3 / 3 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 366: 4 / 4 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 367: 1 / 2 (50.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 368: 2 / 3 (66.66666666666667%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 369: 2 / 4 (50.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 370: 2 / 4 (50.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 371: 2 / 2 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 372: 5 / 5 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 373: 3 / 5 (60.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 374: 2 / 2 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 375: 4 / 4 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 376: 2 / 2 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 377: 5 / 7 (71.42857142857143%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 378: 2 / 2 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 379: 4 / 5 (80.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 380: 2 / 2 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 381: 1 / 2 (50.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 382: 2 / 5 (40.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 383: 5 / 7 (71.42857142857143%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 384: 0 / 2 (0.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 385: 2 / 3 (66.66666666666667%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 386: 6 / 7 (85.71428571428571%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 387: 4 / 6 (66.66666666666667%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 388: 2 / 3 (66.66666666666667%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 389: 3 / 3 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 390: 1 / 1 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 391: 2 / 7 (28.571428571428573%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 392: 2 / 2 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 393: 4 / 4 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 394: 3 / 3 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 396: 4 / 5 (80.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 397: 2 / 3 (66.66666666666667%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 398: 2 / 2 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 399: 4 / 4 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 400: 2 / 4 (50.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 401: 1 / 1 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 402: 2 / 3 (66.66666666666667%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 403: 3 / 4 (75.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 404: 1 / 2 (50.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 405: 1 / 1 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 406: 6 / 7 (85.71428571428571%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 407: 1 / 1 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 408: 3 / 3 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 409: 4 / 6 (66.66666666666667%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 410: 4 / 5 (80.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 411: 1 / 3 (33.333333333333336%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 412: 3 / 3 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 413: 2 / 2 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 414: 3 / 4 (75.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 415: 3 / 3 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 416: 1 / 1 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 418: 3 / 4 (75.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 419: 3 / 3 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 420: 2 / 2 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 421: 3 / 5 (60.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 422: 0 / 1 (0.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 423: 1 / 2 (50.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 424: 0 / 2 (0.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 425: 2 / 2 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 426: 0 / 2 (0.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 427: 2 / 2 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 428: 1 / 1 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 429: 2 / 2 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 430: 3 / 5 (60.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 431: 2 / 4 (50.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 432: 1 / 1 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 433: 1 / 1 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 434: 2 / 3 (66.66666666666667%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 435: 1 / 1 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 436: 1 / 1 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 437: 0 / 1 (0.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 438: 1 / 1 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 439: 0 / 1 (0.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 440: 1 / 1 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 441: 5 / 5 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 442: 3 / 4 (75.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 443: 3 / 4 (75.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 444: 2 / 2 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 445: 1 / 1 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 446: 1 / 1 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 449: 0 / 1 (0.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 450: 0 / 2 (0.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 452: 1 / 1 (100.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - 453: 1 / 2 (50.0%)
+INFO - 02/11/26 16:57:52 - 0:03:56 - epoch -> 0.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc -> 93.144755
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_5 -> 0.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_6 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_7 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_8 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_9 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_10 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_11 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_12 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_13 -> 94.444444
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_14 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_15 -> 96.666667
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_16 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_17 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_18 -> 95.652174
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_19 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_20 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_21 -> 96.363636
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_22 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_23 -> 98.507463
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_24 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_25 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_26 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_27 -> 98.507463
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_28 -> 98.648649
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_29 -> 98.837209
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_30 -> 96.470588
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_31 -> 98.591549
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_32 -> 98.214286
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_33 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_34 -> 98.666667
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_35 -> 98.360656
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_36 -> 97.701149
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_37 -> 98.823529
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_38 -> 99.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_39 -> 97.402597
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_40 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_41 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_42 -> 97.916667
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_43 -> 98.113208
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_44 -> 96.842105
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_45 -> 97.802198
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_46 -> 97.590361
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_47 -> 96.511628
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_48 -> 95.238095
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_49 -> 99.159664
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_50 -> 98.666667
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_51 -> 96.739130
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_52 -> 97.297297
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_53 -> 94.505495
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_54 -> 96.666667
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_55 -> 96.808511
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_56 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_57 -> 96.842105
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_58 -> 98.630137
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_59 -> 98.850575
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_60 -> 95.348837
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_61 -> 94.520548
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_62 -> 95.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_63 -> 95.698925
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_64 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_65 -> 96.923077
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_66 -> 97.560976
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_67 -> 96.052632
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_68 -> 94.736842
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_69 -> 97.014925
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_70 -> 98.412698
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_71 -> 95.505618
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_72 -> 95.890411
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_73 -> 93.333333
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_74 -> 94.444444
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_75 -> 95.454545
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_76 -> 93.243243
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_77 -> 94.545455
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_78 -> 96.825397
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_79 -> 95.652174
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_80 -> 96.296296
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_81 -> 97.058824
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_82 -> 91.525424
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_83 -> 90.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_84 -> 88.888889
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_85 -> 98.275862
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_86 -> 92.307692
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_87 -> 90.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_88 -> 91.666667
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_89 -> 93.103448
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_90 -> 96.923077
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_91 -> 96.491228
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_92 -> 89.361702
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_93 -> 91.836735
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_94 -> 90.384615
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_95 -> 93.442623
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_96 -> 96.428571
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_97 -> 89.830508
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_98 -> 91.304348
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_99 -> 90.243902
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_100 -> 93.617021
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_101 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_102 -> 93.023256
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_103 -> 93.617021
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_104 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_105 -> 94.339623
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_106 -> 95.652174
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_107 -> 87.500000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_108 -> 92.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_109 -> 92.857143
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_110 -> 90.909091
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_111 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_112 -> 88.571429
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_113 -> 93.333333
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_114 -> 95.348837
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_115 -> 84.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_116 -> 94.285714
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_117 -> 94.285714
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_118 -> 90.909091
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_119 -> 88.888889
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_120 -> 94.736842
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_121 -> 88.888889
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_122 -> 90.322581
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_123 -> 96.774194
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_124 -> 86.666667
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_125 -> 94.285714
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_126 -> 94.736842
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_127 -> 88.571429
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_128 -> 91.666667
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_129 -> 91.428571
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_130 -> 89.655172
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_131 -> 97.368421
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_132 -> 85.294118
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_133 -> 91.176471
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_134 -> 96.296296
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_135 -> 92.592593
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_136 -> 90.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_137 -> 86.206897
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_138 -> 85.714286
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_139 -> 91.176471
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_140 -> 92.857143
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_141 -> 95.833333
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_142 -> 93.103448
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_143 -> 96.875000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_144 -> 90.322581
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_145 -> 95.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_146 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_147 -> 82.608696
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_148 -> 84.615385
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_149 -> 88.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_150 -> 78.787879
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_151 -> 90.476190
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_152 -> 90.909091
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_153 -> 88.888889
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_154 -> 90.909091
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_155 -> 91.304348
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_156 -> 81.250000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_157 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_158 -> 94.736842
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_159 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_160 -> 73.913043
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_161 -> 89.473684
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_162 -> 90.909091
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_163 -> 90.909091
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_164 -> 91.304348
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_165 -> 95.238095
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_166 -> 85.714286
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_167 -> 80.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_168 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_169 -> 77.272727
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_170 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_171 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_172 -> 92.307692
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_173 -> 89.473684
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_174 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_175 -> 90.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_176 -> 87.500000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_177 -> 78.947368
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_178 -> 71.428571
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_179 -> 90.909091
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_180 -> 80.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_181 -> 92.307692
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_182 -> 85.714286
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_183 -> 88.888889
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_184 -> 92.857143
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_185 -> 92.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_186 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_187 -> 95.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_188 -> 77.777778
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_189 -> 84.615385
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_190 -> 86.666667
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_191 -> 78.947368
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_192 -> 70.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_193 -> 91.666667
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_194 -> 91.666667
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_195 -> 94.117647
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_196 -> 58.333333
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_197 -> 88.888889
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_198 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_199 -> 85.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_200 -> 86.666667
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_201 -> 77.777778
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_202 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_203 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_204 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_205 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_206 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_207 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_208 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_209 -> 87.500000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_210 -> 88.888889
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_211 -> 81.818182
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_212 -> 90.909091
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_213 -> 89.473684
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_214 -> 86.666667
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_215 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_216 -> 93.333333
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_217 -> 68.750000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_218 -> 78.947368
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_219 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_220 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_221 -> 77.777778
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_222 -> 85.714286
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_223 -> 90.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_224 -> 86.666667
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_225 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_226 -> 90.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_227 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_228 -> 90.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_229 -> 83.333333
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_230 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_231 -> 71.428571
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_232 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_233 -> 55.555556
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_234 -> 87.500000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_235 -> 85.714286
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_236 -> 87.500000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_237 -> 92.857143
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_238 -> 83.333333
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_239 -> 76.923077
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_240 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_241 -> 50.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_242 -> 71.428571
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_243 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_244 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_245 -> 88.888889
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_246 -> 60.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_247 -> 66.666667
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_248 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_249 -> 81.818182
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_250 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_251 -> 75.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_252 -> 85.714286
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_253 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_254 -> 83.333333
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_255 -> 57.142857
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_256 -> 25.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_257 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_258 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_259 -> 87.500000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_260 -> 70.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_261 -> 80.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_262 -> 77.777778
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_263 -> 75.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_264 -> 92.307692
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_265 -> 83.333333
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_266 -> 80.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_267 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_268 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_269 -> 75.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_270 -> 71.428571
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_271 -> 33.333333
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_272 -> 81.818182
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_273 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_274 -> 50.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_275 -> 66.666667
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_276 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_277 -> 77.777778
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_278 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_279 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_280 -> 80.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_281 -> 80.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_282 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_283 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_284 -> 66.666667
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_285 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_286 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_287 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_288 -> 75.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_289 -> 75.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_290 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_291 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_292 -> 71.428571
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_293 -> 60.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_294 -> 66.666667
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_295 -> 66.666667
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_296 -> 83.333333
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_297 -> 83.333333
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_298 -> 25.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_299 -> 40.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_300 -> 80.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_301 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_302 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_303 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_304 -> 66.666667
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_305 -> 50.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_306 -> 50.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_307 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_308 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_309 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_310 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_311 -> 50.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_312 -> 75.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_313 -> 83.333333
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_314 -> 80.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_315 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_316 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_317 -> 60.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_318 -> 75.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_319 -> 66.666667
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_320 -> 66.666667
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_321 -> 80.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_322 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_323 -> 66.666667
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_324 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_325 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_326 -> 80.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_327 -> 71.428571
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_328 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_329 -> 50.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_330 -> 50.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_331 -> 81.818182
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_332 -> 80.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_333 -> 75.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_334 -> 50.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_335 -> 50.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_336 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_337 -> 50.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_338 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_339 -> 50.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_340 -> 85.714286
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_341 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_342 -> 0.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_343 -> 50.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_344 -> 75.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_345 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_346 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_347 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_348 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_349 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_350 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_351 -> 75.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_352 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_353 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_354 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_355 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_356 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_357 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_358 -> 50.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_359 -> 66.666667
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_360 -> 50.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_361 -> 75.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_362 -> 66.666667
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_363 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_364 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_365 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_366 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_367 -> 50.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_368 -> 66.666667
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_369 -> 50.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_370 -> 50.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_371 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_372 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_373 -> 60.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_374 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_375 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_376 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_377 -> 71.428571
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_378 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_379 -> 80.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_380 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_381 -> 50.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_382 -> 40.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_383 -> 71.428571
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_384 -> 0.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_385 -> 66.666667
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_386 -> 85.714286
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_387 -> 66.666667
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_388 -> 66.666667
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_389 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_390 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_391 -> 28.571429
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_392 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_393 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_394 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_396 -> 80.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_397 -> 66.666667
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_398 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_399 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_400 -> 50.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_401 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_402 -> 66.666667
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_403 -> 75.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_404 -> 50.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_405 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_406 -> 85.714286
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_407 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_408 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_409 -> 66.666667
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_410 -> 80.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_411 -> 33.333333
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_412 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_413 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_414 -> 75.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_415 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_416 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_418 -> 75.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_419 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_420 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_421 -> 60.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_422 -> 0.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_423 -> 50.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_424 -> 0.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_425 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_426 -> 0.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_427 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_428 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_429 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_430 -> 60.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_431 -> 50.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_432 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_433 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_434 -> 66.666667
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_435 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_436 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_437 -> 0.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_438 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_439 -> 0.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_440 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_441 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_442 -> 75.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_443 -> 75.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_444 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_445 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_446 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_449 -> 0.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_450 -> 0.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_452 -> 100.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - test_spin_hel_beam_acc_453 -> 50.000000
+INFO - 02/11/26 16:57:52 - 0:03:56 - __log__:{"epoch": 0, "test_spin_hel_beam_acc": 93.1447553855446, "test_spin_hel_beam_acc_5": 0.0, "test_spin_hel_beam_acc_6": 100.0, "test_spin_hel_beam_acc_7": 100.0, "test_spin_hel_beam_acc_8": 100.0, "test_spin_hel_beam_acc_9": 100.0, "test_spin_hel_beam_acc_10": 100.0, "test_spin_hel_beam_acc_11": 100.0, "test_spin_hel_beam_acc_12": 100.0, "test_spin_hel_beam_acc_13": 94.44444444444444, "test_spin_hel_beam_acc_14": 100.0, "test_spin_hel_beam_acc_15": 96.66666666666667, "test_spin_hel_beam_acc_16": 100.0, "test_spin_hel_beam_acc_17": 100.0, "test_spin_hel_beam_acc_18": 95.65217391304348, "test_spin_hel_beam_acc_19": 100.0, "test_spin_hel_beam_acc_20": 100.0, "test_spin_hel_beam_acc_21": 96.36363636363636, "test_spin_hel_beam_acc_22": 100.0, "test_spin_hel_beam_acc_23": 98.50746268656717, "test_spin_hel_beam_acc_24": 100.0, "test_spin_hel_beam_acc_25": 100.0, "test_spin_hel_beam_acc_26": 100.0, "test_spin_hel_beam_acc_27": 98.50746268656717, "test_spin_hel_beam_acc_28": 98.64864864864865, "test_spin_hel_beam_acc_29": 98.83720930232558, "test_spin_hel_beam_acc_30": 96.47058823529412, "test_spin_hel_beam_acc_31": 98.59154929577464, "test_spin_hel_beam_acc_32": 98.21428571428571, "test_spin_hel_beam_acc_33": 100.0, "test_spin_hel_beam_acc_34": 98.66666666666667, "test_spin_hel_beam_acc_35": 98.36065573770492, "test_spin_hel_beam_acc_36": 97.70114942528735, "test_spin_hel_beam_acc_37": 98.82352941176471, "test_spin_hel_beam_acc_38": 99.0, "test_spin_hel_beam_acc_39": 97.40259740259741, "test_spin_hel_beam_acc_40": 100.0, "test_spin_hel_beam_acc_41": 100.0, "test_spin_hel_beam_acc_42": 97.91666666666667, "test_spin_hel_beam_acc_43": 98.11320754716981, "test_spin_hel_beam_acc_44": 96.84210526315789, "test_spin_hel_beam_acc_45": 97.8021978021978, "test_spin_hel_beam_acc_46": 97.59036144578313, "test_spin_hel_beam_acc_47": 96.51162790697674, "test_spin_hel_beam_acc_48": 95.23809523809524, "test_spin_hel_beam_acc_49": 99.15966386554622, "test_spin_hel_beam_acc_50": 98.66666666666667, "test_spin_hel_beam_acc_51": 96.73913043478261, "test_spin_hel_beam_acc_52": 97.29729729729729, "test_spin_hel_beam_acc_53": 94.50549450549451, "test_spin_hel_beam_acc_54": 96.66666666666667, "test_spin_hel_beam_acc_55": 96.80851063829788, "test_spin_hel_beam_acc_56": 100.0, "test_spin_hel_beam_acc_57": 96.84210526315789, "test_spin_hel_beam_acc_58": 98.63013698630137, "test_spin_hel_beam_acc_59": 98.85057471264368, "test_spin_hel_beam_acc_60": 95.34883720930233, "test_spin_hel_beam_acc_61": 94.52054794520548, "test_spin_hel_beam_acc_62": 95.0, "test_spin_hel_beam_acc_63": 95.6989247311828, "test_spin_hel_beam_acc_64": 100.0, "test_spin_hel_beam_acc_65": 96.92307692307692, "test_spin_hel_beam_acc_66": 97.5609756097561, "test_spin_hel_beam_acc_67": 96.05263157894737, "test_spin_hel_beam_acc_68": 94.73684210526316, "test_spin_hel_beam_acc_69": 97.01492537313433, "test_spin_hel_beam_acc_70": 98.41269841269842, "test_spin_hel_beam_acc_71": 95.50561797752809, "test_spin_hel_beam_acc_72": 95.89041095890411, "test_spin_hel_beam_acc_73": 93.33333333333333, "test_spin_hel_beam_acc_74": 94.44444444444444, "test_spin_hel_beam_acc_75": 95.45454545454545, "test_spin_hel_beam_acc_76": 93.24324324324324, "test_spin_hel_beam_acc_77": 94.54545454545455, "test_spin_hel_beam_acc_78": 96.82539682539682, "test_spin_hel_beam_acc_79": 95.65217391304348, "test_spin_hel_beam_acc_80": 96.29629629629629, "test_spin_hel_beam_acc_81": 97.05882352941177, "test_spin_hel_beam_acc_82": 91.52542372881356, "test_spin_hel_beam_acc_83": 90.0, "test_spin_hel_beam_acc_84": 88.88888888888889, "test_spin_hel_beam_acc_85": 98.27586206896552, "test_spin_hel_beam_acc_86": 92.3076923076923, "test_spin_hel_beam_acc_87": 90.0, "test_spin_hel_beam_acc_88": 91.66666666666667, "test_spin_hel_beam_acc_89": 93.10344827586206, "test_spin_hel_beam_acc_90": 96.92307692307692, "test_spin_hel_beam_acc_91": 96.49122807017544, "test_spin_hel_beam_acc_92": 89.36170212765957, "test_spin_hel_beam_acc_93": 91.83673469387755, "test_spin_hel_beam_acc_94": 90.38461538461539, "test_spin_hel_beam_acc_95": 93.44262295081967, "test_spin_hel_beam_acc_96": 96.42857142857143, "test_spin_hel_beam_acc_97": 89.83050847457628, "test_spin_hel_beam_acc_98": 91.30434782608695, "test_spin_hel_beam_acc_99": 90.2439024390244, "test_spin_hel_beam_acc_100": 93.61702127659575, "test_spin_hel_beam_acc_101": 100.0, "test_spin_hel_beam_acc_102": 93.02325581395348, "test_spin_hel_beam_acc_103": 93.61702127659575, "test_spin_hel_beam_acc_104": 100.0, "test_spin_hel_beam_acc_105": 94.33962264150944, "test_spin_hel_beam_acc_106": 95.65217391304348, "test_spin_hel_beam_acc_107": 87.5, "test_spin_hel_beam_acc_108": 92.0, "test_spin_hel_beam_acc_109": 92.85714285714286, "test_spin_hel_beam_acc_110": 90.9090909090909, "test_spin_hel_beam_acc_111": 100.0, "test_spin_hel_beam_acc_112": 88.57142857142857, "test_spin_hel_beam_acc_113": 93.33333333333333, "test_spin_hel_beam_acc_114": 95.34883720930233, "test_spin_hel_beam_acc_115": 84.0, "test_spin_hel_beam_acc_116": 94.28571428571429, "test_spin_hel_beam_acc_117": 94.28571428571429, "test_spin_hel_beam_acc_118": 90.9090909090909, "test_spin_hel_beam_acc_119": 88.88888888888889, "test_spin_hel_beam_acc_120": 94.73684210526316, "test_spin_hel_beam_acc_121": 88.88888888888889, "test_spin_hel_beam_acc_122": 90.3225806451613, "test_spin_hel_beam_acc_123": 96.7741935483871, "test_spin_hel_beam_acc_124": 86.66666666666667, "test_spin_hel_beam_acc_125": 94.28571428571429, "test_spin_hel_beam_acc_126": 94.73684210526316, "test_spin_hel_beam_acc_127": 88.57142857142857, "test_spin_hel_beam_acc_128": 91.66666666666667, "test_spin_hel_beam_acc_129": 91.42857142857143, "test_spin_hel_beam_acc_130": 89.65517241379311, "test_spin_hel_beam_acc_131": 97.36842105263158, "test_spin_hel_beam_acc_132": 85.29411764705883, "test_spin_hel_beam_acc_133": 91.17647058823529, "test_spin_hel_beam_acc_134": 96.29629629629629, "test_spin_hel_beam_acc_135": 92.5925925925926, "test_spin_hel_beam_acc_136": 90.0, "test_spin_hel_beam_acc_137": 86.20689655172414, "test_spin_hel_beam_acc_138": 85.71428571428571, "test_spin_hel_beam_acc_139": 91.17647058823529, "test_spin_hel_beam_acc_140": 92.85714285714286, "test_spin_hel_beam_acc_141": 95.83333333333333, "test_spin_hel_beam_acc_142": 93.10344827586206, "test_spin_hel_beam_acc_143": 96.875, "test_spin_hel_beam_acc_144": 90.3225806451613, "test_spin_hel_beam_acc_145": 95.0, "test_spin_hel_beam_acc_146": 100.0, "test_spin_hel_beam_acc_147": 82.6086956521739, "test_spin_hel_beam_acc_148": 84.61538461538461, "test_spin_hel_beam_acc_149": 88.0, "test_spin_hel_beam_acc_150": 78.78787878787878, "test_spin_hel_beam_acc_151": 90.47619047619048, "test_spin_hel_beam_acc_152": 90.9090909090909, "test_spin_hel_beam_acc_153": 88.88888888888889, "test_spin_hel_beam_acc_154": 90.9090909090909, "test_spin_hel_beam_acc_155": 91.30434782608695, "test_spin_hel_beam_acc_156": 81.25, "test_spin_hel_beam_acc_157": 100.0, "test_spin_hel_beam_acc_158": 94.73684210526316, "test_spin_hel_beam_acc_159": 100.0, "test_spin_hel_beam_acc_160": 73.91304347826087, "test_spin_hel_beam_acc_161": 89.47368421052632, "test_spin_hel_beam_acc_162": 90.9090909090909, "test_spin_hel_beam_acc_163": 90.9090909090909, "test_spin_hel_beam_acc_164": 91.30434782608695, "test_spin_hel_beam_acc_165": 95.23809523809524, "test_spin_hel_beam_acc_166": 85.71428571428571, "test_spin_hel_beam_acc_167": 80.0, "test_spin_hel_beam_acc_168": 100.0, "test_spin_hel_beam_acc_169": 77.27272727272727, "test_spin_hel_beam_acc_170": 100.0, "test_spin_hel_beam_acc_171": 100.0, "test_spin_hel_beam_acc_172": 92.3076923076923, "test_spin_hel_beam_acc_173": 89.47368421052632, "test_spin_hel_beam_acc_174": 100.0, "test_spin_hel_beam_acc_175": 90.0, "test_spin_hel_beam_acc_176": 87.5, "test_spin_hel_beam_acc_177": 78.94736842105263, "test_spin_hel_beam_acc_178": 71.42857142857143, "test_spin_hel_beam_acc_179": 90.9090909090909, "test_spin_hel_beam_acc_180": 80.0, "test_spin_hel_beam_acc_181": 92.3076923076923, "test_spin_hel_beam_acc_182": 85.71428571428571, "test_spin_hel_beam_acc_183": 88.88888888888889, "test_spin_hel_beam_acc_184": 92.85714285714286, "test_spin_hel_beam_acc_185": 92.0, "test_spin_hel_beam_acc_186": 100.0, "test_spin_hel_beam_acc_187": 95.0, "test_spin_hel_beam_acc_188": 77.77777777777777, "test_spin_hel_beam_acc_189": 84.61538461538461, "test_spin_hel_beam_acc_190": 86.66666666666667, "test_spin_hel_beam_acc_191": 78.94736842105263, "test_spin_hel_beam_acc_192": 70.0, "test_spin_hel_beam_acc_193": 91.66666666666667, "test_spin_hel_beam_acc_194": 91.66666666666667, "test_spin_hel_beam_acc_195": 94.11764705882354, "test_spin_hel_beam_acc_196": 58.333333333333336, "test_spin_hel_beam_acc_197": 88.88888888888889, "test_spin_hel_beam_acc_198": 100.0, "test_spin_hel_beam_acc_199": 85.0, "test_spin_hel_beam_acc_200": 86.66666666666667, "test_spin_hel_beam_acc_201": 77.77777777777777, "test_spin_hel_beam_acc_202": 100.0, "test_spin_hel_beam_acc_203": 100.0, "test_spin_hel_beam_acc_204": 100.0, "test_spin_hel_beam_acc_205": 100.0, "test_spin_hel_beam_acc_206": 100.0, "test_spin_hel_beam_acc_207": 100.0, "test_spin_hel_beam_acc_208": 100.0, "test_spin_hel_beam_acc_209": 87.5, "test_spin_hel_beam_acc_210": 88.88888888888889, "test_spin_hel_beam_acc_211": 81.81818181818181, "test_spin_hel_beam_acc_212": 90.9090909090909, "test_spin_hel_beam_acc_213": 89.47368421052632, "test_spin_hel_beam_acc_214": 86.66666666666667, "test_spin_hel_beam_acc_215": 100.0, "test_spin_hel_beam_acc_216": 93.33333333333333, "test_spin_hel_beam_acc_217": 68.75, "test_spin_hel_beam_acc_218": 78.94736842105263, "test_spin_hel_beam_acc_219": 100.0, "test_spin_hel_beam_acc_220": 100.0, "test_spin_hel_beam_acc_221": 77.77777777777777, "test_spin_hel_beam_acc_222": 85.71428571428571, "test_spin_hel_beam_acc_223": 90.0, "test_spin_hel_beam_acc_224": 86.66666666666667, "test_spin_hel_beam_acc_225": 100.0, "test_spin_hel_beam_acc_226": 90.0, "test_spin_hel_beam_acc_227": 100.0, "test_spin_hel_beam_acc_228": 90.0, "test_spin_hel_beam_acc_229": 83.33333333333333, "test_spin_hel_beam_acc_230": 100.0, "test_spin_hel_beam_acc_231": 71.42857142857143, "test_spin_hel_beam_acc_232": 100.0, "test_spin_hel_beam_acc_233": 55.55555555555556, "test_spin_hel_beam_acc_234": 87.5, "test_spin_hel_beam_acc_235": 85.71428571428571, "test_spin_hel_beam_acc_236": 87.5, "test_spin_hel_beam_acc_237": 92.85714285714286, "test_spin_hel_beam_acc_238": 83.33333333333333, "test_spin_hel_beam_acc_239": 76.92307692307692, "test_spin_hel_beam_acc_240": 100.0, "test_spin_hel_beam_acc_241": 50.0, "test_spin_hel_beam_acc_242": 71.42857142857143, "test_spin_hel_beam_acc_243": 100.0, "test_spin_hel_beam_acc_244": 100.0, "test_spin_hel_beam_acc_245": 88.88888888888889, "test_spin_hel_beam_acc_246": 60.0, "test_spin_hel_beam_acc_247": 66.66666666666667, "test_spin_hel_beam_acc_248": 100.0, "test_spin_hel_beam_acc_249": 81.81818181818181, "test_spin_hel_beam_acc_250": 100.0, "test_spin_hel_beam_acc_251": 75.0, "test_spin_hel_beam_acc_252": 85.71428571428571, "test_spin_hel_beam_acc_253": 100.0, "test_spin_hel_beam_acc_254": 83.33333333333333, "test_spin_hel_beam_acc_255": 57.142857142857146, "test_spin_hel_beam_acc_256": 25.0, "test_spin_hel_beam_acc_257": 100.0, "test_spin_hel_beam_acc_258": 100.0, "test_spin_hel_beam_acc_259": 87.5, "test_spin_hel_beam_acc_260": 70.0, "test_spin_hel_beam_acc_261": 80.0, "test_spin_hel_beam_acc_262": 77.77777777777777, "test_spin_hel_beam_acc_263": 75.0, "test_spin_hel_beam_acc_264": 92.3076923076923, "test_spin_hel_beam_acc_265": 83.33333333333333, "test_spin_hel_beam_acc_266": 80.0, "test_spin_hel_beam_acc_267": 100.0, "test_spin_hel_beam_acc_268": 100.0, "test_spin_hel_beam_acc_269": 75.0, "test_spin_hel_beam_acc_270": 71.42857142857143, "test_spin_hel_beam_acc_271": 33.333333333333336, "test_spin_hel_beam_acc_272": 81.81818181818181, "test_spin_hel_beam_acc_273": 100.0, "test_spin_hel_beam_acc_274": 50.0, "test_spin_hel_beam_acc_275": 66.66666666666667, "test_spin_hel_beam_acc_276": 100.0, "test_spin_hel_beam_acc_277": 77.77777777777777, "test_spin_hel_beam_acc_278": 100.0, "test_spin_hel_beam_acc_279": 100.0, "test_spin_hel_beam_acc_280": 80.0, "test_spin_hel_beam_acc_281": 80.0, "test_spin_hel_beam_acc_282": 100.0, "test_spin_hel_beam_acc_283": 100.0, "test_spin_hel_beam_acc_284": 66.66666666666667, "test_spin_hel_beam_acc_285": 100.0, "test_spin_hel_beam_acc_286": 100.0, "test_spin_hel_beam_acc_287": 100.0, "test_spin_hel_beam_acc_288": 75.0, "test_spin_hel_beam_acc_289": 75.0, "test_spin_hel_beam_acc_290": 100.0, "test_spin_hel_beam_acc_291": 100.0, "test_spin_hel_beam_acc_292": 71.42857142857143, "test_spin_hel_beam_acc_293": 60.0, "test_spin_hel_beam_acc_294": 66.66666666666667, "test_spin_hel_beam_acc_295": 66.66666666666667, "test_spin_hel_beam_acc_296": 83.33333333333333, "test_spin_hel_beam_acc_297": 83.33333333333333, "test_spin_hel_beam_acc_298": 25.0, "test_spin_hel_beam_acc_299": 40.0, "test_spin_hel_beam_acc_300": 80.0, "test_spin_hel_beam_acc_301": 100.0, "test_spin_hel_beam_acc_302": 100.0, "test_spin_hel_beam_acc_303": 100.0, "test_spin_hel_beam_acc_304": 66.66666666666667, "test_spin_hel_beam_acc_305": 50.0, "test_spin_hel_beam_acc_306": 50.0, "test_spin_hel_beam_acc_307": 100.0, "test_spin_hel_beam_acc_308": 100.0, "test_spin_hel_beam_acc_309": 100.0, "test_spin_hel_beam_acc_310": 100.0, "test_spin_hel_beam_acc_311": 50.0, "test_spin_hel_beam_acc_312": 75.0, "test_spin_hel_beam_acc_313": 83.33333333333333, "test_spin_hel_beam_acc_314": 80.0, "test_spin_hel_beam_acc_315": 100.0, "test_spin_hel_beam_acc_316": 100.0, "test_spin_hel_beam_acc_317": 60.0, "test_spin_hel_beam_acc_318": 75.0, "test_spin_hel_beam_acc_319": 66.66666666666667, "test_spin_hel_beam_acc_320": 66.66666666666667, "test_spin_hel_beam_acc_321": 80.0, "test_spin_hel_beam_acc_322": 100.0, "test_spin_hel_beam_acc_323": 66.66666666666667, "test_spin_hel_beam_acc_324": 100.0, "test_spin_hel_beam_acc_325": 100.0, "test_spin_hel_beam_acc_326": 80.0, "test_spin_hel_beam_acc_327": 71.42857142857143, "test_spin_hel_beam_acc_328": 100.0, "test_spin_hel_beam_acc_329": 50.0, "test_spin_hel_beam_acc_330": 50.0, "test_spin_hel_beam_acc_331": 81.81818181818181, "test_spin_hel_beam_acc_332": 80.0, "test_spin_hel_beam_acc_333": 75.0, "test_spin_hel_beam_acc_334": 50.0, "test_spin_hel_beam_acc_335": 50.0, "test_spin_hel_beam_acc_336": 100.0, "test_spin_hel_beam_acc_337": 50.0, "test_spin_hel_beam_acc_338": 100.0, "test_spin_hel_beam_acc_339": 50.0, "test_spin_hel_beam_acc_340": 85.71428571428571, "test_spin_hel_beam_acc_341": 100.0, "test_spin_hel_beam_acc_342": 0.0, "test_spin_hel_beam_acc_343": 50.0, "test_spin_hel_beam_acc_344": 75.0, "test_spin_hel_beam_acc_345": 100.0, "test_spin_hel_beam_acc_346": 100.0, "test_spin_hel_beam_acc_347": 100.0, "test_spin_hel_beam_acc_348": 100.0, "test_spin_hel_beam_acc_349": 100.0, "test_spin_hel_beam_acc_350": 100.0, "test_spin_hel_beam_acc_351": 75.0, "test_spin_hel_beam_acc_352": 100.0, "test_spin_hel_beam_acc_353": 100.0, "test_spin_hel_beam_acc_354": 100.0, "test_spin_hel_beam_acc_355": 100.0, "test_spin_hel_beam_acc_356": 100.0, "test_spin_hel_beam_acc_357": 100.0, "test_spin_hel_beam_acc_358": 50.0, "test_spin_hel_beam_acc_359": 66.66666666666667, "test_spin_hel_beam_acc_360": 50.0, "test_spin_hel_beam_acc_361": 75.0, "test_spin_hel_beam_acc_362": 66.66666666666667, "test_spin_hel_beam_acc_363": 100.0, "test_spin_hel_beam_acc_364": 100.0, "test_spin_hel_beam_acc_365": 100.0, "test_spin_hel_beam_acc_366": 100.0, "test_spin_hel_beam_acc_367": 50.0, "test_spin_hel_beam_acc_368": 66.66666666666667, "test_spin_hel_beam_acc_369": 50.0, "test_spin_hel_beam_acc_370": 50.0, "test_spin_hel_beam_acc_371": 100.0, "test_spin_hel_beam_acc_372": 100.0, "test_spin_hel_beam_acc_373": 60.0, "test_spin_hel_beam_acc_374": 100.0, "test_spin_hel_beam_acc_375": 100.0, "test_spin_hel_beam_acc_376": 100.0, "test_spin_hel_beam_acc_377": 71.42857142857143, "test_spin_hel_beam_acc_378": 100.0, "test_spin_hel_beam_acc_379": 80.0, "test_spin_hel_beam_acc_380": 100.0, "test_spin_hel_beam_acc_381": 50.0, "test_spin_hel_beam_acc_382": 40.0, "test_spin_hel_beam_acc_383": 71.42857142857143, "test_spin_hel_beam_acc_384": 0.0, "test_spin_hel_beam_acc_385": 66.66666666666667, "test_spin_hel_beam_acc_386": 85.71428571428571, "test_spin_hel_beam_acc_387": 66.66666666666667, "test_spin_hel_beam_acc_388": 66.66666666666667, "test_spin_hel_beam_acc_389": 100.0, "test_spin_hel_beam_acc_390": 100.0, "test_spin_hel_beam_acc_391": 28.571428571428573, "test_spin_hel_beam_acc_392": 100.0, "test_spin_hel_beam_acc_393": 100.0, "test_spin_hel_beam_acc_394": 100.0, "test_spin_hel_beam_acc_396": 80.0, "test_spin_hel_beam_acc_397": 66.66666666666667, "test_spin_hel_beam_acc_398": 100.0, "test_spin_hel_beam_acc_399": 100.0, "test_spin_hel_beam_acc_400": 50.0, "test_spin_hel_beam_acc_401": 100.0, "test_spin_hel_beam_acc_402": 66.66666666666667, "test_spin_hel_beam_acc_403": 75.0, "test_spin_hel_beam_acc_404": 50.0, "test_spin_hel_beam_acc_405": 100.0, "test_spin_hel_beam_acc_406": 85.71428571428571, "test_spin_hel_beam_acc_407": 100.0, "test_spin_hel_beam_acc_408": 100.0, "test_spin_hel_beam_acc_409": 66.66666666666667, "test_spin_hel_beam_acc_410": 80.0, "test_spin_hel_beam_acc_411": 33.333333333333336, "test_spin_hel_beam_acc_412": 100.0, "test_spin_hel_beam_acc_413": 100.0, "test_spin_hel_beam_acc_414": 75.0, "test_spin_hel_beam_acc_415": 100.0, "test_spin_hel_beam_acc_416": 100.0, "test_spin_hel_beam_acc_418": 75.0, "test_spin_hel_beam_acc_419": 100.0, "test_spin_hel_beam_acc_420": 100.0, "test_spin_hel_beam_acc_421": 60.0, "test_spin_hel_beam_acc_422": 0.0, "test_spin_hel_beam_acc_423": 50.0, "test_spin_hel_beam_acc_424": 0.0, "test_spin_hel_beam_acc_425": 100.0, "test_spin_hel_beam_acc_426": 0.0, "test_spin_hel_beam_acc_427": 100.0, "test_spin_hel_beam_acc_428": 100.0, "test_spin_hel_beam_acc_429": 100.0, "test_spin_hel_beam_acc_430": 60.0, "test_spin_hel_beam_acc_431": 50.0, "test_spin_hel_beam_acc_432": 100.0, "test_spin_hel_beam_acc_433": 100.0, "test_spin_hel_beam_acc_434": 66.66666666666667, "test_spin_hel_beam_acc_435": 100.0, "test_spin_hel_beam_acc_436": 100.0, "test_spin_hel_beam_acc_437": 0.0, "test_spin_hel_beam_acc_438": 100.0, "test_spin_hel_beam_acc_439": 0.0, "test_spin_hel_beam_acc_440": 100.0, "test_spin_hel_beam_acc_441": 100.0, "test_spin_hel_beam_acc_442": 75.0, "test_spin_hel_beam_acc_443": 75.0, "test_spin_hel_beam_acc_444": 100.0, "test_spin_hel_beam_acc_445": 100.0, "test_spin_hel_beam_acc_446": 100.0, "test_spin_hel_beam_acc_449": 0.0, "test_spin_hel_beam_acc_450": 0.0, "test_spin_hel_beam_acc_452": 100.0, "test_spin_hel_beam_acc_453": 50.0}

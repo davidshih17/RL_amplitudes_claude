@@ -1,0 +1,3 @@
+[submodule "spinorhelicity"]
+	path = spinorhelicity
+	url = https://github.com/aureliendersy/spinorhelicity

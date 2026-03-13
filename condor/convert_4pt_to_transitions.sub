@@ -1,0 +1,18 @@
+# NOTE: Update paths below before use
+universe = vanilla
+executable = /path/to/python
+arguments = /path/to/RL_amplitudes_claude/src/convert_oracle_4pt_to_multilabel_worker.py --input_dir /path/to/RL_amplitudes_claude/data/oracle_4pt_500k --output_dir /path/to/RL_amplitudes_claude/data/transitions_4pt_chunks --worker_id $(Process) --num_workers 500 --n_point 4 --max_terms_obs 20 --max_terms_action 10 --max_brackets_per_term 8 --max_brackets 12
+
+output = /path/to/RL_amplitudes_claude/logs/convert_4pt_$(Process).out
+error = /path/to/RL_amplitudes_claude/logs/convert_4pt_$(Process).err
+log = /path/to/RL_amplitudes_claude/logs/convert_4pt.log
+
+environment = "PYTHONPATH=/path/to/RL_amplitudes_claude/spinorhelicity:/path/to/RL_amplitudes_claude/src"
+
+request_cpus = 1
+request_memory = 4GB
+request_disk = 1GB
+
++MaxRuntime = 7200
+
+queue 500
