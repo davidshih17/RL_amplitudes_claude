@@ -12,10 +12,11 @@ This repository implements a self-supervised learning approach for simplifying s
 
 Three separate pipelines are provided for 4-point, 5-point, and 6-point amplitudes.
 
-**Key results:**
-- 4-point: 99.6% exact solve rate (greedy), 100% with beam search
-- 5-point: 85.8% exact solve rate (greedy), 97.2% with beam search (width 20)
-- 6-point: 55.3% exact solve rate (greedy), 82.3% with beam search (width 20)
+**Key results** (target-relative solve rate):
+- 4-point: 99.9%
+- 5-point: 99.6%
+- 6-point: 99.4%
+- Yang-Mills 5-point gluon amplitudes (8--228 terms): 100% simplified to Parke-Taylor
 
 ## Setup
 
